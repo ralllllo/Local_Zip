@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -6,15 +7,18 @@
 <meta charset="UTF-8">
 <title>우리동네.zip</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link rel="icon" type="image/png" sizes="512x512" href="/resources/images/pavicon.png">
+<link rel="icon" type="image/png" sizes="512x512"
+	href="/resources/images/pavicon.png">
 
 <style>
 * {
 	box-sizing: border-box;
 }
+
 @font-face {
 	font-family: 'GMarketSans';
 	src:
@@ -78,9 +82,8 @@ body, html {
 	justify-content: flex-end;
 	align-items: flex-end;
 	height: 0px;
-/* 	padding-right: 30px; */
+	/* 	padding-right: 30px; */
 	gap: 10px;
-	
 	position: relative;
 	right: 30px;
 	top: 15px;
@@ -183,10 +186,11 @@ body, html {
 	margin-left: 40px;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-.rightBox img{
+
+.rightBox img {
 	width: 100%;
-    height: 100%;
-    object-fit: cover; 
+	height: 100%;
+	object-fit: cover;
 }
 
 .subBox {
@@ -289,18 +293,16 @@ body, html {
 
 .slideBanner.active {
 	opacity: 1;
-	pointer-events: auto; 
+	pointer-events: auto;
 }
 
 .loginBtn, .logoutBtn, .joinBtn {
 	background-color: #FFB300;
 	color: #5e361a;
 	border: none;
-	
 	height: 30px;
 	width: 80px;
 	border-radius: 5px;
-	
 	line-height: 32px;
 }
 
@@ -473,9 +475,9 @@ body, html {
 	line-height: 40px;
 	color: #5e361a;
 	white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* 넘치는 부분을 ...으로 표시 */
-    display: block;
+	overflow: hidden;
+	text-overflow: ellipsis; /* 넘치는 부분을 ...으로 표시 */
+	display: block;
 }
 
 .postContent {
@@ -649,19 +651,18 @@ body, html {
 /* } */
 
 /* padding: 100px 0;" */
-
 .emptyBox {
-    width: 100%;
-    /* height: 600px;  <-- 이 고정 높이가 레이아웃을 깨뜨릴 수 있습니다. */
-    min-height: 400px; /* 적당한 최소 높이만 유지 */
-    font-size: 25px;
-    color: #5e361a;
-    text-align: center;
-    display: flex; /* 중앙 정렬을 위해 추가 */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+	width: 100%;
+	/* height: 600px;  <-- 이 고정 높이가 레이아웃을 깨뜨릴 수 있습니다. */
+	min-height: 400px; /* 적당한 최소 높이만 유지 */
+	font-size: 25px;
+	color: #5e361a;
+	text-align: center;
+	display: flex; /* 중앙 정렬을 위해 추가 */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
 }
 
 a {
@@ -753,26 +754,27 @@ a {
 }
 
 .weather-wrapper {
-	margin-top: 50px; 
-    padding: 20px;          /* 안쪽 여백을 줘야 그림자가 예쁘게 잡혀요 */
-    border-radius: 15px;    /* 모서리를 둥글게 */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 은은한 그림자 */    
-}
-.swal2-icon.swal2-question .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		
-.logo a {
-  text-decoration: none; /* 밑줄 제거 */
-  color: inherit;        /* 부모 요소의 글자색 상속 (파란색 제거) */
+	margin-top: 50px;
+	padding: 20px; /* 안쪽 여백을 줘야 그림자가 예쁘게 잡혀요 */
+	border-radius: 15px; /* 모서리를 둥글게 */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 은은한 그림자 */
 }
 
-.nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
-   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-   color: #e6a83e;
+.swal2-icon.swal2-question .swal2-icon-content {
+	font-size: 50px; /* i 크기 */
+	transform: translateY(5px);
+	line-height: 70px; /* 세로 위치 (핵심🔥) */
+}
+
+.logo a {
+	text-decoration: none; /* 밑줄 제거 */
+	color: inherit; /* 부모 요소의 글자색 상속 (파란색 제거) */
+}
+
+.nowNavicon {
+	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+	color: #e6a83e;
 }
 </style>
 </head>
@@ -780,24 +782,26 @@ a {
 <body>
 	<div class="container">
 		<div class="topBar">
-			<div class="logo" style="font-size: 50px; background-color: #F2D3A2; color: #A66A3F"><a href="/">우리 동네.zip</a></div>
+			<div class="logo"
+				style="font-size: 50px; background-color: #F2D3A2; color: #A66A3F">
+				<a href="/">우리 동네.zip</a>
+			</div>
 			<!-- 상단바 -->
 
 			<c:choose>
 				<c:when test="${loginId == null}">
 					<div class="loginBox">
-						<a href="/members/loginUi">
-							<input type="button" value="로그인" class="loginBtn">
-						</a>
-						<a href="/members/join">
-							<input type="button" value="회원가입" class="joinBtn">
+						<a href="/members/loginUi"> <input type="button" value="로그인"
+							class="loginBtn">
+						</a> <a href="/members/join"> <input type="button" value="회원가입"
+							class="joinBtn">
 						</a>
 					</div>
 				</c:when>
 				<c:otherwise>
-					<span class="logoutArea" style="display: inline;">
-					<a href="/members/logout">
-						<input type="button" value="로그아웃" class="logoutBtn">
+					<span class="logoutArea" style="display: inline;"> <a
+						href="/members/logout"> <input type="button" value="로그아웃"
+							class="logoutBtn">
 					</a>
 					</span>
 				</c:otherwise>
@@ -827,26 +831,23 @@ a {
 
 			<div class="categoryBtn">
 				<a href="/">
-					<button type="button" class="nowBtn" style="background-color: #fecc56; border-radius: 10px; height: 30px; margin-right: 10px;">
+					<button type="button" class="nowBtn"
+						style="background-color: #fecc56; border-radius: 10px; height: 30px; margin-right: 10px;">
 						<i class="fa-solid fa-house fa-lg"></i> 전체
 					</button>
-				</a>
-				<a href="/board/lifeInfo">
+				</a> <a href="/board/lifeInfo">
 					<button type="button" class="topBtn">
 						<i class="fa-regular fa-lightbulb fa-lg"></i> 생활정보
 					</button>
-				</a>
-				<a href="/board/food">
+				</a> <a href="/board/food">
 					<button type="button" class="topBtn">
 						<i class="fa-solid fa-utensils fa-lg"></i> 맛집/카페
 					</button>
-				</a>
-				<a href="/board/talk">
+				</a> <a href="/board/talk">
 					<button type="button" class="topBtn">
 						<i class="fa-regular fa-comment-dots fa-lg"></i> 고민/이야기
 					</button>
-				</a>
-				<a href="/board/beauty">
+				</a> <a href="/board/beauty">
 					<button type="button" class="topBtn">
 						<i class="fa-solid fa-shirt fa-lg"></i> 미용/패션
 					</button>
@@ -858,15 +859,24 @@ a {
 				<div class="leftBox">
 					<div class="localBanner">
 						<div class="notice">
-							<a href="/notice/toNoticeDetail?notice_seq=110&cPage=1"><img class="slideBanner active" src="/resources/images/spring.jpg" style="border-radius: 10px;" width="100%;" height="100%;"></a>
-							<a href="/notice/toNoticeDetail?notice_seq=113&cPage=1"><img class="slideBanner" src="/resources/images/fleaMarket.jpg" style="border-radius: 10px;" width="100%;" height="100%;" loading="lazy"></a>
-							<a href="/notice/toNoticeDetail?notice_seq=115&cPage=1"><img class="slideBanner" src="/resources/images/movie.jpg" style="border-radius: 10px;" width="100%;" height="100%;" loading="lazy"></a>
+							<a href="/notice/toNoticeDetail?notice_seq=110&cPage=1"><img
+								class="slideBanner active" src="/resources/images/spring.jpg"
+								style="border-radius: 10px;" width="100%;" height="100%;"></a>
+							<a href="/notice/toNoticeDetail?notice_seq=113&cPage=1"><img
+								class="slideBanner" src="/resources/images/fleaMarket.jpg"
+								style="border-radius: 10px;" width="100%;" height="100%;"
+								loading="lazy"></a> <a
+								href="/notice/toNoticeDetail?notice_seq=115&cPage=1"><img
+								class="slideBanner" src="/resources/images/movie.jpg"
+								style="border-radius: 10px;" width="100%;" height="100%;"
+								loading="lazy"></a>
 						</div>
 					</div>
 
 					<div class="orderBy">
 						<div class="searchBox">
-							<input name="" class="inputSearch" placeholder="검색할 게시글의 제목을 입력해주세요.">
+							<input name="" class="inputSearch"
+								placeholder="검색할 게시글의 제목을 입력해주세요.">
 							<div class="searchIconBox">
 								<i class="searchIcon fa-solid fa-magnifying-glass"></i>
 							</div>
@@ -881,7 +891,8 @@ a {
 							<div class="emptyBox">
 								<c:choose>
 									<c:when test="${not empty searchKeyword}">
-										<i class="fa-solid fa-circle-exclamation fa-3x" style="color: #A66A3F; margin-bottom: 20px;"></i>
+										<i class="fa-solid fa-circle-exclamation fa-3x"
+											style="color: #A66A3F; margin-bottom: 20px;"></i>
 										<p>'${searchKeyword}'에 대한 검색 결과가 없습니다.</p>
 									</c:when>
 									<c:otherwise>
@@ -890,96 +901,119 @@ a {
 								</c:choose>
 							</div>
 						</c:when>
-						
+
 						<c:otherwise>
 							<!-- 게시글영역 -->
-							<c:forEach var="i" items="${list}">
-								<div class="postBox" data-seq="${i.post_seq}" data-writer="${i.mem_id}">
-									<!-- data-seq는 ajax로 댓글 수 표시할 때 해당 게시글 번호를 기억하기 위해 달아놓음.	 -->
-									<div class="postUpBox">
+							<div id="postContainer">
+								<c:forEach var="i" items="${list}">
+									<div class="postBox" data-seq="${i.post_seq}"
+										data-writer="${i.mem_id}">
+										<!-- data-seq는 ajax로 댓글 수 표시할 때 해당 게시글 번호를 기억하기 위해 달아놓음.	 -->
+										<div class="postUpBox">
 
-										<div class="postProfile">
-											<img class="contentProfile" src="/resources/images/user1.png">
-										</div>
+											<div class="postProfile">
+												<img class="contentProfile"
+													src="/resources/images/user1.png">
+											</div>
 
-										<div class="postInfoBox">
-											<div class="postInfoUp">
-												<div class="profileName profileInfo">${i.mem_nickname}</div>
-												<div class="profileLocal profileInfo">${i.mem_dong}</div>
+											<div class="postInfoBox">
+												<div class="postInfoUp">
+													<div class="profileName profileInfo">${i.mem_nickname}</div>
+													<div class="profileLocal profileInfo">${i.mem_dong}</div>
 
-												<div class="profileCatagory profileInfo">
-													<!-- 카테고리에서 영어로 불러와지는걸 한글로 변환 -->
-													<button class="PostCategory">
-														<c:choose>
-															<c:when test="${i.post_category == 'lifeInfo'}">생활정보</c:when>
-															<c:when test="${i.post_category == 'food'}">맛집/카페</c:when>
-															<c:when test="${i.post_category == 'talk'}">고민/이야기</c:when>
-															<c:when test="${i.post_category == 'beauty'}">미용/패션</c:when>
-															<c:otherwise>${i.post_category}</c:otherwise>
-														</c:choose>
-													</button>
+													<div class="profileCatagory profileInfo">
+														<!-- 카테고리에서 영어로 불러와지는걸 한글로 변환 -->
+														<button class="PostCategory">
+															<c:choose>
+																<c:when test="${i.post_category == 'lifeInfo'}">생활정보</c:when>
+																<c:when test="${i.post_category == 'food'}">맛집/카페</c:when>
+																<c:when test="${i.post_category == 'talk'}">고민/이야기</c:when>
+																<c:when test="${i.post_category == 'beauty'}">미용/패션</c:when>
+																<c:otherwise>${i.post_category}</c:otherwise>
+															</c:choose>
+														</button>
+													</div>
+
 												</div>
 
+												<div class="postInfoDown">
+													<div class="profileTime profileInfo">${i.post_date}</div>
+												</div>
 											</div>
 
-											<div class="postInfoDown">
-												<div class="profileTime profileInfo">${i.post_date}</div>
-											</div>
+
+											<c:if
+												test="${loginId != null && loginId != i.mem_id && i.mem_role != 0}">
+												<div class="reportArea">
+													<img src="/resources/images/free-icon-siren1.png"
+														class="reportIcon" style="width: 25px; height: 25px;"></img>
+													<select class="reportSelect">
+														<option class="report-menu" disabled selected>신고
+															사유</option>
+														<option class="report-menu" value="badContents">부적절한
+															컨텐츠</option>
+														<option class="report-menu" value="badWord">욕설/비방</option>
+														<option class="report-menu" value="AD">광고/스팸</option>
+													</select>
+													<button type="button" class="reportBtn">신고하기</button>
+												</div>
+											</c:if>
+
 										</div>
 
+										<div class="postMidBox">
 
-										<c:if test="${loginId != null && loginId != i.mem_id && i.mem_role != 0}">
-											<div class="reportArea">
-												<img src="/resources/images/free-icon-siren1.png" class="reportIcon"
-													style="width: 25px; height: 25px;"></img> <select class="reportSelect">
-													<option class="report-menu" disabled selected>신고 사유</option>
-													<option class="report-menu" value="badContents">부적절한 컨텐츠</option>
-													<option class="report-menu" value="badWord">욕설/비방</option>
-													<option class="report-menu" value="AD">광고/스팸</option>
-												</select>
-												<button type="button" class="reportBtn">신고하기</button>
+											<div class="postTitle">${i.post_title}</div>
+											<div class="postContent">${i.post_contents}</div>
+
+										</div>
+
+										<c:if test="${loginId != null}">
+											<div class="postDownBox">
+
+												<div
+													class="postLikeBox  ${i.post_like_check == 1 ? 'active' : ''}">
+													<i class="fa-regular fa-heart fa-xl beforeHeart"></i> <i
+														class="fa-solid fa-heart fa-xl afterHeart"></i>
+
+													<div class="likeCount infoCount">${i.post_like_count}</div>
+												</div>
+
+												<div class="postCommentBox">
+													<i class="fa-regular fa-comment fa-xl comment"></i>
+
+													<div class="commentCount infoCount">${i.post_hit}</div>
+												</div>
+
 											</div>
 										</c:if>
 
 									</div>
-
-									<div class="postMidBox">
-
-										<div class="postTitle">${i.post_title}</div>
-										<div class="postContent">${i.post_contents}</div>
-
-									</div>
-
-									<c:if test="${loginId != null}">
-										<div class="postDownBox">
-
-											<div class="postLikeBox  ${i.post_like_check == 1 ? 'active' : ''}">
-												<i class="fa-regular fa-heart fa-xl beforeHeart"></i> <i class="fa-solid fa-heart fa-xl afterHeart"></i>
-
-												<div class="likeCount infoCount">${i.post_like_count}</div>
-											</div>
-
-											<div class="postCommentBox">
-												<i class="fa-regular fa-comment fa-xl comment"></i>
-
-												<div class="commentCount infoCount">${i.post_hit}</div>
-											</div>
-
-										</div>
-									</c:if>
-
-								</div>
-							</c:forEach>
+								</c:forEach>
+							</div>
+							<div id="loadingBox"
+								style="display: none; text-align: center; padding: 20px; color: #A66A3F;">
+								로딩 중입니다...</div>
 						</c:otherwise>
 					</c:choose>
 
 				</div>
 
 				<div class="rightBox">
-					<a href="/notice/toNoticeDetail?notice_seq=116&cPage=1"><img src="/resources/images/localCafe2.jpg" style="border-radius: 10px;" width="100%" height="100%"></a>
+					<a href="/notice/toNoticeDetail?notice_seq=116&cPage=1"><img
+						src="/resources/images/localCafe2.jpg"
+						style="border-radius: 10px;" width="100%" height="100%"></a>
 					<div class="weather-wrapper">
-					<a class="weatherwidget-io" href="https://forecast7.com/en/37d57126d98/seoul/" data-label_1="SEOUL" data-label_2="WEATHER" data-font="Open Sans" data-icons="Climacons Animated" data-theme="original" data-basecolor="#fbe5c0" data-accent="" data-textcolor="#5e361a" data-highcolor="#5e361a" data-lowcolor="#5e361a" data-suncolor="#FFB300" data-cloudcolor="#7BB8C9" data-cloudfill="#7BB8C9" data-raincolor="#7BB8C9" data-snowcolor="#ffffff" >SEOUL WEATHER</a>
-<script>
+						<a class="weatherwidget-io"
+							href="https://forecast7.com/en/37d57126d98/seoul/"
+							data-label_1="SEOUL" data-label_2="WEATHER" data-font="Open Sans"
+							data-icons="Climacons Animated" data-theme="original"
+							data-basecolor="#fbe5c0" data-accent="" data-textcolor="#5e361a"
+							data-highcolor="#5e361a" data-lowcolor="#5e361a"
+							data-suncolor="#FFB300" data-cloudcolor="#7BB8C9"
+							data-cloudfill="#7BB8C9" data-raincolor="#7BB8C9"
+							data-snowcolor="#ffffff">SEOUL WEATHER</a>
+						<script>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
 					</div>
@@ -1000,20 +1034,26 @@ a {
 		</div>
 
 		<div class="bottomBar">
-			<a href="/"><i class="nowNavicon fa-solid fa-house fa-2xl"></i></a>
-			<a href="/map/test"><i class="navicon fa-solid fa-map-location-dot fa-2xl" style="color: #A66A3F"></i></a>
-			<a href="/meeting/list?category=all"><i class="navicon fa-solid fa-people-group fa-2xl" style="color: #A66A3F"></i></a>
-			<a href="/feedback/feedbackHome"><i class="navicon fa-solid fa-bullhorn fa-2xl" style="color: #A66A3F"></i></a>
+			<a href="/"><i class="nowNavicon fa-solid fa-house fa-2xl"></i></a> <a
+				href="/map/test"><i
+				class="navicon fa-solid fa-map-location-dot fa-2xl"
+				style="color: #A66A3F"></i></a> <a href="/meeting/list?category=all"><i
+				class="navicon fa-solid fa-people-group fa-2xl"
+				style="color: #A66A3F"></i></a> <a href="/feedback/feedbackHome"><i
+				class="navicon fa-solid fa-bullhorn fa-2xl" style="color: #A66A3F"></i></a>
 
 			<c:choose>
 				<c:when test="${loginId == null}">
-					<a href="/members/loginUi"><i class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
+					<a href="/members/loginUi"><i
+						class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
 				</c:when>
 				<c:when test="${role == 1}">
-					<a href="/members/mypage"><i class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
+					<a href="/members/mypage"><i
+						class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
 				</c:when>
 				<c:otherwise>
-					<a href="/admin/adminPage"><i class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
+					<a href="/admin/adminPage"><i
+						class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
 				</c:otherwise>
 			</c:choose>
 
@@ -1217,7 +1257,7 @@ a {
 		        	
 		
 		 	// 좋아요 버튼을 눌렀을 때
-			$(".postLikeBox").on("click", function(e) {
+			$(document).on("click", ".postLikeBox", function(e) {
 				e.stopPropagation(); // 상세페이지 이동 방지
 				let postLike = $(this);
 				let post_seq = postLike.closest(".postBox").data("seq");	
@@ -1335,6 +1375,100 @@ a {
             });
         });
      	
+        
+        let page = 1;
+        let size = 5;
+        let loading = false;
+        let lastPage = false;
+
+        $(window).on("scroll", function() {
+
+            if (loading || lastPage) return;
+
+            let scrollTop = $(window).scrollTop();
+            let windowHeight = $(window).height();
+            let documentHeight = $(document).height();
+
+            // 거의 바닥에 도달했을 때
+            if (scrollTop + windowHeight >= documentHeight) {
+
+                loading = true;
+                $("#loadingBox").show();
+                page++;
+
+                $.ajax({
+                    url: "/listPaging",
+                    data: {
+                        page: page,
+                        size: size,
+                        sort: "${sort}"
+                    },
+                	dataType: "json"
+                }).done(function(resp) {
+
+                    let list = resp;
+                    console.log(list);
+                    if (list.length === 0) {
+                        lastPage = true;
+                        $("#loadingBox").text("마지막 게시글입니다.");
+                        return;
+                    }
+
+                    list.forEach(function(i) {
+
+                        let html = `
+                        	<div class="postBox" data-seq="\${i.post_seq}" data-writer="\${i.mem_id}">
+                            <div class="postUpBox">
+
+                                <div class="postProfile">
+                                    <img class="contentProfile" src="/resources/images/user1.png">
+                                </div>
+
+                                <div class="postInfoBox">
+                                    <div class="postInfoUp">
+                                        <div class="profileName profileInfo">\${i.mem_nickname}</div>
+                                        <div class="profileLocal profileInfo">\${i.mem_dong}</div>
+
+                                        <div class="profileCatagory profileInfo">
+                                            <button class="PostCategory">
+                                                \${i.post_category}
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="postInfoDown">
+                                        <div class="profileTime profileInfo">\${i.post_date}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="postMidBox">
+                                <div class="postTitle">\${i.post_title}</div>
+                                <div class="postContent">\${i.post_contents}</div>
+                            </div>
+
+                            <div class="postDownBox">
+                                <div class="postLikeBox ${i.post_like_check == 1 ? 'active' : ''}">
+                                    <i class="fa-regular fa-heart fa-xl beforeHeart"></i>
+                                    <i class="fa-solid fa-heart fa-xl afterHeart"></i>
+                                    <div class="likeCount infoCount">\${i.post_like_count}</div>
+                                </div>
+
+                                <div class="postCommentBox">
+                                    <i class="fa-regular fa-comment fa-xl comment"></i>
+                                    <div class="commentCount infoCount">\${i.post_hit}</div>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+						
+                        $("#postContainer").append(html);
+                    });
+					$("#loadingBox").hide();
+                    loading = false;
+                });
+            }
+        });
 	</script>
 
 </body>

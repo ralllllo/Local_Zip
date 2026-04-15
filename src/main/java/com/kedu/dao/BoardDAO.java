@@ -27,27 +27,46 @@ public class BoardDAO {
 
 	
 	// 카테고리 별 최신순, 인기순 정렬 후 > 리스트 출력 메서드 ------------------------------
-	public List<BoardDTO> list_home_latest(String mem_id) throws Exception{
-		String sql = "select p.*, m.mem_nickname, m.mem_dong, m.mem_role, " +
-                " (select count(*) FROM reply r WHERE r.post_seq = p.post_seq) as post_hit, " + // 댓글 수
-                " (select count(*) FROM post_like l WHERE l.post_seq = p.post_seq) as post_like_count, " + // 전체 좋아요 수
-                " (select count(*) FROM post_like l WHERE l.post_seq = p.post_seq AND l.mem_id = ?) as post_like_check " + // 내가 눌렀는지 여부
-                " FROM post p "
-                + "join members m on p.mem_id = m.mem_id " +
-                " order by p.post_seq desc";
-		return jdbc.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class),mem_id);
+	public List<BoardDTO> list_home_latest(String mem_id,int start, int end) throws Exception{
+		String sql =
+				"SELECT * FROM ( " +
+		        "    SELECT ROWNUM rnum, A.* FROM ( " +
+		        "        SELECT " +
+		        "            p.POST_SEQ, p.POST_CATEGORY, p.POST_TITLE, p.POST_CONTENTS, " +
+		        "            p.POST_DATE, p.POST_HIT, p.POST_LIKE, " + // post_like는 테이블 컬럼
+		        "            p.MEM_ID, " +
+		        "            m.MEM_NICKNAME, m.MEM_DONG, m.MEM_ROLE, " + // members의 최신 정보
+		        "            (SELECT COUNT(*) FROM reply r WHERE r.post_seq = p.post_seq) AS reply_count, " +
+		        "            (SELECT COUNT(*) FROM post_like l WHERE l.post_seq = p.post_seq) AS post_like_count, " +
+		        "            (SELECT COUNT(*) FROM post_like l WHERE l.post_seq = p.post_seq AND l.mem_id = ?) AS post_like_check " +
+		        "        FROM post p " +
+		        "        JOIN members m ON p.mem_id = m.mem_id " +
+		        "        ORDER BY p.POST_SEQ DESC " +
+		        "    ) A WHERE ROWNUM <= ? " +
+		        ") WHERE rnum > ?";
+		return jdbc.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class),mem_id,end,start);
 	};
 
 	//홈(=전체) 리스트 출력(인기순)
-	public List<BoardDTO> list_home_like(String mem_id) throws Exception{
-		String sql = "select p.*, m.mem_nickname, m.mem_dong, m.mem_role, " +
-                " (select count(*) FROM reply r WHERE r.post_seq = p.post_seq) as post_hit, " + // 댓글 수
-                " (select count(*) FROM post_like l WHERE l.post_seq = p.post_seq) as post_like_count, " + // 전체 좋아요 수
-                " (select count(*) FROM post_like l WHERE l.post_seq = p.post_seq AND l.mem_id = ?) as post_like_check " + // 내가 눌렀는지 여부
-                " FROM post p " +
-                " join members m on p.mem_id = m.mem_id " +
-                " order by post_like desc";
-		return jdbc.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class),mem_id);
+	public List<BoardDTO> list_home_like(String mem_id,int start, int end) throws Exception{
+		 String sql =
+				 "SELECT * FROM ( " +
+					        "    SELECT ROWNUM rnum, A.* FROM ( " +
+					        "        SELECT " +
+					        "            p.POST_SEQ, p.POST_CATEGORY, p.POST_TITLE, p.POST_CONTENTS, " +
+					        "            p.POST_DATE, p.POST_HIT, p.POST_LIKE, " +
+					        "            p.MEM_ID, " +
+					        "            m.MEM_NICKNAME, m.MEM_DONG, m.MEM_ROLE, " +
+					        "            (SELECT COUNT(*) FROM reply r WHERE r.post_seq = p.post_seq) AS reply_count, " +
+					        "            (SELECT COUNT(*) FROM post_like l WHERE l.post_seq = p.post_seq) AS post_like_count, " +
+					        "            (SELECT COUNT(*) FROM post_like l WHERE l.post_seq = p.post_seq AND l.mem_id = ?) AS post_like_check " +
+					        "        FROM post p " +
+					        "        JOIN members m ON p.mem_id = m.mem_id " +
+					        "        ORDER BY p.POST_LIKE DESC, p.POST_SEQ DESC " + // 좋아요 순, 같으면 최신순
+					        "    ) A WHERE ROWNUM <= ? " +
+					        ") WHERE rnum > ?";
+
+		return jdbc.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class),mem_id,end,start);
 	};
 
 	//생활정보 리스트 출력(최신순)

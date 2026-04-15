@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.kedu.dao.AttachmentDAO;
 import com.kedu.dao.BoardDAO;
 import com.kedu.dao.PostLikeDAO;
@@ -24,7 +25,10 @@ import com.kedu.dto.ReplyDTO;
 public class HomeController {
 
 	@Autowired
-	private Gson gson;
+	private Gson gson= new GsonBuilder()
+	        .setPrettyPrinting()
+	        .disableHtmlEscaping()
+	        .create();
 	@Autowired
 	private BoardDAO dao;
 	@Autowired
@@ -46,14 +50,21 @@ public class HomeController {
 		if(sort == null) {
 			sort = "latest";
 		}
+		int page =1;
+		int size =5;
+		
+		int start = (page - 1) * size;
+		int end = page * size;
+
+		
 		List<BoardDTO> list;
 
 		// 출력을 어떤 종류를 기준으로 할 지 검사
 		// dao에 카테고리 별로 최신순, 인기순 정렬하는 다오 생성하면서, dao 이름 반영
 		if ("like".equals(sort)) {
-			list = dao.list_home_like(loginId); // join문 전용
+			list = dao.list_home_like(loginId,start,end); // join문 전용
 		}else {
-			list = dao.list_home_latest(loginId);
+			list = dao.list_home_latest(loginId,start,end);
 		}
 
         // *(좋아요)
@@ -64,6 +75,41 @@ public class HomeController {
 		model.addAttribute("sort",sort);
 		
 		return "home";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/listPaging", produces="application/json; charset=UTF-8")
+	public String listPaging(
+	        int page,
+	        int size,
+	        String sort,
+	        HttpSession session) throws Exception {
+
+	    String loginId = (String) session.getAttribute("loginId");
+
+	    if (sort == null) sort = "latest";
+
+	    int start = (page - 1) * size;
+	    int end = page * size;
+
+
+	    List<BoardDTO> list;
+
+	    if ("like".equals(sort)) {
+	        list = dao.list_home_like(loginId, start, end);
+	    } else {
+	        list = dao.list_home_latest(loginId, start, end);
+	    }
+
+	    // 👍 좋아요 상태 반영 (임시 - 나중에 JOIN으로 개선 추천)
+	    if (loginId != null) {
+	        for (BoardDTO dto : list) {
+	            int check = likeDao.likeCheck(dto.getPost_seq(), loginId);
+	            dto.setPost_like_check(check);
+	        }
+	    }
+
+	    return gson.toJson(list);
 	}
 	
 	// ajax용 댓글 수 count
