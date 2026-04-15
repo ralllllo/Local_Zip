@@ -1410,6 +1410,7 @@ a {
                     console.log(list);
                     if (list.length === 0) {
                         lastPage = true;
+                        loading = false;
                         $("#loadingBox").text("마지막 게시글입니다.");
                         return;
                     }
@@ -1465,6 +1466,8 @@ a {
                         $("#postContainer").append(html);
                     });
 					$("#loadingBox").hide();
+                    loading = false;
+                }).fail(function(){
                     loading = false;
                 });
             }
