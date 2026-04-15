@@ -63,11 +63,6 @@ public class MeetingMemberController {
 	public int updateStatus(int seq, int meet_seq, int status) {
 		
 		int result = dao.updateStatus(seq, status);
-		
-		if(status == 1) {
-			mdao.currentUpdate(meet_seq);
-		}
-		
 	    return result;
 	}
 	
@@ -77,7 +72,10 @@ public class MeetingMemberController {
 	public int outMeeting(HttpSession session, int seq) throws Exception{
 		
 		String loginId = (String)session.getAttribute("loginId");
-		return dao.outMeeting(loginId, seq);
+		// 모임 탈퇴
+		int count = dao.outMeeting(loginId, seq);
+		
+		return count;
 	}
 	
 	// 처리 완료된 리스트 출력

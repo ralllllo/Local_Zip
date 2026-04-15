@@ -24,17 +24,17 @@ public class MeetingMemberDAO {
 		return jdbc.update(sql, dto.getMem_id(), dto.getMem_nickname() , dto.getMeet_seq(), dto.getMeetmem_contents(), dto.getMeetmem_status());
 	}
 	
-	public int selectByStatus(int meet_seq, String mem_id) {
+	public int selectByStatus(int meet_seq, String mem_id) { // 내가 신청한 모임
 		String sql = "select count(*) from meeting_member where meet_seq = ? and mem_id =? and meetmem_status = 1";
 		return jdbc.queryForObject(sql, Integer.class ,meet_seq, mem_id);
 	}
 	
-	public int adminCheck(String mem_id) {
+	public int adminCheck(String mem_id) { // 관리자 여부 확인
 		String sql = "select count(*) from members where mem_id =? and mem_role = 0";
 		return jdbc.queryForObject(sql, Integer.class, mem_id);
 	}
 	
-	public int hostCheck(int meet_seq, String mem_id) {
+	public int hostCheck(int meet_seq, String mem_id) { // 주최자인지 확인
 		String sql = "select count(*) from meeting where meet_seq = ? and mem_id = ?";
 		return jdbc.queryForObject(sql, Integer.class, meet_seq, mem_id);
 	}

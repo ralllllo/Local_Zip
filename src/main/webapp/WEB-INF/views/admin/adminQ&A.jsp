@@ -477,6 +477,12 @@ img {
 	word-break: keep-all;
 	overflow-wrap: break-word;
 }
+
+.nowNavicon{
+   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+   color: #e6a83e;
+}
 </style>
 </head>
 
@@ -547,7 +553,7 @@ img {
 					<input type="hidden" name="status" value="${status}">
 	                <input type="hidden" name="qa_seq" value="${i.qa_seq}">
 	                <div class="replyTextAndBtn">
-	                    <textarea placeholder="댓글을 입력하세요." maxlength="1000" class="inputQaReply" name="admin_answer"></textarea>
+	                    <textarea placeholder="댓글을 입력하세요." class="inputQaReply" name="admin_answer"></textarea>
 						<button class="replyBtn" type="submit">등록</button>
 	                </div>
 	            </form>
@@ -579,7 +585,7 @@ img {
 			<a href="/map/test"><i class="navicon fa-solid fa-map-location-dot fa-2xl" style="color: #A66A3F"></i></a>
 			<a href="/meeting/list?category=all"><i class="navicon fa-solid fa-people-group fa-2xl" style="color: #A66A3F"></i></a> 
 			<a href="/feedback/feedbackHome"><i class="navicon fa-solid fa-bullhorn fa-2xl" style="color: #A66A3F"></i></a> 
-			<a href="/admin/adminPage"><i class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
+			<a href="/admin/adminPage"><i class="nowNavicon fa-solid fa-user fa-2xl"></i></a>
 		</div>
 	</div>
 	
@@ -647,14 +653,12 @@ img {
 				
 			$(document).on("submit", "#frm", function(e){
 				let textarea = $(this).find(".inputQaReply");
-				let value = textarea.val().trim();
 				
 				// 데이터추출
-				 let reply_contents = $(".answerDiv").html();
-	             // 엔터(\n)를 포함한 실제 텍스트 추출 (innerText 사용)
-	             let replyContents = document.querySelector(".answerDiv").innerText; 
-	  			 // 내용 제한
-	             let limit = 1000;     
+	            let replyContents = textarea.val(); 
+	            let value = replyContents.trim();  
+	  			// 내용 제한
+	            let limit = 1000;     
 	  			 
 				if(value == ""){
 					e.preventDefault();
@@ -669,14 +673,15 @@ img {
 					}
 					
 				// 글자수 초과 체크
-		          if (replyContents.length > limit) {
+	          	if (replyContents.length > limit) {
+		        	  e.preventDefault(); // 초과되면 제출 막기
 		              let currentLen = replyContents.length;
 		              let overText = replyContents.substring(limit, limit + 100); 
-
+	
 		              Swal.fire({
 		                  icon: "warning",
-		                  title: "답변 글자수 초과!",
-		                  html: "현재 답변이 <b>" + currentLen + "자</b>입니다. (제한: 1000자)<br><br>" +
+		                  title: "댓글 글자수 초과!",
+		                  html: "현재 댓글이 <b>" + currentLen + "자</b>입니다. (제한: 1000자)<br><br>" +
 		                        "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:14px; border:1px solid #ffcccc; white-space: pre-wrap; word-break: break-all;'>" +
 		                        "<b>이 부분부터 삭제해주세요:</b><br><br>" +
 		                        "<span style='color:#555;'>... " + overText + "</span></div>",
@@ -684,11 +689,8 @@ img {
 		                  confirmButtonColor: "#FFB300"
 		              });
 		              return;
-		          }
-					
+		          	}
 				})
-			
-				
 			
 			$(document).on("click", ".updateBtn", function(){
 				let parentRow = $(this).closest(".replyTextAndBtn");
@@ -699,7 +701,7 @@ img {
 				answerDiv.data("origin", originText);
 				
 				answerDiv.addClass("editing");
-				answerDiv.html(`<textarea class="inputQaReply inputUpdate" id="inputUpdate_\${seq}" data-origin="\${originText}" maxlength="1000">\${originText}</textarea>`);
+				answerDiv.html(`<textarea class="inputQaReply inputUpdate" id="inputUpdate_\${seq}" data-origin="\${originText}">\${originText}</textarea>`);
 				
 				let textarea = $("#inputUpdate_" + seq)[0];
 				textarea.style.height = "auto";
@@ -724,16 +726,15 @@ img {
 				$(document).on("click", ".saveBtn", function(){
 					let btn = $(this);
 					let seq = btn.data("seq");
-					let updateContents = $("#inputUpdate_" + seq).val();
 		             
 					 // 데이터추출
-					 let reply_contents = $(".answerDiv").html();
+		             let replyContents = $("#inputUpdate_" + seq).val();
 		             // 엔터(\n)를 포함한 실제 텍스트 추출 (innerText 사용)
-		             let replyContents = document.querySelector(".answerDiv").innerText; 
+		             let updateContents = replyContents.trim();
 		  			 // 내용 제한
 		             let limit = 1000;     
 		             
-					if(updateContents.trim() == ""){
+					if(updateContents == ""){
 						Swal.fire({
     						icon: "info",
     						title: "Wait  !",
@@ -751,8 +752,8 @@ img {
 
 			              Swal.fire({
 			                  icon: "warning",
-			                  title: "답변 글자수 초과!",
-			                  html: "현재 답변이 <b>" + currentLen + "자</b>입니다. (제한: 1000자)<br><br>" +
+			                  title: "댓글 글자수 초과!",
+			                  html: "현재 댓글이 <b>" + currentLen + "자</b>입니다. (제한: 1000자)<br><br>" +
 			                        "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:14px; border:1px solid #ffcccc; white-space: pre-wrap; word-break: break-all;'>" +
 			                        "<b>이 부분부터 삭제해주세요:</b><br><br>" +
 			                        "<span style='color:#555;'>... " + overText + "</span></div>",
