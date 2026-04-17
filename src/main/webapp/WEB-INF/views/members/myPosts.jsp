@@ -378,7 +378,7 @@ button, body {
 
 				<c:otherwise>
 					<c:forEach var="i" items="${listAll}">
-						<div class="postBox" data-seq="${i.post_seq}" style="cursor:pointer;">
+						<div class="postBox" data-seq="${i.post_seq}" data-category="${i.post_category}" style="cursor:pointer;">
 							<div class="postUpBox">
 								<div class="postInfoBox">
 									<div class="postInfoUp">
@@ -414,7 +414,6 @@ button, body {
 				</c:otherwise>
 			</c:choose>
 		</div>
-
 		<div class="bottomBox">
 			<a href="/"><i class="navicon fa-solid fa-house fa-2xl" style="color: #A66A3F"></i></a>
 			<a href="/map/test"><i class="navicon fa-solid fa-map-location-dot fa-2xl" style="color: #A66A3F"></i></a>
@@ -437,11 +436,13 @@ button, body {
 	</div>
 	
 	<script>
-	
+		
 		// 게시글 목록을 눌렀을때, => postDetail.jsp 이동 시.
 		$(document).on("click", ".postBox", function(e) {
 		    let post_seq = $(this).data("seq");
-		    location.href = "/board/postDetail?post_seq=" + post_seq + "&cPage=${cPage}&from=myPosts";
+		    let post_category = $(this).data("category");
+		    console.log(post_category);
+		    location.href = "/board/postDetail?post_seq=" + post_seq + "&category=" + post_category + "&cPage=${cPage}&from=myPosts";
 		});
 		
 		
