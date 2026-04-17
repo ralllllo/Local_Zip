@@ -45,5 +45,4 @@ public class ReplyDAO {
 		String sql = "select count(*) from reply where post_seq = ?";
 		return jdbc.queryForObject(sql, Integer.class, post_seq);
 	};
-	
 }

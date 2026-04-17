@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.kedu.dto.AgeVisitDTO;
-import com.kedu.dto.CategoryVisitDTO;
 import com.kedu.dto.DailyVisitDTO;
 import com.kedu.dto.GenderVisitDTO;
 

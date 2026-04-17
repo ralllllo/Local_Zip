@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import com.kedu.dto.BoardDTO;
 import com.kedu.dto.CategoryVisitDTO;
-import com.kedu.dto.NoticeDTO;
 
 @Repository
 public class BoardDAO {
@@ -183,7 +182,6 @@ public class BoardDAO {
 
 	//미용/패션 리스트 출력(최신순)
 	public List<BoardDTO> list_beauty_latest(int start, int end) throws Exception{
-//		String sql = "select * from post where post_category = 'beauty' order by post_seq desc";
 		
 		String sql = "select * from (" 
 				   + " select row_number() over(order by p.post_date desc) rn, "
@@ -206,7 +204,6 @@ public class BoardDAO {
 
 	//미용/패션 리스트 출력(인기순)
 	public List<BoardDTO> list_beauty_like(int start, int end) throws Exception{
-//		String sql = "select * from post where post_category = 'beauty' order by post_like desc";
 		
 		String sql = "select * from (" 
 				   + " select row_number() over(order by p.post_like desc, p.post_seq desc) rn, "
@@ -292,8 +289,6 @@ public class BoardDAO {
 		String sql = "select post_category from post where post_seq = ?";
 		return jdbc.queryForObject(sql, String.class, seq);
 	}
-
-
 
 	//----------------------------------------------------
 
@@ -418,6 +413,4 @@ public class BoardDAO {
 			String sql = "SELECT post_seq.NEXTVAL FROM DUAL";
 			return jdbc.queryForObject(sql, Integer.class);
 		}
-	
-	
 }
