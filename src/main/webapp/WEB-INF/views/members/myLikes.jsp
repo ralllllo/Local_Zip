@@ -449,7 +449,7 @@ hr {
 				<div class="bodyBox">
 
 					<c:forEach var="i" items="${likeList}">
-						<div class="postBox" data-seq="${i.post_seq}" data-writer="${i.mem_id}">
+						<div class="postBox" data-seq="${i.post_seq}" data-writer="${i.mem_id}" data-category="${i.post_category}">
 
 							<div class="postUpBox">
 
@@ -535,7 +535,8 @@ hr {
 			// 게시글 목록을 눌렀을때, => postDetail.jsp 이동 시.
 			$(document).on("click", ".postBox", function(e) {
 			    let post_seq = $(this).data("seq");
-			    location.href = "/board/postDetail?post_seq=" + post_seq + "&cPage=${cPage}&from=myLikes";
+			    let post_category = $(this).data("category");
+			    location.href = "/board/postDetail?post_seq=" + post_seq + "&category=" + post_category + "&cPage=${cPage}&from=myLikes";
 			});
 
 			// 댓글 수 갱신
