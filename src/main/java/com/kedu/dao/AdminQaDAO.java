@@ -82,7 +82,7 @@ public class AdminQaDAO {
 	
 	public List<QaDTO> selectAllCount(int start, int end){ // 전체 cpage
 		String sql = "select * from ("
-				+ "    select row_number() over(order by qa_seq desc) rnum, q.* "
+				+ "    select row_number() over(order by qa_create_date desc) rnum, q.* "
 				+ "    from qa q"
 				+ ") where rnum between ? and ?";
 
@@ -91,7 +91,7 @@ public class AdminQaDAO {
 
 	public List<QaDTO> selectByAdminAnswerWait(int start, int end){ // qa 답변대기 목록 출력
 		String sql = "select * from ("
-				+ "    select row_number() over(order by qa_seq) rnum, q.* "
+				+ "    select row_number() over(order by qa_create_date) rnum, q.* "
 				+ "    from qa q where qa_status = 0"
 				+ ") where rnum between ? and ?";
 
@@ -100,7 +100,7 @@ public class AdminQaDAO {
 	
 	public List<QaDTO> selectByAdminAnswerFinish(int start, int end){ // qa 답변완료 목록 출력
 		String sql = "select * from ("
-				+ "    select row_number() over(order by qa_seq desc) rnum, q.* "
+				+ "    select row_number() over(order by qa_create_date desc) rnum, q.* "
 				+ "    from qa q where qa_status = 1"
 				+ ") where rnum between ? and ?";
 
