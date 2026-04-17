@@ -12,9 +12,11 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/resources/images/pavicon.png">
 
 <style>
+
 * {
 	box-sizing: border-box;
 }
+
 @font-face {
 	font-family: 'GMarketSans';
 	src:
@@ -78,9 +80,7 @@ body, html {
 	justify-content: flex-end;
 	align-items: flex-end;
 	height: 0px;
-/* 	padding-right: 30px; */
 	gap: 10px;
-	
 	position: relative;
 	right: 30px;
 	top: 15px;
@@ -112,7 +112,7 @@ body, html {
 	margin-top: 10px;
 	margin-left: 20px;
 	position: relative;
-	height: 300px; /* 적당히 고정 */
+	height: 300px;
 	overflow: hidden;
 }
 
@@ -142,7 +142,6 @@ body, html {
 	height: 80px;
 	border-radius: 50%;
 	object-fit: cover;
-	/* 찌그러짐 방지 */
 	margin-top: 10px;
 	margin-left: 10px;
 }
@@ -183,6 +182,7 @@ body, html {
 	margin-left: 40px;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
 .rightBox img{
 	width: 100%;
     height: 100%;
@@ -196,8 +196,8 @@ body, html {
 
 .orderBy {
 	display: flex;
-	justify-content: right; /* 가로(수평) 오른쪽 정렬 */
-	align-items: center; /* 세로(수직) 중앙 정렬 */
+	justify-content: right;
+	align-items: center;
 	gap: 15px;
 	padding-right: 50px;
 	height: auto;
@@ -212,7 +212,6 @@ body, html {
 }
 
 .inputSearch {
-	/* 수정: 고정 1500px 제거 */
 	width: 85%;
 	max-width: 500px;
 	min-height: 30px;
@@ -221,15 +220,15 @@ body, html {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border: none;
-	outline: none; /* 눌렀을 때 선 안보이게 */
+	outline: none;
 	background-color: #FFEFD5;
 }
 
 .searchIconBox {
 	width: 15%;
 	display: flex;
-	justify-content: center; /* 가로(수평) 오른쪽 정렬 */
-	align-items: center; /* 세로(수직) 중앙 정렬 */
+	justify-content: center;
+	align-items: center;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	background-color: #FFB300;
@@ -267,7 +266,7 @@ body, html {
 	background-color: #fecc56;
 }
 
-.localBanner { /* 이 범위안에서만 사용할 수 있게 고정 */
+.localBanner {
 	position: relative;
 	overflow: hidden;
 	width: 1500px;
@@ -296,16 +295,13 @@ body, html {
 	background-color: #FFB300;
 	color: #5e361a;
 	border: none;
-	
 	height: 30px;
 	width: 80px;
 	border-radius: 5px;
-	
 	line-height: 32px;
 }
 
-.loginBtn:hover, .logoutBtn:hover, .joinBtn:hover, .categoryBtn button:hover
-	{
+.loginBtn:hover, .logoutBtn:hover, .joinBtn:hover, .categoryBtn button:hover {
 	transform: translateY(-3px); /* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
@@ -365,7 +361,7 @@ body, html {
 
 .postInfoBox {
 	margin-left: 15px;
-	flex-grow: 1; /* 남은 공간 다 차지 */
+	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -397,7 +393,7 @@ body, html {
 
 /* 신고 영역 스타일 */
 .reportArea {
-	position: absolute; /* 부모(.postUpBox)의 오른쪽 상단에 고정 */
+	position: absolute;
 	right: 15px;
 	top: 10px;
 	display: flex;
@@ -437,14 +433,14 @@ body, html {
 }
 
 .reportBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
 }
 
 .reportBtn:active {
-	transform: translateY(2px); /* 아래로 눌림 */
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -490,7 +486,7 @@ body, html {
 	padding: 0 10px;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis; /* 넘치는 부분을 ...으로 표시 */
+	text-overflow: ellipsis;
 	display: block;
 }
 
@@ -528,7 +524,6 @@ body, html {
 	color: red;
 }
 
-/* active 클래스가 붙었을 때의 제어 */
 .postLikeBox.active .beforeHeart {
 	display: none;
 }
@@ -538,18 +533,14 @@ body, html {
 }
 
 .nowBtn {
-	/* background-color: #fecc56; */
 	color: #A66A3F;
 	transform: translateY(-3px);
-	/* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	height: 25px;
 	border-radius: 10px;
 	border: 1px solid #FFB300;
 	align-items: center;
-	/* 수직 중앙 정렬 */
 	vertical-align: middle;
-	/* 버튼들끼리 줄이 안 맞을 때를 대비 */
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -561,7 +552,7 @@ body, html {
 	color: #3e5e40;
 	height: 30px;
 	margin-right: 10px;
-	transition: all 0.2s ease; /* 애니메이션 부드럽게 */
+	transition: all 0.2s ease;
 	cursor: pointer;
 }
 
@@ -593,20 +584,19 @@ body, html {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.7); /* 배경을 조금 더 어둡게 */
-	display: none; /* 기본은 숨김 */
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
 	justify-content: center;
 	align-items: center;
-	z-index: 9999; /* 상단바보다 훨씬 높게 설정 */
+	z-index: 9999;
 }
 
 .popup-content img {
-	max-width: 100%; /* 이미지가 팝업창을 넘어가지 않도록 */
+	max-width: 100%; 
 	border-radius: 20px;
 	width: 500px;
 }
 
-/* 닫기 버튼 */
 .close-btn {
 	width: 100%;
 	padding: 10px;
@@ -628,36 +618,24 @@ body, html {
 }
 
 .swal2-icon.swal2-info .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-warning .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
-
-/* .emptyBox { */
-/* 	width: 100%; */
-/* 	height: 600px; */
-/* 	font-size: 25px; */
-/* 	color: #5e361a; */
-/* 	text-align: center; */
-/* 	margin-top: 80px; */
-/* } */
-
-/* padding: 100px 0;" */
 
 .emptyBox {
     width: 100%;
-    /* height: 600px;  <-- 이 고정 높이가 레이아웃을 깨뜨릴 수 있습니다. */
-    min-height: 400px; /* 적당한 최소 높이만 유지 */
+    min-height: 400px;
     font-size: 25px;
     color: #5e361a;
     text-align: center;
-    display: flex; /* 중앙 정렬을 위해 추가 */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -681,27 +659,26 @@ a {
 	border: #fbe5c0;
 	color: rgb(255, 179, 0);
 	font-size: 30px;
-	position: fixed; /* 버튼 따라다니게 만들기 */
+	position: fixed;
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-	transition: all 0.3s ease; /* 애니메이션 부드럽게 */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
 	z-index: 1001;
 }
 
 .writeBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	color: #fecc56;
 }
 
 .moveTopBtn {
-	/* 	color: rgb(255, 179, 0); */
 	width: 50px;
 	height: 50px;
 	right: 35px;
-	bottom: 90px; /* 기본 위치는 글쓰기 버튼과 동일하게 시작 */
+	bottom: 90px;
 	cursor: pointer;
 	margin-top: 90%;
 	border-radius: 50%;
@@ -709,68 +686,63 @@ a {
 	border: #fbe5c0;
 	color: #fbe5c0;
 	font-size: 30px;
-	position: fixed; /* 버튼 따라다니게 만들기 */
+	position: fixed;
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 	z-index: 1001;
-	transition: all 0.3s ease; /* 애니메이션 부드럽게 */
-	display: none; /* 초기에는 숨김 */
-	/* 추가/수정할 부분 */
-	padding: 0; /* 패딩 초기화 */
-	line-height: 0; /* 텍스트 줄바꿈 간격 제거 */
+	transition: all 0.3s ease;
+	display: none;
+	padding: 0;
+	line-height: 0;
 }
 
 .moveTopBtn i {
-	/* 아이콘 자체에 걸린 기본 여백 제거 */
 	margin: 0;
 	padding: 0;
 }
 
-/* 상단 이동 버튼이 위로 올라갔을 때의 위치 */
 .moveTopBtn.up-pos {
 	bottom: 175px;
 }
 
 .moveTopBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	color: #f5deb8;
 }
 
 .navicon:hover {
 	transform: translateY(-3px);
-	/* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .navicon:active {
 	transform: translateY(2px);
-	/* 아래로 눌림 */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .weather-wrapper {
 	margin-top: 50px; 
-    padding: 20px;          /* 안쪽 여백을 줘야 그림자가 예쁘게 잡혀요 */
-    border-radius: 15px;    /* 모서리를 둥글게 */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 은은한 그림자 */    
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  
 }
+
 .swal2-icon.swal2-question .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
 		
 .logo a {
-  text-decoration: none; /* 밑줄 제거 */
-  color: inherit;        /* 부모 요소의 글자색 상속 (파란색 제거) */
+  text-decoration: none;
+  color: inherit;
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }
@@ -858,9 +830,9 @@ a {
 				<div class="leftBox">
 					<div class="localBanner">
 						<div class="notice">
-							<a href="/notice/toNoticeDetail?notice_seq=110&cPage=1"><img class="slideBanner active" src="/resources/images/spring.jpg" style="border-radius: 10px;" width="100%;" height="100%;"></a>
-							<a href="/notice/toNoticeDetail?notice_seq=113&cPage=1"><img class="slideBanner" src="/resources/images/fleaMarket.jpg" style="border-radius: 10px;" width="100%;" height="100%;" loading="lazy"></a>
-							<a href="/notice/toNoticeDetail?notice_seq=115&cPage=1"><img class="slideBanner" src="/resources/images/movie.jpg" style="border-radius: 10px;" width="100%;" height="100%;" loading="lazy"></a>
+							<a href="/notice/toNoticeDetail?notice_seq=11&cPage=1"><img class="slideBanner active" src="/resources/images/spring.jpg" style="border-radius: 10px;" width="100%;" height="100%;"></a>
+							<a href="/notice/toNoticeDetail?notice_seq=12&cPage=1"><img class="slideBanner" src="/resources/images/fleaMarket.jpg" style="border-radius: 10px;" width="100%;" height="100%;" loading="lazy"></a>
+							<a href="/notice/toNoticeDetail?notice_seq=13&cPage=1"><img class="slideBanner" src="/resources/images/movie.jpg" style="border-radius: 10px;" width="100%;" height="100%;" loading="lazy"></a>
 						</div>
 					</div>
 
@@ -976,7 +948,7 @@ a {
 				</div>
 
 				<div class="rightBox">
-					<a href="/notice/toNoticeDetail?notice_seq=116&cPage=1"><img src="/resources/images/localCafe2.jpg" style="border-radius: 10px;" width="100%" height="100%"></a>
+					<a href="/notice/toNoticeDetail?notice_seq=14&cPage=1"><img src="/resources/images/localCafe2.jpg" style="border-radius: 10px;" width="100%" height="100%"></a>
 					<div class="weather-wrapper">
 					<a class="weatherwidget-io" href="https://forecast7.com/en/37d57126d98/seoul/" data-label_1="SEOUL" data-label_2="WEATHER" data-font="Open Sans" data-icons="Climacons Animated" data-theme="original" data-basecolor="#fbe5c0" data-accent="" data-textcolor="#5e361a" data-highcolor="#5e361a" data-lowcolor="#5e361a" data-suncolor="#FFB300" data-cloudcolor="#7BB8C9" data-cloudfill="#7BB8C9" data-raincolor="#7BB8C9" data-snowcolor="#ffffff" >SEOUL WEATHER</a>
 <script>
@@ -1211,8 +1183,8 @@ a {
 		                  confirmButtonColor: "#FFB300"
 		               });
 		        });
-		  	}
-		 });
+		  	  }
+		  });
 	  });
 		        	
 		
@@ -1257,7 +1229,7 @@ a {
 						}).done(function(count){
 							postLike.find(".likeCount").text(count);
 						});
-					}
+					 }
 				});
 			});
 		
@@ -1300,7 +1272,6 @@ a {
             }
             
             location.href = url; // 검색어가 있거나 없거나, 인기순 최신순 정렬 기준으로 주소 창 이동.     
-            
         });
      	
      	
@@ -1334,7 +1305,6 @@ a {
                 }
             });
         });
-     	
 	</script>
 
 </body>

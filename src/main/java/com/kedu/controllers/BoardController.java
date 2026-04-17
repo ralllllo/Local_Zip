@@ -20,7 +20,6 @@ import com.kedu.dao.AttachmentDAO;
 import com.kedu.dao.BoardDAO;
 import com.kedu.dao.MembersDAO;
 import com.kedu.dao.PostLikeDAO;
-import com.kedu.dao.ReplyDAO;
 import com.kedu.dao.ReportDAO;
 import com.kedu.dao.VisitLogDAO;
 import com.kedu.dto.AttachmentDTO;

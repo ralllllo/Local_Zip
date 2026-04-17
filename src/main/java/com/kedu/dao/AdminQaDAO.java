@@ -1,8 +1,6 @@
 package com.kedu.dao;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -82,7 +80,7 @@ public class AdminQaDAO {
 	
 	public List<QaDTO> selectAllCount(int start, int end){ // 전체 cpage
 		String sql = "select * from ("
-				+ "    select row_number() over(order by qa_seq desc) rnum, q.* "
+				+ "    select row_number() over(order by qa_create_date desc) rnum, q.* "
 				+ "    from qa q"
 				+ ") where rnum between ? and ?";
 
@@ -91,7 +89,7 @@ public class AdminQaDAO {
 
 	public List<QaDTO> selectByAdminAnswerWait(int start, int end){ // qa 답변대기 목록 출력
 		String sql = "select * from ("
-				+ "    select row_number() over(order by qa_seq) rnum, q.* "
+				+ "    select row_number() over(order by qa_create_date) rnum, q.* "
 				+ "    from qa q where qa_status = 0"
 				+ ") where rnum between ? and ?";
 
@@ -100,7 +98,7 @@ public class AdminQaDAO {
 	
 	public List<QaDTO> selectByAdminAnswerFinish(int start, int end){ // qa 답변완료 목록 출력
 		String sql = "select * from ("
-				+ "    select row_number() over(order by qa_seq desc) rnum, q.* "
+				+ "    select row_number() over(order by qa_create_date desc) rnum, q.* "
 				+ "    from qa q where qa_status = 1"
 				+ ") where rnum between ? and ?";
 
@@ -223,8 +221,7 @@ public class AdminQaDAO {
 	}
 	
 	public List<ReportDTO> selectGetPage(int start, int end){ // cpage
-		String sql = "select * from(select reports.*, row_number() over(order by reports_seq desc) num from reports) where num between ? and ? ";
+		String sql = "select * from(select reports.*, row_number() over(order by reports_date desc) num from reports) where num between ? and ? ";
 		return jdbc.query(sql, new BeanPropertyRowMapper<ReportDTO>(ReportDTO.class),start,end);
 	}
-	
 }

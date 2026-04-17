@@ -201,7 +201,6 @@ body {
 	border-radius: 5px;
 }
 
-/* .reportReason { font-weight: bold; font-size: 18px; color: #5e361a; } */
 .reportReason {
 	font-size: 18px;
 	color: #444;
@@ -467,19 +466,19 @@ hr {
 }
 
 .swal2-icon.swal2-info .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }

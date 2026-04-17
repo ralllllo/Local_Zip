@@ -185,7 +185,7 @@ body {
 }
 
 .requestBtn:hover, .backBtn:hover, .myMeetingBtn:hover {
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    background-color: #fecc56;
    color: #A66A3F;
@@ -313,7 +313,7 @@ p {
 							<a href="/meeting/myMeeting"><button class="myMeetingBtn" type="button">내 모임으로 이동</button></a>
 						</c:when>
 						<c:when test="${loginId != i.mem_id and admin == 0}">
-							<button class="requestBtn" type="submit" data-meet-seq="${meet_seq}">신청하기</button>
+							<button class="requestBtn" type="submit" data-meet-seq="${i.meet_seq}">신청하기</button>
 						</c:when>
 					</c:choose>
 						<a href="/meeting/list?category=${category}&cpage=${cPage}"><button class="backBtn" type="button">뒤로가기</button></a>

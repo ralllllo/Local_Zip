@@ -1,7 +1,6 @@
 package com.kedu.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +11,6 @@ import com.kedu.dto.AuthDTO;
 public class AuthDAO {
 	@Autowired
 	private JdbcTemplate jdbc;
-	
 	
 	// 인증번호 저장
 	 public void saveAuth(AuthDTO dto) {
@@ -55,12 +53,13 @@ public class AuthDAO {
 	 public int isEmailExists(String email) {
 		    String sql = "SELECT COUNT(*) FROM members WHERE mem_EMAIL = ?";
 		    return jdbc.queryForObject(sql, Integer.class, email);
-		}
+	 }
 	 
 	 public int isIdEmailExists(String id, String email) {
 		    String sql = "SELECT COUNT(*) FROM MEMBERS WHERE MEM_ID=? AND MEM_EMAIL = ?";
 		    return jdbc.queryForObject(sql, Integer.class,id,email);
-		}
+	 }
+	 
 	 //비밀번호 업데이트
 	 public int updatePwById(String id,String pw) {
 		

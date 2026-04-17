@@ -1,8 +1,6 @@
 package com.kedu.controllers;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -23,7 +21,6 @@ import com.kedu.dao.VisitLogDAO;
 import com.kedu.dto.BlackListDTO;
 import com.kedu.dto.NoticeDTO;
 import com.kedu.dto.QaDTO;
-import com.kedu.dto.ReplyDTO;
 import com.kedu.dto.ReportDTO;
 
 @Controller
@@ -137,10 +134,7 @@ public class AdminController {
 		return "redirect:/admin/adminQ&A?seq=" + qa_seq;
 	}
 	
-	
-	
 	//공지사항 글쓰기로 가기
-	
 	@RequestMapping("/toNoticeWrite")
 	public String toWrite() throws Exception{
 		return "/notice/noticeWrite";

@@ -51,17 +51,15 @@ body, html {
 	padding: 0;
 }
 
-/* 폰트 지정 */
 button, body, div, input {
 	font-family: 'GMarketSans', sans-serif;
 }
 
 .container {
-position : relative;
+	position : relative;
 	z-index: 2;
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	background-color: #fbe5c0;
 }
 
@@ -74,7 +72,6 @@ position : relative;
 	color: #A66A3F;
 	background-color: #F2D3A2;
 	border-bottom: 2px solid #A66A3F;
-	/* 아래쪽만 줄 그음 */
 	line-height: 100px;
 	z-index: 1000;
 }
@@ -128,7 +125,7 @@ position : relative;
 	font-size: 15px;
 	padding: 2px;
 	outline: none;
-	resize: none; /*늘어나기 방지*/
+	resize: none;
 }
 
 .TextTitle {
@@ -167,16 +164,16 @@ position : relative;
 
 .requestBtn, .backBtn {
 	cursor: pointer;
-		transition: all 0.2s ease;
-		width: 350px;
-		height: 40px;
-		background-color: #FFB300;
-		border: none;
-		border-radius: 10px;
-		color: #5e361a;
-		font-size: 17px;
-		font-weight: bold;
-		flex-shrink: 0;
+	transition: all 0.2s ease;
+	width: 350px;
+	height: 40px;
+	background-color: #FFB300;
+	border: none;
+	border-radius: 10px;
+	color: #5e361a;
+	font-size: 17px;
+	font-weight: bold;
+	flex-shrink: 0;
 }
 
 .requestBtn:hover, .backBtn:hover {
@@ -246,10 +243,10 @@ position : relative;
 	right: 0;
 }
 .swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
+    font-size: 50px; 
+    transform: translateY(5px);
+    line-height: 70px;
+}
 </style>
 
 

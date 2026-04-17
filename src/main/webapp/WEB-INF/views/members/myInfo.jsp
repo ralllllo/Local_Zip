@@ -49,16 +49,18 @@ body {
 }
 
 .container {
-position : relative;
+	position : relative;
 	z-index: 2;
 	width: 100%;
 	min-height: 100vh;
 	background-color: #fbe5c0;
 }
+
 .mainTitle{
 	min-width:500px;
 	font-size: 50px;
 }
+
 .topBar {
 	display: flex;
 	padding-left: 20px;
@@ -74,8 +76,8 @@ position : relative;
 }
 
 .backBtnDiv{
-position: relative;
-    top: 20px; /* 아래로 이동 */
+	position: relative;
+    top: 20px;
     right : 20px;
 }
 
@@ -170,8 +172,8 @@ position: relative;
 }
 
 .searchBtn:hover, .updateBtn:hover, .deleteBtn:hover, .completeBtn:hover,
-	.cancelBtn:hover, .backBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+.cancelBtn:hover, .backBtn:hover {
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
@@ -179,8 +181,8 @@ position: relative;
 }
 
 .searchBtn:active, .updateBtn:active, .deleteBtn:active, .completeBtn:active,
-	.cancelBtn:active, .backBtn:active {
-	transform: translateY(2px); /* 아래로 눌림 */
+.cancelBtn:active, .backBtn:active {
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -208,28 +210,28 @@ hr {
 }
 
 .swal2-icon.swal2-info .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-warning .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px; 
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .updateDiv{
-	width: 250px;           /* 원하는 고정 너비 */
+	width: 250px;
     display: inline-block;
-    white-space: nowrap;    /* 줄바꿈 절대 안 함 (한 줄 유지) */
-    overflow: hidden;       /* 너비를 넘어가면 일단 숨김 */
+    white-space: nowrap;
+    overflow: hidden;
     vertical-align: middle;
     text-align: left;
 }
@@ -401,7 +403,7 @@ hr {
 							$("#input_dong").val(data.bname);
 						}
 					}).open();
-    	})
+    			})
     	
     	$(".frm").on("submit", function(e){
 				e.preventDefault();

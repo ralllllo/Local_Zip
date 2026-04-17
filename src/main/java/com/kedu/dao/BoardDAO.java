@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import com.kedu.dto.BoardDTO;
 import com.kedu.dto.CategoryVisitDTO;
-import com.kedu.dto.NoticeDTO;
 
 @Repository
 public class BoardDAO {
@@ -34,7 +33,7 @@ public class BoardDAO {
                 " (select count(*) FROM post_like l WHERE l.post_seq = p.post_seq AND l.mem_id = ?) as post_like_check " + // 내가 눌렀는지 여부
                 " FROM post p "
                 + "join members m on p.mem_id = m.mem_id " +
-                " order by p.post_seq desc";
+                " order by p.post_date desc";
 		return jdbc.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class),mem_id);
 	};
 
@@ -53,7 +52,7 @@ public class BoardDAO {
 	//생활정보 리스트 출력(최신순)
 	public List<BoardDTO> list_lifeInfo_latest(int start, int end) throws Exception{
 		String sql = "select * from (" 
-				   + " select row_number() over(order by p.post_seq desc) rn, "
+				   + " select row_number() over(order by p.post_date desc) rn, "
 				   + " p.post_seq, "
 				   + " p.mem_id, "
 				   + " p.post_title, "
@@ -97,7 +96,7 @@ public class BoardDAO {
 	//맛집/카페 리스트 출력(최신순)
 	public List<BoardDTO> list_food_latest(int start, int end) throws Exception{
 		String sql = "select * from (" 
-				   + " select row_number() over(order by p.post_seq desc) rn, "
+				   + " select row_number() over(order by p.post_date desc) rn, "
 				   + " p.post_seq, "
 				   + " p.mem_id, "
 				   + " p.post_title, "
@@ -141,7 +140,7 @@ public class BoardDAO {
 	
 	//고민/이야기 리스트 출력(최신순)
 	public List<BoardDTO> list_concern_latest(int start, int end) throws Exception{
-		String sql = "select * from (" + " select row_number() over(order by p.post_seq desc) rn, "
+		String sql = "select * from (" + " select row_number() over(order by p.post_date desc) rn, "
 									   + " p.post_seq, "
 									   + " p.mem_id, "
 									   + " p.post_title, "
@@ -183,10 +182,9 @@ public class BoardDAO {
 
 	//미용/패션 리스트 출력(최신순)
 	public List<BoardDTO> list_beauty_latest(int start, int end) throws Exception{
-//		String sql = "select * from post where post_category = 'beauty' order by post_seq desc";
 		
 		String sql = "select * from (" 
-				   + " select row_number() over(order by p.post_seq desc) rn, "
+				   + " select row_number() over(order by p.post_date desc) rn, "
 				   + " p.post_seq, "
 				   + " p.mem_id, "
 				   + " p.post_title, "
@@ -206,7 +204,6 @@ public class BoardDAO {
 
 	//미용/패션 리스트 출력(인기순)
 	public List<BoardDTO> list_beauty_like(int start, int end) throws Exception{
-//		String sql = "select * from post where post_category = 'beauty' order by post_like desc";
 		
 		String sql = "select * from (" 
 				   + " select row_number() over(order by p.post_like desc, p.post_seq desc) rn, "
@@ -293,13 +290,11 @@ public class BoardDAO {
 		return jdbc.queryForObject(sql, String.class, seq);
 	}
 
-
-
 	//----------------------------------------------------
 
 	//마이페이지 > 내 작성글 모아보기
 	public List<BoardDTO> getMyBoards(String mem_id){
-		String sql = "select * from post where mem_id = ? order by post_seq desc";
+		String sql = "select * from post where mem_id = ? order by post_date desc";
 		return jdbc.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class), mem_id);
 	};
 
@@ -308,20 +303,6 @@ public class BoardDAO {
 		String sql = "select count(*) from post where mem_id = ?";
 		return jdbc.queryForObject(sql, Integer.class, mem_id);
 	}
-	
-//	// 마이페이지 > 내가 좋아요 누른 글 목록 출력
-//	public List<BoardDTO> getMyLikes(String mem_id){
-//		String sql = "select p.post_seq, p.post_category, p.mem_id, m.mem_nickname, "
-//					+ " m.mem_dong, p.post_hit, p.post_title, p.post_contents, "
-//					+ " p.post_like, p.post_date, "
-//					+ " 1 as post_like_check " // 내가 좋아요를 눌렀다는 뜻. => 무조건 1
-//					+ " from post_like l "
-//					+ " JOIN post p ON l.post_seq = p.post_seq "
-//					+ " join members m on p.mem_id = m.mem_id "
-//					+ " where l.mem_id = ? "
-//					+ " order by l.like_date desc";
-//		return jdbc.query(sql, new BeanPropertyRowMapper<BoardDTO>(BoardDTO.class),mem_id);
-//	}
 	
 	// 마이페이지 > 내 관심 게시글 수 세기
 	public int MyLikeCount(String mem_id) {
@@ -420,7 +401,7 @@ public class BoardDAO {
 		        sql += " ORDER BY post_like_count DESC, p.post_seq DESC";
 		    } else {
 		        // 최신순 정렬
-		        sql += " ORDER BY p.post_seq DESC";
+		        sql += " ORDER BY p.post_date DESC";
 		    }
 
 		    // 3. 파라미터 전달 (순서: mem_id -> title)
@@ -432,6 +413,4 @@ public class BoardDAO {
 			String sql = "SELECT post_seq.NEXTVAL FROM DUAL";
 			return jdbc.queryForObject(sql, Integer.class);
 		}
-	
-	
 }

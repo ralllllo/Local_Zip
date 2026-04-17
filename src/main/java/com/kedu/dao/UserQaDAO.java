@@ -15,9 +15,6 @@ public class UserQaDAO {
 	@Autowired
 	private JdbcTemplate jdbc;
 	
-	@Autowired
-	private AdminQaDAO adao;
-	
 	//db에 저장
 	public void insert(QaDTO dto) {
 		String sql = "insert into qa (qa_seq, mem_id, qa_title, qa_contents, qa_category, qa_create_date, qa_status) " +

@@ -67,6 +67,7 @@ body {
 	background-color: #FFC846;
 	margin-bottom: 30px;
 }
+
 .num1Div, .num2Div, .num3Div{
 	display:flex;
 	font-size: large;
@@ -74,6 +75,7 @@ body {
 	margin-bottom: 30px;
 	margin-right: 30px;
 }
+
 .num1, .num2, .num3{
 	width: 25%;
 	text-align: center;
@@ -85,26 +87,33 @@ body {
 	margin-left: 20px;
 	font-weight: bold;
 }
+
 .num1{
 	width: 23%;
 }
+
 .num1_contents, .num2_contents, .num3_contents{
 	margin-left: 20px;
 }
+
 .contents_title1, .contents_title2, .contents_title3{
 	font-size: 20px;
 	margin-top: 5px;
 	margin-bottom: 10px;
 }
+
 .contents_1, .contents_2{
 	font-size: 15px;
 }
+
 .contents_1{
 	margin-bottom: 10px;
 }
+
 .icon{
 	color: #5e361a;
 }
+
 .leftImg, .rightImg{
 	position: absolute;
 	width: 330px;
@@ -112,9 +121,11 @@ body {
 	z-index: 10;
 	bottom: 0;
 }
+
 .leftImg{
     left: 0;
 }
+
 .rightImg{
 	right: 0;
 }

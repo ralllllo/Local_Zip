@@ -48,7 +48,6 @@ body, html {
 	padding: 0;
 }
 
-/* 폰트 지정 */
 button, body, div, input {
 	font-family: 'GMarketSans', sans-serif;
 }
@@ -58,7 +57,6 @@ button, body, div, input {
 	z-index: 2;
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	background-color: #fbe5c0;
 }
 
@@ -71,7 +69,6 @@ button, body, div, input {
 	color: #A66A3F;
 	background-color: #F2D3A2;
 	border-bottom: 2px solid #A66A3F;
-	/* 아래쪽만 줄 그음 */
 	line-height: 100px;
 	z-index: 1000;
 }
@@ -104,7 +101,6 @@ button, body, div, input {
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .titleDiv, .categoryDiv, .fileDiv, .locationDiv, .TextDiv {
 	padding: 10px;
 	border-bottom: 1px dotted #A66A3F;
@@ -134,8 +130,6 @@ button, body, div, input {
 	padding-left: 3px;
 	border-radius: 8px;
 }
-
-
 
 .openChatLinkDiv, .openChatPwDiv {
 	padding: 10px;
@@ -244,16 +238,15 @@ button, body, div, input {
 	padding: 2px;
 	outline: none;
 }
+
 .leftImg, .rightImg {
-	position: absolute;   /* 🔥 fixed ❌ */
+	position: absolute; 
 	bottom: 0;
 	width: 450px;
 	height: 170px;
 	z-index: -1;
 	pointer-events: none;
-	
 }
-
 
 .leftImg {
 	left: 0;
@@ -262,23 +255,19 @@ button, body, div, input {
 .rightImg {
 	right: 0;
 }
+
 .swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
 		
 .swal2-icon.swal2-warning .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-
-
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
 </style>
-
-
-
 </head>
 <body>
 
@@ -336,7 +325,6 @@ button, body, div, input {
 	</div>
 
 	<script>
-		
 		// submit 전 공백에 대한 안내메시지
 		$(".frm").on("submit",function(e){
 			e.preventDefault();
@@ -386,10 +374,6 @@ button, body, div, input {
 		        $(".frm")[0].submit();
 			});
 		});
-		
-		
 	</script>
-
-
 </body>
 </html>

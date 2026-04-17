@@ -115,7 +115,7 @@ body {
 
 .categoryBtnAll:hover, .navicon:hover, .topBtn:hover, .join-btn:hover,
 	.reportBtn:active, .adminMeeting-btn:hover{
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
@@ -123,7 +123,7 @@ body {
 
 .categoryBtnAll:active, .navicon:active, .topBtn:active, .join-btn:active,
 	.reportBtn:active {
-	transform: translateY(2px); /* 아래로 눌림 */
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -264,7 +264,6 @@ body {
 	display: none;
 	position: absolute;
 	top: 30px;
-/* 	left: 0; */
 	right: 0px;
 	width: 150px;
 	z-index: 10;
@@ -341,7 +340,7 @@ body {
 }
 
 .reportBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
@@ -450,25 +449,25 @@ body {
 }
 
 .swal2-icon.swal2-info .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-warning .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }
@@ -588,7 +587,7 @@ body {
 				</div>
 			</c:forEach>
 	</div>
-<c:if test="${not empty navi}">
+	<c:if test="${not empty navi}">
 		<div class="pageBox">
 
 			<c:if test="${navi.needPrev}">

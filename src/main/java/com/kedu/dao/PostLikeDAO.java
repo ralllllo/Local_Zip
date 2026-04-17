@@ -1,13 +1,8 @@
 package com.kedu.dao;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
-import com.kedu.dto.PostLikeDTO;
 
 @Repository
 public class PostLikeDAO {
@@ -45,6 +40,4 @@ public class PostLikeDAO {
 		String sql = "select count(*) from post_like where post_seq = ?";
 		return jdbc.queryForObject(sql, Integer.class, post_seq);
 	};
-	
-
 }

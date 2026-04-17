@@ -49,7 +49,6 @@ body, html {
 	padding: 0;
 }
 
-/* 폰트 지정 */
 button, body {
 	font-family: 'GMarketSans', sans-serif;
 }
@@ -59,7 +58,6 @@ button, body {
 	top: 100px;
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	border: 1px solid black;
 	background-color: #fbe5c0;
 }
@@ -75,11 +73,11 @@ button, body {
 	font-size: 50px;
 	color: #A66A3F;
 	background-color: #F2D3A2;
-	border-bottom: 2px solid #A66A3F; /* 아래쪽만 줄 그음 */
+	border-bottom: 2px solid #A66A3F;
 	z-index: 1000;
 	display: flex;
-	align-items: center; /* 수직 중앙 정렬 */
-	gap: 15px; /* 아이콘과 글자 사이 간격 */
+	align-items: center;
+	gap: 15px;
 	justify-content: space-between;
 }
 
@@ -89,7 +87,7 @@ button, body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 5px; /* 👈 아이콘도 텍스트랑 라인 맞추기 위해 살짝 조정 */
+	margin-top: 5px;
 }
 
 .icon {
@@ -102,7 +100,7 @@ button, body {
 .mainTitle {
 	margin-right: auto;
 	display: flex;
-	align-items: center; /* 텍스트 자체의 정렬 */
+	align-items: center;
 }
 
 .leftGroup {
@@ -123,18 +121,18 @@ button, body {
 	top: 10px;
 	right: 45px;
 	cursor: pointer;
-	transition: all 0.3s ease; /* 애니메이션 부드럽게 */
+	transition: all 0.3s ease;
 }
 
 .backBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
 }
 
 .backBtn:active{
-	transform: translateY(2px); /* 아래로 눌림 */
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	background-color: #ffb300;
 }
@@ -146,9 +144,7 @@ button, body {
 	border: 1px solid #FFB300;
 	color: #3e5e40;
 	align-items: center;
-	/* 수직 중앙 정렬 */
 	vertical-align: middle;
-	/* 버튼들끼리 줄이 안 맞을 때를 대비 */
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -156,7 +152,6 @@ button, body {
 .bodyBox {
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	margin-top: 50px;
 	color: #5e361a;
 }
@@ -166,16 +161,13 @@ button, body {
 }
 
 .postBox {
-	/* 수정: 고정 1500px 제거 */
 	width: 95%;
 	max-width: 1500px;
-	/* 적당히 보기 좋은 최대 너비 설정 */
 	min-height: 200px;
 	height: auto;
 	margin: auto;
 	margin-top: 30px;
 	border-radius: 10px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 }
@@ -210,7 +202,6 @@ button, body {
 	left: 20px;
 	top: 23px;
 	flex-grow: 1;
-	/* 신고박스 오른쪽으로 딱 붙게 하기 위해 빈공간을 쭉 늘려주는 코드 */
 }
 
 .postInfoUp, .postInfoDown {
@@ -220,8 +211,6 @@ button, body {
 .profileInfo {
 	width: auto;
 	margin-right: 15px;
-	/* 정보 사이의 간격 일정하게 부여 */
-	/*수직 정렬*/
 	display: flex;
 	align-items: center;
 	font-size: 14px;
@@ -258,7 +247,7 @@ button, body {
 	padding: 0 10px;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis; /* 넘치는 부분을 ...으로 표시 */
+	text-overflow: ellipsis;
 	display: block;
 }
 
@@ -283,7 +272,6 @@ button, body {
 	color: #cdaa69;
 }
 
-/* 기본 상태 : 빨간하트는 숨겨놓고, 빈 하트는 보여주기 */
 .beforeHeart {
 	display: inline;
 }
@@ -293,7 +281,6 @@ button, body {
 	color: red;
 }
 
-/* active 클래스가 붙었을 때의 제어(빨간하트를 보여주고 빈 하트는 숨김.) */
 .postLikeBox.active .beforeHeart {
 	display: none;
 }
@@ -304,13 +291,11 @@ button, body {
 
 .navicon:hover {
 	transform: translateY(-3px);
-	/* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .navicon:active {
 	transform: translateY(2px);
-	/* 아래로 눌림 */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -334,14 +319,13 @@ hr {
 	width: 97%;
 	margin-bottom: 40px;
 	border: 1px solid #cdaa69;
-	;
 }
 
 .pageBox {
 	width: 100%;
-	text-align: center; /* 가운데 정렬 */
-	padding: 20px 0; /* 상하 여백 */
-	margin-bottom: 80px; /* 중요: 하단 바에 가려지지 않도록 아래쪽 여백 확보 */
+	text-align: center;
+	padding: 20px 0;
+	margin-bottom: 80px;
 	font-size: 18px;
 	color: #A66A3F;
 	font-weight: bold;
@@ -359,18 +343,16 @@ hr {
 	border: #fbe5c0;
 	color: #fbe5c0;
 	font-size: 30px;
-	position: fixed; /* 버튼 따라다니게 만들기 */
+	position: fixed;
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	/* 애니메이션 부드럽게 */
 	transition: all 0.2s ease;
 }
 
 .writeBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -384,16 +366,16 @@ hr {
 }
 
 .swal2-icon.swal2-warning .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .pageBox {
 	width: 100%;
-	text-align: center; /* 가운데 정렬 */
-	padding: 20px 0; /* 상하 여백 */
-	margin-bottom: 80px; /* 중요: 하단 바에 가려지지 않도록 아래쪽 여백 확보 */
+	text-align: center;
+	padding: 20px 0;
+	margin-bottom: 80px;
 	font-size: 18px;
 	color: #A66A3F;
 	font-weight: bold;
@@ -432,7 +414,7 @@ hr {
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }

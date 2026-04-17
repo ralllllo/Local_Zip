@@ -49,7 +49,7 @@ body {
 }
 
 .container {
-position : relative;
+	position : relative;
 	z-index: 2;
 	width: 100%;
 	min-height: 100vh;
@@ -121,7 +121,6 @@ hr {
 	position: absolute;
 	left: 44%;
 	bottom: 35px;
-
 	background-color: #ffb300;
 	color: #5e361a;
 	border: 1px solid #ffb300;
@@ -151,32 +150,32 @@ hr {
 	left: 50%;
 	transform: translateX(-50%);
 	bottom: 100px;   
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 15px;
 }
-		.loginBtn:hover,
-        .JoinBtn:hover,
-        .backBtn:hover{
-            transform: translateY(-3px); /* 살짝 위로 뜸 */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            background-color: #fecc56;
-			color: #A66A3F;
-        }
+.loginBtn:hover,
+.JoinBtn:hover,
+.backBtn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    background-color: #fecc56;
+	color: #A66A3F;
+}
 
-        .loginBtn:active,
-        .JoinBtn:active,
-        .backBtn:active{
-            transform: translateY(2px); /* 아래로 눌림 */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .loginBtn, .JoinBtn, .backBtn {
-        	cursor: pointer;
-			transition: all 0.2s ease;
-        }
+.loginBtn:active,
+.JoinBtn:active,
+.backBtn:active{
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+      
+.loginBtn, .JoinBtn, .backBtn {
+    cursor: pointer;
+	transition: all 0.2s ease;
+}
+
 .linkText{
 	display: flex;
 	gap: 60px;
@@ -185,6 +184,7 @@ hr {
 	margin-left: 10px;
 	color: #5e361a;
 }
+
 a:link{color:black;text-decoration:none;}
 a:visited{color:black;text-decoration:none;}
 
@@ -193,24 +193,28 @@ input{
 }
 
 .leftImg, .rightImg{
-	position: absolute;   /* 🔥 fixed ❌ */
+	position: absolute;
 	bottom: 0;
 	width: 450px;
 	height: 170px;
 	z-index: -1;
 	pointer-events: none;
 }
+
 .leftImg{
     left: 0;
 }
+
 .rightImg{
 	right: 0;
 }
+
 .swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
+   font-size: 50px;
+   transform: translateY(5px);
+   line-height: 70px;
+}
+
 .linkDiv a {
 	color: #5e361a;
 }
@@ -315,7 +319,7 @@ input{
 				Swal.fire({
 			        icon: "error",
 			        title: "접근 제한",
-			        html: alertMsg,   // 👉 기존 문자열 그대로
+			        html: alertMsg,   // 기존 문자열 그대로
 			        iconColor: "#EB0000",
 			        confirmButtonColor: "#FFB300"
 			    });
@@ -332,9 +336,6 @@ input{
 				confirmButtonColor: "#FFB300"
 			});
 		}
-		
-		
-		
 	</script>
 	
 </body>

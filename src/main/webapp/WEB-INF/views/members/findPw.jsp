@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <title>우리동네.zip</title>
@@ -84,10 +81,10 @@ body {
 
 .form-row {
 	display: flex;
-    align-items: center; /* 세로 중앙 */
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
-    max-width: 480px; /* 전체 너비 제한 */
+    max-width: 480px;
     margin-bottom: 15px;
 }
 
@@ -111,12 +108,15 @@ label {
 	color : #5e361a;
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
 .mem_id {
     margin-right: 80px; 
 }
+
 .pw, .checkPw {
     margin-right: 64px;
 }
+
 hr {
 	position: absolute;
 	left: 50%;
@@ -194,6 +194,7 @@ hr {
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
+
 .correct, .incorrect {
 	display: none;
 	font-size: small;
@@ -228,6 +229,7 @@ hr {
 	border: 1px solid #ffb300;
 	display : none;
 }
+
 .pwLabel{
 	margin-left: 17px;
 }
@@ -240,57 +242,63 @@ hr {
 	pointer-events: none;
 	bottom: 0;
 }
+
 .leftImg{
     left: 0;
 }
+
 .rightImg{
 	right: 0;
 }
+
 input{
 	outline: none;
 }
+
 .swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		
-		.swal2-icon.swal2-question .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		
-		.swal2-icon.swal2-warning .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		.swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		
-		.swal2-icon.swal2-question .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		
-		.swal2-icon.swal2-error .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		.correct{
-			color: #286708;
-			margin-top: 5px;
-		}
-		.incorrect{
-			color: #de4f28;
-			margin-top: 5px;
-		}
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
+
+.swal2-icon.swal2-question .swal2-icon-content {
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
+
+.swal2-icon.swal2-warning .swal2-icon-content {
+    font-size: 50px; 
+    transform: translateY(5px);
+    line-height: 70px; 
+}
+.swal2-icon.swal2-info .swal2-icon-content {
+    font-size: 50px; 
+    transform: translateY(5px);
+    line-height: 70px; 
+}
+
+.swal2-icon.swal2-question .swal2-icon-content {
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
+
+.swal2-icon.swal2-error .swal2-icon-content {
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
+
+.correct{
+	color: #286708;
+	margin-top: 5px;
+}
+
+.incorrect{
+	color: #de4f28;
+	margin-top: 5px;
+}
 </style>
 </head>
 
@@ -470,70 +478,68 @@ input{
 						});
 						$(".auth_code").val("").focus();
 					}
-
 				});
 			}
 		})
 
 		$(".okBtn").on("click",function(e) {
-							e.defaultPrevented;
+				e.defaultPrevented;
 
-							// pw
-							let pw1 = document.getElementsByClassName("pw")[0];
-							let pw2 = document.getElementsByClassName("checkPw")[0];
-							let correct = document.getElementsByClassName("correct")[0];
-							let incorrect = document.getElementsByClassName("incorrect")[0];
+				// pw
+				let pw1 = document.getElementsByClassName("pw")[0];
+				let pw2 = document.getElementsByClassName("checkPw")[0];
+				let correct = document.getElementsByClassName("correct")[0];
+				let incorrect = document.getElementsByClassName("incorrect")[0];
 
-							if (pw1.value == "" || pw2.value == "") {
-								Swal.fire({
-		    						icon: "info",
-		    						title: "Wait  !",
-		    						text: "비밀번호를 입력해주세요.",
-		    						iconColor: "#FFB300",
-		    						confirmButtonColor: "#FFB300"
-		    					});
-								return false;
-							} else {
-								let regex = /^[A-Za-z\d!@#$%^&*]{8,16}$/;
-								let pwResult = regex.test(pw1.value);
-								if (!pwResult) {
-									Swal.fire({
-										icon: "error",
-										title: "InCorrect  !",
-										text: "비밀번호를 다시 설정해주세요.\n8~16자의 영문 대소문자,숫자,특수문자(!@#$%^&*) 사용 가능",
-										iconColor: "#EB0000",
-										confirmButtonColor: "#FFB300"
-									});
-									pw1.value = "";
-									pw1.focus();
-									return false;
-								} else if (pw1.value != pw2.value) {
-									incorrect.style.display = "block";
-									correct.style.display = "none";
-									return false;
-								} else {
-									correct.style.display = "block";
-									incorrect.style.display = "none";
-									$(".frm").submit();
-								}
-							}
-						})
-	$(document).ready(function(){
-		let message = "${pwMsg}";
-		
-    if (message && message !== "") {
-    	Swal.fire({
-			icon: "success",
-			title: "Success  !",
-			text: message,
-			iconColor: "#FFB300",
-			confirmButtonColor: "#FFB300"
-		});
-    }
-});
+				if (pw1.value == "" || pw2.value == "") {
+					Swal.fire({
+   						icon: "info",
+   						title: "Wait  !",
+   						text: "비밀번호를 입력해주세요.",
+   						iconColor: "#FFB300",
+   						confirmButtonColor: "#FFB300"
+   					});
+					return false;
+				} else {
+					let regex = /^[A-Za-z\d!@#$%^&*]{8,16}$/;
+					let pwResult = regex.test(pw1.value);
+					if (!pwResult) {
+						Swal.fire({
+							icon: "error",
+							title: "InCorrect  !",
+							text: "비밀번호를 다시 설정해주세요.\n8~16자의 영문 대소문자,숫자,특수문자(!@#$%^&*) 사용 가능",
+							iconColor: "#EB0000",
+							confirmButtonColor: "#FFB300"
+						});
+						pw1.value = "";
+						pw1.focus();
+						return false;
+					} else if (pw1.value != pw2.value) {
+						incorrect.style.display = "block";
+						correct.style.display = "none";
+						return false;
+					} else {
+						correct.style.display = "block";
+						incorrect.style.display = "none";
+						$(".frm").submit();
+					}
+				}
+			})
+		$(document).ready(function(){
+			let message = "${pwMsg}";
+			
+	    if (message && message !== "") {
+	    	Swal.fire({
+				icon: "success",
+				title: "Success  !",
+				text: message,
+				iconColor: "#FFB300",
+				confirmButtonColor: "#FFB300"
+			});
+	    }
+	});
 	
 	</script>
 
 </body>
-
 </html>

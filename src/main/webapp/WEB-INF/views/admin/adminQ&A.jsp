@@ -118,19 +118,19 @@ body {
 }
 
 .categoryBtnAll:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
 }
 
 .navicon:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .categoryBtnAll:active, .navicon:active {
-	transform: translateY(2px); /*아래로 눌림*/
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -212,7 +212,6 @@ body {
 	border: none;
 	margin: 0 0 5px 0;
 	font-size: 15px;
-	/*  	height: 40px; */
 	flex: 1;
 	width: auto;
 	min-width: 0;
@@ -234,7 +233,6 @@ body {
 
 .replyTextAndBtn {
 	display: flex;
-	/*  	align-items: stretch; /* textarea랑 버튼 영역 높이 맞추기 */
 	gap: 10px;
 }
 
@@ -380,8 +378,6 @@ body {
 	display: flex;
 	gap: 10px;
 	flex-shrink: 0;
-	/* 	align-self: flex-start; /*버튼 영역 위로 붙이기*/
-	*/
 }
 
 .adminBtn, .replyBtn {
@@ -463,15 +459,15 @@ img {
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-info .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .answerDiv{
@@ -480,7 +476,7 @@ img {
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }

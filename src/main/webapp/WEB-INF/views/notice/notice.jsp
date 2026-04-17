@@ -54,7 +54,7 @@ body, html {
 	width: 100%;
 	min-height: 100vh;
 	background-color: #fbe5c0;
-	padding-bottom: 80px; /* 하단바 여백 */
+	padding-bottom: 80px;
 }
 
 /* 헤더 스타일 */
@@ -64,11 +64,9 @@ body, html {
 	left: 0;
 	width: 100%;
 	height: 100px;
-	
 	display:flex;
 	justify-content: space-between;
 	align-items: center;
-	
 	padding-left: 20px;
 	font-weight: bold;
 	font-size: 50px;
@@ -94,7 +92,7 @@ body, html {
 }
 
 .backBtn:hover{
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
    	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
    	color: #A66A3F;
@@ -126,14 +124,16 @@ body, html {
 	width: 95%;
 	max-width: 1000px;
 	margin: 20px auto;
-	background-color: #fbe5c0; /* 와이어프레임의 흰색 배경 느낌 */
+	background-color: #fbe5c0;
 	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+
 .postBox:hover{
 	cursor: pointer;
 }
+
 .postHeader {
 	background-color: #F2D3A2;
 	padding: 10px 15px;
@@ -180,8 +180,6 @@ body, html {
 	margin: 0 10px;
 	cursor: pointer;
 }
-
-
 
 /* 하단바 */
 .bottomBox {
@@ -244,12 +242,11 @@ body, html {
 
 .navicon:active {
    transform: translateY(2px);
-   /* 아래로 눌림 */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }
@@ -265,9 +262,7 @@ body, html {
 				<a href="/members/mypage"> <input class="backBtn" type="button" value="내.zip으로 가기">
 				</a>
 			</div>
-					
 		</div>
-
 
 		<c:choose>
 			<c:when test="${not empty list}">
@@ -300,51 +295,52 @@ body, html {
 			<a href="/members/mypage"><i class="nowNavicon fa-solid fa-user fa-2xl" style="color: #e6a83e"></i></a>
 		</div>
 	</div>
+	
 	<script>
-	let recordTotalCount = ${totalCount};
-	let recordCountPerPage = 10;
-	let naviCountPerPage = 10;
-	let currentPage = ${cPage};
-
-	let pageTotalCount = Math.ceil(recordTotalCount/recordCountPerPage);
+		let recordTotalCount = ${totalCount};
+		let recordCountPerPage = 10;
+		let naviCountPerPage = 10;
+		let currentPage = ${cPage};
 	
-	let startNavi = Math.floor(((currentPage - 1)/naviCountPerPage)) * naviCountPerPage + 1;
-	let endNavi = startNavi + naviCountPerPage - 1;
-	
-	if(endNavi > pageTotalCount) {
-		endNavi = pageTotalCount;
-	}
-	$(".page").empty();
-	
-	let needPrev = true; // <<
-	let needNext = true; // >>
-	
-	if(startNavi == 1){needPrev = false;}
-	if(endNavi == pageTotalCount){needNext = false;}
-	
-	if(needPrev) {
-		let prev = $("<a>"); 
-		prev.attr("href","/notice/toNotice?cPage="+(startNavi-1)); 
-		prev.html("<< ");
-		$(".page").append(prev);
-	}
+		let pageTotalCount = Math.ceil(recordTotalCount/recordCountPerPage);
 		
-	for(let i = startNavi; i <= endNavi; i++) {
-		let navi = $("<a>");
-		navi.attr("href", "/notice/toNotice?cPage="+i);
-		navi.html(i + " ");
-		$(".page").append(navi);
+		let startNavi = Math.floor(((currentPage - 1)/naviCountPerPage)) * naviCountPerPage + 1;
+		let endNavi = startNavi + naviCountPerPage - 1;
 		
-		if (i === currentPage) {
-	        navi.addClass("active");
-	    }
-	}
-	if(needNext) {
-		let next = $("<a>");
-		next.attr("href", "/notice/toNotice?cPage="+(endNavi+1));
-		next.html(" >>");
-		$(".page").append(next);
-	}
+		if(endNavi > pageTotalCount) {
+			endNavi = pageTotalCount;
+		}
+		$(".page").empty();
+		
+		let needPrev = true; // <<
+		let needNext = true; // >>
+		
+		if(startNavi == 1){needPrev = false;}
+		if(endNavi == pageTotalCount){needNext = false;}
+		
+		if(needPrev) {
+			let prev = $("<a>"); 
+			prev.attr("href","/notice/toNotice?cPage="+(startNavi-1)); 
+			prev.html("<< ");
+			$(".page").append(prev);
+		}
+			
+		for(let i = startNavi; i <= endNavi; i++) {
+			let navi = $("<a>");
+			navi.attr("href", "/notice/toNotice?cPage="+i);
+			navi.html(i + " ");
+			$(".page").append(navi);
+			
+			if (i === currentPage) {
+		        navi.addClass("active");
+		    }
+		}
+		if(needNext) {
+			let next = $("<a>");
+			next.attr("href", "/notice/toNotice?cPage="+(endNavi+1));
+			next.html(" >>");
+			$(".page").append(next);
+		}
 	</script>
 	
 </body>

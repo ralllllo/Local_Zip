@@ -24,7 +24,7 @@ public class ReplyDAO {
 		String sql = "select r.*, m.mem_nickname "
 				+ " from reply r "
 				+ "join members m on r.mem_id = m.mem_id "
-				+ "where post_seq = ? order by reply_seq desc";
+				+ "where post_seq = ? order by reply_date desc";
 		return jdbc.query(sql, new BeanPropertyRowMapper<ReplyDTO>(ReplyDTO.class), post_seq);
 	}
 	
@@ -45,5 +45,4 @@ public class ReplyDAO {
 		String sql = "select count(*) from reply where post_seq = ?";
 		return jdbc.queryForObject(sql, Integer.class, post_seq);
 	};
-	
 }

@@ -38,5 +38,4 @@ public class AttachmentDAO {
 		String sql = "DELETE FROM ATTACHMENT WHERE ATTACH_SYSNAME=?";
 		jdbc.update(sql,sys_name);
 	}
-	
 }

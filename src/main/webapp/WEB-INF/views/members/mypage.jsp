@@ -136,7 +136,7 @@ hr {
 
 .navicon:hover, .myInfo:hover, .myWrite:hover, .myLike:hover, .myClub:hover,
 	.CS:hover, .notice:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -144,9 +144,6 @@ hr {
 	background-color: #FFB300;
 	color: #5e361a;
 	border: none;
-	/* 			position: relative; */
-	/* 			left: 1610px; */
-	/* 			top: 10px; */
 	height: 30px;
 	width: 80px;
 	border-radius: 5px;
@@ -154,7 +151,7 @@ hr {
 }
 
 .logoutBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
@@ -167,7 +164,7 @@ hr {
 
 .navicon:active, .myInfo:active, .myWrite:active, .myLike:active,
 	.myClub:active, .CS:active, .notice:active, .logoutBtn:active {
-	transform: translateY(2px); /* 아래로 눌림 */
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -294,7 +291,7 @@ hr {
 
 a {
 	color: #5e361a;
-	text-decoration: none; /* div에 밑줄 숨기기 */
+	text-decoration: none;
 }
 
 a:visited {
@@ -302,7 +299,7 @@ a:visited {
 }
 
 .nowNavicon {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	color: #e6a83e;
 }

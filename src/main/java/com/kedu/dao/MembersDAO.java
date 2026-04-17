@@ -103,11 +103,6 @@ public class MembersDAO {
 		return jdbc.update(sql, dto.getMem_nickname(), dto.getMem_phone(), dto.getMem_zip_code(), dto.getMem_address1(), dto.getMem_address2(), dto.getMem_dong(), mem_id);
 	}
 	
-//	public int deleteById(String mem_id) { // 회원탈퇴 
-//		String sql = "update members set mem_status = 1 where mem_id=?";
-//		return jdbc.update(sql, mem_id);
-//	}
-	
 	// 회원 탈퇴
 	public int deleteById(String mem_id) {
 		String sql = "delete from members where mem_id = ?";
@@ -143,5 +138,3 @@ public class MembersDAO {
 		return jdbc.update(sql, mem_id);
 	}
 }
-
-

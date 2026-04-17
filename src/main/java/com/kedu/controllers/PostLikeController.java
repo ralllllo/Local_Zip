@@ -7,16 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.gson.Gson;
 import com.kedu.dao.BoardDAO;
 import com.kedu.dao.PostLikeDAO;
 
 @Controller
 @RequestMapping("/like")
 public class PostLikeController {
-
-	@Autowired
-	private Gson gson;
 
 	@Autowired
 	private BoardDAO dao;

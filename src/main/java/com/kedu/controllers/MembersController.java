@@ -240,8 +240,6 @@ public class MembersController {
 		
 		String mem_id = (String)session.getAttribute("loginId");
 		
-		//List<BoardDTO> list = BoardDao.getMyBoards(mem_id); // 로그인 아이디를 기준으로 전체 게시판 목록 출력
-		
 		int start = (cPage-1)*10+1;
 		int end = cPage*10;
 		List<BoardDTO> list = BoardDao.getPostsNavi(mem_id,start,end);

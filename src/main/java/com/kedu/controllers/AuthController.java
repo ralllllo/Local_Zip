@@ -80,7 +80,6 @@ public class AuthController {
 				helper.setSubject("[우리 동네.zip] 이메일 인증번호 안내");
 				helper.setText(htmlContent, true);
 				mailSender.send(mail);
-				System.out.println(authCode);
 				// db에 저장
 				dao.saveAuth(new AuthDTO(email, authCode, auth_type, 0, "0"));
 
@@ -154,5 +153,5 @@ public class AuthController {
 	   public String exceptionHandler(Exception e) {
 	      e.printStackTrace();
 	      return "error";
-	   }
+	}
 }

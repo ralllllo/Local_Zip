@@ -48,7 +48,6 @@ body, html {
 	padding: 0;
 }
 
-/* 폰트 지정 */
 button, body {
 	font-family: 'GMarketSans', sans-serif;
 }
@@ -56,7 +55,7 @@ button, body {
 .container {
 	position: relative;
 	width: 100%;
-	min-height: 100vh; /* 화면 전체 높이를 확보해서 배경색이 끊기지 않게 함 */
+	min-height: 100vh;
 	border: 1px solid black;
 	background-color: #fbe5c0;
 }
@@ -65,15 +64,15 @@ button, body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%; /* 1919px 대신 100%로 수정 */
+	width: 100%;
 	height: 100px;
-	padding: 0 30px; /* 좌우 여백 살짝 부여 */
+	padding: 0 30px;
 	background-color: #F2D3A2;
 	border-bottom: 2px solid #A66A3F;
 	z-index: 1000;
-	display: flex; /* 가로 정렬 시작 */
-	align-items: center; /* 수직 가운데 정렬 */
-	justify-content: space-between; /* 제목은 왼쪽, 버튼은 오른쪽 끝으로! */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .backBtn {
@@ -87,18 +86,18 @@ button, body {
 	top: 15px;
 	right: 15px;
 	cursor: pointer;
-	transition: all 0.3s ease; /* 애니메이션 부드럽게 */
+	transition: all 0.3s ease;
 }
 
 .backBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
 }
 
 .backBtn:active {
-	transform: translateY(2px); /* 아래로 눌림 */
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	background-color: #ffb300;
 }
@@ -114,15 +113,12 @@ button, body {
 	background-color: #fecc56;
 	color: #A66A3F;
 	transform: translateY(-3px);
-	/* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	height: 25px;
 	border-radius: 10px;
 	border: 1px solid #FFB300;
 	align-items: center;
-	/* 수직 중앙 정렬 */
-	vertical-align: middle;
-	/* 버튼들끼리 줄이 안 맞을 때를 대비 */
+	vertical-align: middle; /* 버튼들끼리 줄이 안 맞을 때를 대비 */
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -134,9 +130,7 @@ button, body {
 	border: 1px solid #FFB300;
 	color: #3e5e40;
 	align-items: center;
-	/* 수직 중앙 정렬 */
 	vertical-align: middle;
-	/* 버튼들끼리 줄이 안 맞을 때를 대비 */
 	transition: 0.3s;
 }
 
@@ -145,7 +139,7 @@ button, body {
 	min-height: auto;
 	padding-top: 120px;
 	color: #5e361a;
-	padding-bottom: 20px; /* 타이틀박스와 문구 사이 여백 */
+	padding-bottom: 20px;
 }
 
 /* 바디박스 수정 */
@@ -165,10 +159,8 @@ button, body {
 }
 
 .titleIdBox {
-	/* 수정: 고정 1500px 제거 */
 	width: 95%;
 	max-width: 1500px;
-	/* 적당히 보기 좋은 최대 너비 설정 */
 	min-height: 100px;
 	height: auto;
 	margin: auto;
@@ -180,27 +172,24 @@ button, body {
 .profileName {
 	font-size: 45px;
 	display: flex;
-	align-items: center; /* height 정렬 */
+	align-items: center;
 	margin: 30px;
 }
 
 .profileLocal {
 	font-size: 30px;
 	display: flex;
-	align-items: center; /* height 정렬 */
+	align-items: center;
 }
 
 .postBox {
-	/* 수정: 고정 1500px 제거 */
 	width: 95%;
 	max-width: 1500px;
-	/* 적당히 보기 좋은 최대 너비 설정 */
 	min-height: 200px;
 	height: auto;
 	margin: auto;
 	margin-bottom: 30px;
 	border-radius: 10px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 }
@@ -235,7 +224,6 @@ button, body {
 	left: 20px;
 	top: 23px;
 	flex-grow: 1;
-	/* 신고박스 오른쪽으로 딱 붙게 하기 위해 빈공간을 쭉 늘려주는 코드 */
 }
 
 .postInfoUp, .postInfoDown {
@@ -281,19 +269,17 @@ button, body {
 	padding: 0 10px;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis; /* 넘치는 부분을 ...으로 표시 */
+	text-overflow: ellipsis;
 	display: block;
 }
 
 .navicon:hover {
 	transform: translateY(-3px);
-	/* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .navicon:active {
 	transform: translateY(2px);
-	/* 아래로 눌림 */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -315,9 +301,9 @@ button, body {
 
 .pageBox {
 	width: 100%;
-	text-align: center; /* 가운데 정렬 */
-	padding: 20px 0; /* 상하 여백 */
-	margin-bottom: 80px; /* 중요: 하단 바에 가려지지 않도록 아래쪽 여백 확보 */
+	text-align: center;
+	padding: 20px 0;
+	margin-bottom: 80px;
 	font-size: 18px;
 	color: #A66A3F;
 	font-weight: bold;
@@ -356,7 +342,7 @@ button, body {
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }
@@ -387,22 +373,15 @@ button, body {
 
 			<c:choose>
 				<c:when test="${empty listAll}">
-
 					<div class="emptyBox">등록된 게시글이 없습니다.</div>
-
 				</c:when>
 
 				<c:otherwise>
-	
 					<c:forEach var="i" items="${listAll}">
-
 						<div class="postBox" data-seq="${i.post_seq}" style="cursor:pointer;">
-
 							<div class="postUpBox">
-
 								<div class="postInfoBox">
 									<div class="postInfoUp">
-
 										<div class="profileCatagory profileInfo">
 											<button class="topBtn" type="button">
 												<c:choose>
@@ -420,21 +399,18 @@ button, body {
 										<div class="profileTime profileInfo" style="color: #5e361a;">작성일자 : ${i.post_date}</div>
 									</div>
 								</div>
-
 							</div>
 
 							<div class="postMidBox">
 								<div class="postTitle">${i.post_title}</div>
 								<div class="postContent">${i.post_contents}</div>
 							</div>
-
 						</div>
 
 					</c:forEach>
 					<div class="pageBox">
 						<span class="page"></span>
 					</div>
-
 				</c:otherwise>
 			</c:choose>
 		</div>
@@ -458,7 +434,6 @@ button, body {
 			</c:choose>
 
 		</div>
-
 	</div>
 	
 	<script>
@@ -516,8 +491,6 @@ button, body {
 		   next.html(" >>");
 		   $(".page").append(next);
 		}
-
-	
 	</script>
 
 </body>

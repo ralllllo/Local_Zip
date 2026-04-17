@@ -53,5 +53,4 @@ public class NoticeDAO {
 		String sql = "select * from notice where notice_seq=?";
 		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<NoticeDTO>(NoticeDTO.class),notice_seq);
 	}
-	
 }

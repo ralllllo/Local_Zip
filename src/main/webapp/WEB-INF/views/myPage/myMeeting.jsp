@@ -16,73 +16,73 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<link rel="icon" type="image/png" sizes="512x512" href="/resources/images/pavicon.png">
 <style>
-		@font-face {
-			font-family: 'GMarketSans';
-			src:
-				url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
-				format('woff');
-			font-weight: 300;
-			font-display: swap;
-		}
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: 300;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
+		format('woff');
+	font-weight: 700;
+	font-display: swap;
+}
+
+button, body {
+	font-family: 'GMarketSans', sans-serif;
+}
+
+body {
+	margin: 0;
+	background-color: #fbe5c0;
+}
+
+.top-section {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	border-bottom: 2px solid #A66A3F;
+}
+
+.container {
+   width: 100%;
+   display: grid;
+   grid-template-columns:repeat(4, 1fr);
+   gap:20px;
+   padding: 200px 0 0 0;
+   box-sizing: border-box;
+   margin-bottom: 200px;
+}
+
+.meeting-card {
+    width: 300px;
+	border: 2px solid #C29F6D90;
+    border-radius: 10px;
+    background-color: #fbe5c0;
+    padding: 35px;
+    margin: 20px 0 20px 50px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
 		
-		@font-face {
-			font-family: 'GMarketSans';
-			src:
-				url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-				format('woff');
-			font-weight: 500;
-			font-display: swap;
-		}
-		
-		@font-face {
-			font-family: 'GMarketSans';
-			src:
-				url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
-				format('woff');
-			font-weight: 700;
-			font-display: swap;
-		}
-		
-		button, body {
-			font-family: 'GMarketSans', sans-serif;
-		}
-		
-		body {
-			margin: 0;
-			background-color: #fbe5c0;
-		}
-		
-		.top-section {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 1000;
-			border-bottom: 2px solid #A66A3F;
-		}
-		.container {
-		   width: 100%;
-		   display: grid;
-		   grid-template-columns:repeat(4, 1fr);
-		   gap:20px;
-		   padding: 200px 0 0 0;
-		   box-sizing: border-box;
-		   margin-bottom: 200px;
-		}
-		
-		.meeting-card {
-		    width: 300px;
- 		    border: 2px solid #C29F6D90;
-		    border-radius: 10px;
-		    background-color: #fbe5c0;
-		    padding: 35px;
-		    margin: 20px 0 20px 50px;
-/* 		     위 오른쪽 아래 왼쪽 */
-			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-		}
-		
-		.titleSection{
-			display: flex;
+.titleSection{
+	display: flex;
 	padding-left: 20px;
 	font-weight: bold;
 	color: #A66A3F;
@@ -93,236 +93,250 @@
 	justify-content: space-between; 
     align-items: center;
     padding: 0 20px;
-		}
-		.mainTitle {
-			font-weight: bold;
-			font-size: 50px;
-			color: #A66A3F;
-		}
-        .backBtnDiv{
-        	position: relative;
-			 top: 20px; /* 아래로 이동 */
-    right : 20px;
-        }
-        .bottomBar{
-            border: 2px solid #A66A3F;
-            background-color: #F2D3A2;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            gap: 200px;
-        }
-        
-        .meetingDetail:hover,
-        .deleteBtn:hover,
-        .outBtn:hover,
-        .myMeetingBtn:hover,
-        .manageBtn:hover{
-            transform: translateY(-3px); /* 살짝 위로 뜸 */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        }
+}
 
-        .meetingDetail:active,
-        .deleteBtn:active,
-        .outBtn:active,
-        .myMeetingBtn:active,
-        .manageBtn:active,
-        .backBtn:active{
-            transform: translateY(2px); /* 아래로 눌림 */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-		
-		.meetingDetail, .deleteBtn, .outBtn, .myMeetingBtn, .manageBtn {
-			cursor: pointer;
-			transition: all 0.2s ease;
-		}
-		.card-header {
-		    display: flex;
-		    justify-content: space-between;
-		    align-items: center;
-		    font-weight: bold;
-		    font-size:20px;
-		    color: #5e361a;
-		}
-		
-		.category, .isLeader {
-		    display: inline-block;
-		    line-height : 23px;
-		    font-size: 12px;
-		    padding: 3px 8px;
-		    border-radius: 5px;
-		    margin-top: 18px;
-		    margin-bottom: 10px;
-		    background-color: #FFB300;
-		    height: 20px;
-		    color: #286708;
-		}
-		.isLeader{
-			background-color: #7BB8C9;
-			color: #5e361a;
-		}
-		.info {
-		    font-size: 13px;
-		    color: #555;
-		    margin-bottom: 20px;
-		    color: #5e361a;
-		}
-		.category {
-		    display: inline-block;
-		    line-height : 23px;
-		    font-size: 12px;
-		    padding: 3px 8px;
-		    border-radius: 5px;
-		    margin-top: 18px;
-		    margin-bottom: 10px;
-		    background-color: #FFB300;
-		    height: 20px;
-		    color: #286708;
-		    max-width:120px;
-		    white-space:nowrap;
-		    overflow:hidden;
-		    text-overflow:ellipsis;
-		}
-		.desc {
-		    margin-bottom: 10px;
-		    color: #5e361a;
-		   	overflow:hidden;
-		   	white-space:nowrap;
-		    overflow:hidden;
-		    text-overflow:ellipsis;
-		}
-		.category-row {
-		    display:flex;
-		    align-items:center;
-		    gap:8px;
-		    margin-bottom:10px;
-		}
-		.card-footer {
-		    display:flex;
-		    gap: 8px;
-		    color: #5e361a;
-		    font-weight: bold;
-		    margin-left: 5px;
-		}
-		
-		.meetingDetail {
-		    width: 47%;
-		    height: 30px;
-		    background-color: #FFB300;
-		    border:none;
-		    border-radius: 10px;
-		    color: #5e361a;
-		}
-		
-		.deleteBtn{
-			width: 47%;
-		    height: 30px;
-		    background-color: #8B4F1D;
-		    border:none;
-		    border-radius: 10px;
-		    color: #f5f5f5;
-		}
-		
-		.outBtn{
-			width: 47%;
-		    height: 30px;
-		    background-color: #8B4F1D;
-		    border:none;
-		    border-radius: 10px;
-		    color: #f5f5f5;
-		}
-		.tagDiv{
-			display: flex;
-			gap: 7px;
-		}
-		
-		.manageMeeting{
-			display: flex;
-			gap: 20px;
-			align-items: center;
-			background-color: #fbe5c0;
-		}
-		
-		.myMeetingBtn, .manageBtn{
-			width: 48%;
-		    height: 70px;
-		    border: none;
-		    color: #5e361a;
-		    font-weight: bold;
-		    font-size: x-large;
-		    border-radius: 10px;
-		    margin-top: 10px;
-			margin-bottom: 10px;
-			color: #5e361a;
-		}
-		.myMeetingBtn{
-			margin-left: 30px;
-			background-color: #FFB300;
-		}
-		.manageBtn{
-		 	background-color: #E5D3B3;
-		}
-		
-		.backBtn{
-			background-color: #ffb300;
-			color: #5e361a;
-			border: 1px solid #ffb300;
-			border-radius: 10px;
-			font-weight: bold;
-			height: 30px;
-			cursor: pointer;
-			transition: all 0.3s ease;
-		}
-		
-		.backBtn:hover{
-			transform: translateY(-3px); /* 살짝 위로 뜸 */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            background-color: #fecc56;
-   			color: #A66A3F;
-		}
-		
-		.emptyMeeting{
-			width: 100%;
-  			height: 600px;
-  			font-weight: bold;
-  			font-size: large;
-  			margin-left: 630px;
-  			text-align: center;
-  			color: #5e361a;
-		}
-		.title{
-		    max-width:280px;
-		    white-space:nowrap;
-		    overflow:hidden;
-		    text-overflow:ellipsis;
-		}
-		.swal2-icon.swal2-question .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		.navicon:hover {
-		   transform: translateY(-3px);
-		   /* 살짝 위로 뜸 */
-		   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-		}
-		
-		.navicon:active {
-		   transform: translateY(2px);
-		   /* 아래로 눌림 */
-		   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-		}
-		.nowNavicon{
-		   transform: translateY(-3px); /* 살짝 위로 뜸 */
-		   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-		   color: #e6a83e;
-		}
+.mainTitle {
+	font-weight: bold;
+	font-size: 50px;
+	color: #A66A3F;
+}
+
+.backBtnDiv{
+ 	position: relative;
+	top: 20px;
+	right : 20px;
+}
+
+.bottomBar{
+    border: 2px solid #A66A3F;
+    background-color: #F2D3A2;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    gap: 200px;
+}
+	  
+ .meetingDetail:hover,
+ .deleteBtn:hover,
+ .outBtn:hover,
+ .myMeetingBtn:hover,
+ .manageBtn:hover{
+     transform: translateY(-3px);
+     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+	
+ .meetingDetail:active,
+ .deleteBtn:active,
+ .outBtn:active,
+ .myMeetingBtn:active,
+ .manageBtn:active,
+ .backBtn:active{
+     transform: translateY(2px);
+     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.meetingDetail, .deleteBtn, .outBtn, .myMeetingBtn, .manageBtn {
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size:20px;
+    color: #5e361a;
+}
+
+.category, .isLeader {
+    display: inline-block;
+    line-height : 23px;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    background-color: #FFB300;
+    height: 20px;
+    color: #286708;
+}
+
+.isLeader{
+	background-color: #7BB8C9;
+	color: #5e361a;
+}
+
+.info {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 20px;
+    color: #5e361a;
+}
+
+.category {
+    display: inline-block;
+    line-height : 23px;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    background-color: #FFB300;
+    height: 20px;
+    color: #286708;
+    max-width:120px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.desc {
+    margin-bottom: 10px;
+    color: #5e361a;
+   	overflow:hidden;
+   	white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.category-row {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:10px;
+}
+
+.card-footer {
+    display:flex;
+    gap: 8px;
+    color: #5e361a;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.meetingDetail {
+    width: 47%;
+    height: 30px;
+    background-color: #FFB300;
+    border:none;
+    border-radius: 10px;
+    color: #5e361a;
+}
+
+.deleteBtn{
+	width: 47%;
+    height: 30px;
+    background-color: #8B4F1D;
+    border:none;
+    border-radius: 10px;
+    color: #f5f5f5;
+}
+
+.outBtn{
+	width: 47%;
+    height: 30px;
+    background-color: #8B4F1D;
+    border:none;
+    border-radius: 10px;
+    color: #f5f5f5;
+}
+
+.tagDiv{
+	display: flex;
+	gap: 7px;
+}
+
+.manageMeeting{
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	background-color: #fbe5c0;
+}
+
+.myMeetingBtn, .manageBtn{
+	width: 48%;
+    height: 70px;
+    border: none;
+    color: #5e361a;
+    font-weight: bold;
+    font-size: x-large;
+    border-radius: 10px;
+    margin-top: 10px;
+	margin-bottom: 10px;
+	color: #5e361a;
+}
+
+.myMeetingBtn{
+	margin-left: 30px;
+	background-color: #FFB300;
+}
+
+.manageBtn{
+ 	background-color: #E5D3B3;
+}
+
+.backBtn{
+	background-color: #ffb300;
+	color: #5e361a;
+	border: 1px solid #ffb300;
+	border-radius: 10px;
+	font-weight: bold;
+	height: 30px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.backBtn:hover{
+	transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    background-color: #fecc56;
+	color: #A66A3F;
+}
+
+.emptyMeeting{
+	width: 100%;
+	height: 600px;
+	font-weight: bold;
+	font-size: large;
+	margin-left: 630px;
+	text-align: center;
+	color: #5e361a;
+}
+
+.title{
+    max-width:280px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.swal2-icon.swal2-question .swal2-icon-content {
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
+
+.navicon:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navicon:active {
+   transform: translateY(2px);
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nowNavicon{
+   transform: translateY(-3px);
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+   color: #e6a83e;
+}
 </style>
 </head>
 <body>

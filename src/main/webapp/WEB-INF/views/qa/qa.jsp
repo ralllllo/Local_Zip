@@ -55,7 +55,7 @@ body, html {
 	width: 100%;
 	min-height: 100vh;
 	background-color: #fbe5c0;
-	padding-bottom: 80px; /* 하단바 여백 */
+	padding-bottom: 80px;
 }
 
 /* 헤더 스타일 */
@@ -65,11 +65,9 @@ body, html {
 	left: 0;
 	width: 100%;
 	height: 100px;
-	
 	display:flex;
 	justify-content: space-between;
 	align-items: center;
-	
 	padding-left: 20px;
 	font-weight: bold;
 	font-size: 50px;
@@ -95,7 +93,7 @@ body, html {
 }
 
 .backBtn:hover{
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
    	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
    	color: #A66A3F;
@@ -103,7 +101,7 @@ body, html {
 
 /* 상단 사용자 정보 섹션 */
 .userInfoSection {
-margin: 20px auto;
+	margin: 20px auto;
 	width : 1000px;
 	padding: 20px;
 	position: relative;
@@ -131,7 +129,7 @@ margin: 20px auto;
 	width: 1000px;
 	max-width: 1000px;
 	margin: 20px auto;
-	background-color: #fbe5c0; /* 와이어프레임의 흰색 배경 느낌 */
+	background-color: #fbe5c0;
 	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -229,18 +227,18 @@ margin: 20px auto;
 	cursor: pointer;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	z-index: 999;
-	transition: all 0.3s ease;/* 애니메이션 부드럽게 */
+	transition: all 0.3s ease;
 }
 
 .writeBtn:hover{
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #d69e76;
  
 }
 
 .writeBtn:activr{
-	transform: translateY(2px); /* 아래로 눌림 */
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -296,36 +294,32 @@ margin: 20px auto;
 .pageBox a:hover{
     background-color:#F2D3A2;
 }
+
 .textContent, .answerText{
 	white-space: pre-wrap;
 }
 
 .navicon:hover {
    transform: translateY(-3px);
-   /* 살짝 위로 뜸 */
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .navicon:active {
    transform: translateY(2px);
-   /* 아래로 눌림 */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .editBtn:hover, .delBtn:hover,
- .cancleBtn:hover, .okBtn:hover
-	{
+.cancleBtn:hover, .okBtn:hover {
     background-color: #fecc56;
     color: #A66A3F;
-   
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .editBtn:active, .delBtn:active,
- .cancleBtn:active, .okBtn:active {
+.cancleBtn:active, .okBtn:active {
 	transform: translateY(2px);
-	/* 아래로 눌림 */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -339,9 +333,7 @@ margin: 20px auto;
 	width: 50px;
 	height: 20px;
 	border-radius: 5px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	/* 애니메이션 부드럽게 */
 	transition: all 0.2s ease;
 }
 
@@ -356,9 +348,7 @@ margin: 20px auto;
 	width: 50px;
 	height: 20px;
 	border-radius: 5px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	/* 애니메이션 부드럽게 */
 	transition: all 0.2s ease;
 }
 
@@ -375,7 +365,6 @@ margin: 20px auto;
 	border: 1px solid #FFB300;
 	border-radius: 5px;
 	padding: 5px;
-	
 }
 
 .titleContent, .textContent, .answerText {
@@ -384,7 +373,7 @@ margin: 20px auto;
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }
@@ -466,261 +455,259 @@ margin: 20px auto;
 	</div>
 	<script>
 		//수정버튼
-	$(".editBtn").on("click",function(){
-		let box = $(this).closest(".postBox");
-    	
-    	let title = box.find(".titleContent").html();
-    	let contents = box.find(".textContent").html();
-    	
-    	box.data("original-title", title);
-        box.data("original-contents", contents);
-    	
-    	box.find(".titleContent").attr("contenteditable", "true");
-        box.find(".textContent").attr("contenteditable", "true");
-    	
-    	box.find(".editBtn, .delBtn").hide();
-    	box.find(".cancleBtn, .okBtn").show();
-	})
-		//수정취소
-	 $(".cancleBtn").on("click", function(){
+			$(".editBtn").on("click",function(){
+				let box = $(this).closest(".postBox");
+		    	
+		    	let title = box.find(".titleContent").html();
+		    	let contents = box.find(".textContent").html();
+		    	
+		    	box.data("original-title", title);
+		        box.data("original-contents", contents);
+		    	
+		    	box.find(".titleContent").attr("contenteditable", "true");
+		        box.find(".textContent").attr("contenteditable", "true");
+		    	
+		    	box.find(".editBtn, .delBtn").hide();
+		    	box.find(".cancleBtn, .okBtn").show();
+			})
+				//수정취소
+			 $(".cancleBtn").on("click", function(){
+		        	
+		        	let box = $(this).closest(".postBox");
+		        	
+		        	box.find(".titleContent").html(box.data("original-title"));
+		        	box.find(".textContent").html(box.data("original-contents"));
+		        	        	 
+		        	box.find(".titleContent").attr("contenteditable", "false");
+		            box.find(".textContent").attr("contenteditable", "false");
+		            
+		        	box.find(".okBtn, .cancleBtn").hide();
+		        	box.find(".delBtn, .editBtn").show();
+		        })
+		    
+		        //수정완료
+		    $(".okBtn").on("click", function(){
+		        	
+		        	let box = $(this).closest(".postBox");
+		        	let seq = $(this).data("seq");
+		        	let title = box.find(".titleContent").html().trim(); // 엔터 살리기
+		        	let contents = box.find(".textContent").html().trim(); // 엔터 살리기
+		        	
+		        	let titleCheck = box.find(".titleContent").text().trim(); // 빈칸 체크
+		        	let contentsCheck = box.find(".textContent").text().trim(); // 빈칸 체크
+		            
+		            // 엔터(\n)를 포함한 실제 텍스트 추출 (innerText 사용)
+		            let titleContent = document.querySelector(".titleContent").innerText; 
+		            let textContent = document.querySelector(".textContent").innerText; 
+		  
+		            let titleLimit = 50; // 제목 제한
+		            let limit = 1000;     // 내용 제한
+		
+			        	if(titleCheck === "" && contentsCheck === ""){
+			                Swal.fire({
+			                    icon: "info",
+			                    title: "Wait !",
+			                    text: "제목과 내용을 입력해주세요.",
+			                    iconColor: "#FFB300",
+			                    confirmButtonColor: "#FFB300"
+			                });
+			                return;
+			            }
         	
-        	let box = $(this).closest(".postBox");
         	
-        	box.find(".titleContent").html(box.data("original-title"));
-        	box.find(".textContent").html(box.data("original-contents"));
-        	        	 
-        	box.find(".titleContent").attr("contenteditable", "false");
-            box.find(".textContent").attr("contenteditable", "false");
-            
-        	box.find(".okBtn, .cancleBtn").hide();
-        	box.find(".delBtn, .editBtn").show();
-        })
-    
-        //수정완료
-    $(".okBtn").on("click", function(){
-        	
-        	let box = $(this).closest(".postBox");
-        	let seq = $(this).data("seq");
-        	let title = box.find(".titleContent").html().trim(); // 엔터 살리기
-        	let contents = box.find(".textContent").html().trim(); // 엔터 살리기
-        	
-        	let titleCheck = box.find(".titleContent").text().trim(); // 빈칸 체크
-        	let contentsCheck = box.find(".textContent").text().trim(); // 빈칸 체크
-            
-            // 엔터(\n)를 포함한 실제 텍스트 추출 (innerText 사용)
-            let titleContent = document.querySelector(".titleContent").innerText; 
-            let textContent = document.querySelector(".textContent").innerText; 
-  
-            let titleLimit = 50; // 제목 제한
-            let limit = 1000;     // 내용 제한
-
-        	if(titleCheck === "" && contentsCheck === ""){
-                Swal.fire({
-                    icon: "info",
-                    title: "Wait !",
-                    text: "제목과 내용을 입력해주세요.",
-                    iconColor: "#FFB300",
-                    confirmButtonColor: "#FFB300"
-                });
-                return;
-            }
-        	
-        	
-        	// 빈값 검사
-            if(titleCheck === ""){
-                Swal.fire({
-                    icon: "info",
-                    title: "Wait !",
-                    text: "제목을 입력해주세요.",
-                    iconColor: "#FFB300",
-                    confirmButtonColor: "#FFB300"
-                });
-                return;
-            } 
-        	if(contentsCheck === "") {
-            	Swal.fire({
-                    icon: "info",
-                    title: "Wait !",
-                    text: "내용을 입력해주세요.",
-                    iconColor: "#FFB300",
-                    confirmButtonColor: "#FFB300"
-                });
-                return;
-            }
-        	
-			// 3. 제목 글자수 초과 체크
-          if (titleContent.length > titleLimit) {
-              let currentTitleLen = titleContent.length;
-              let overTitle = titleContent.substring(titleLimit, titleLimit + 50); // 제목은 짧으니 50자만
-              
-              Swal.fire({
-                  icon: "warning",
-                  title: "제목 글자수 초과!",
-                  html: "현재 제목이 <b>" + currentTitleLen + "자</b>입니다. (제한: 50자)<br><br>" +
-                        "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:13px; border:1px solid #ffcccc; word-break: break-all;'>" +
-                        "<b>제목 뒷부분을 삭제해주세요:</b><br><br>" +
-                        "<span style='color:#555;'>... " + overTitle + "</span></div>",
-                  iconColor: "#EB0000",
-                  confirmButtonColor: "#FFB300"
-              });
-              return;
-          }
-
-          // 4. 내용 글자수 초과 체크
-          if (textContent.length > limit) {
-              let currentLen = textContent.length;
-              let overText = textContent.substring(limit, limit + 100); 
-
-              Swal.fire({
-                  icon: "warning",
-                  title: "내용 글자수 초과!",
-                  html: "현재 내용이 <b>" + currentLen + "자</b>입니다. (제한: 1000자)<br><br>" +
-                        "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:14px; border:1px solid #ffcccc; white-space: pre-wrap; word-break: break-all;'>" +
-                        "<b>이 부분부터 삭제해주세요:</b><br><br>" +
-                        "<span style='color:#555;'>... " + overText + "</span></div>",
-                  iconColor: "#EB0000",
-                  confirmButtonColor: "#FFB300"
-              });
-              return;
-          }
-          box.find(".titleContent").attr("contenteditable", "false");
-          box.find(".textContent").attr("contenteditable", "false");
-          
-			$.ajax({
-				url:"/qa/update",
-				data:{qa_seq:seq,
-					qa_title:title,
-					qa_contents:contents},
-				type: "post"
-			}).done(function(){
-					Swal.fire({
-					icon: "success",
-					title: "Success  !",
-					text: "수정되었습니다.",
-					iconColor: "#FFB300",
-					confirmButtonColor: "#FFB300"
-				}).then(() => {
-					location.reload();
-				});
-			});
-        	
-        }) 
-        
-   	// 삭제버튼
-   	$(".delBtn").on("click", function(){
-        	
-        	let seq = $(this).data("seq");
-        	
-        	Swal.fire({
-				icon: "question",
-				title: "정말 삭제하시겠습니까?",
-				text: "삭제 후에는 복구할 수 없습니다.",
-				iconColor: "#FFB300",
-				confirmButtonColor: "#FFB300",
-					showCancelButton: true,
-					confirmButtonText: "삭제",
-					cancelButtonText: "취소",
-					cancelButtonColor: "#d9d9d9"
-			}).then((result) => {
-				
-				if(result.isConfirmed) {
-        		
-        		$.ajax ({
-        			url: "/qa/delete",
-        			type: "post",
-        			data: { qa_seq: seq },
-        			
-        			success: function(resp) {
-        				if(resp === "successDel") {
-        					
-        					// 삭제 성공 알림
-        					Swal.fire({
+			        	// 빈값 검사
+			            if(titleCheck === ""){
+			                Swal.fire({
+			                    icon: "info",
+			                    title: "Wait !",
+			                    text: "제목을 입력해주세요.",
+			                    iconColor: "#FFB300",
+			                    confirmButtonColor: "#FFB300"
+			                });
+			                return;
+			            } 
+			        	if(contentsCheck === "") {
+			            	Swal.fire({
+			                    icon: "info",
+			                    title: "Wait !",
+			                    text: "내용을 입력해주세요.",
+			                    iconColor: "#FFB300",
+			                    confirmButtonColor: "#FFB300"
+			                });
+			                return;
+			            }
+			        	
+						// 3. 제목 글자수 초과 체크
+			          if (titleContent.length > titleLimit) {
+			              let currentTitleLen = titleContent.length;
+			              let overTitle = titleContent.substring(titleLimit, titleLimit + 50); // 제목은 짧으니 50자만
+			              
+			              Swal.fire({
+			                  icon: "warning",
+			                  title: "제목 글자수 초과!",
+			                  html: "현재 제목이 <b>" + currentTitleLen + "자</b>입니다. (제한: 50자)<br><br>" +
+			                        "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:13px; border:1px solid #ffcccc; word-break: break-all;'>" +
+			                        "<b>제목 뒷부분을 삭제해주세요:</b><br><br>" +
+			                        "<span style='color:#555;'>... " + overTitle + "</span></div>",
+			                  iconColor: "#EB0000",
+			                  confirmButtonColor: "#FFB300"
+			              });
+			              return;
+			          }
+			
+			          // 4. 내용 글자수 초과 체크
+			          if (textContent.length > limit) {
+			              let currentLen = textContent.length;
+			              let overText = textContent.substring(limit, limit + 100); 
+			
+			              Swal.fire({
+			                  icon: "warning",
+			                  title: "내용 글자수 초과!",
+			                  html: "현재 내용이 <b>" + currentLen + "자</b>입니다. (제한: 1000자)<br><br>" +
+			                        "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:14px; border:1px solid #ffcccc; white-space: pre-wrap; word-break: break-all;'>" +
+			                        "<b>이 부분부터 삭제해주세요:</b><br><br>" +
+			                        "<span style='color:#555;'>... " + overText + "</span></div>",
+			                  iconColor: "#EB0000",
+			                  confirmButtonColor: "#FFB300"
+			              });
+			              return;
+			          }
+			          box.find(".titleContent").attr("contenteditable", "false");
+			          box.find(".textContent").attr("contenteditable", "false");
+			          
+						$.ajax({
+							url:"/qa/update",
+							data:{qa_seq:seq,
+								qa_title:title,
+								qa_contents:contents},
+							type: "post"
+						}).done(function(){
+								Swal.fire({
 								icon: "success",
 								title: "Success  !",
-								text: "삭제되었습니다.",
+								text: "수정되었습니다.",
 								iconColor: "#FFB300",
 								confirmButtonColor: "#FFB300"
-        					}).then(() => {
-        						location.reload(); // 새로고침
-        					});
-        					
-        				}
-        				else {
-        					Swal.fire({
-								icon: "error",
-								title: "Error  !",
-								text: "문제가 발생해 삭제할 수 없습니다.",
-								iconColor: "#EB0000",
-								confirmButtonColor: "#FFB300"
-        					});
-        				}
-        			},
-        			error: function() {
-        				Swal.fire({
-							icon: "error",
-							title: "Error  !",
-							text: "에러 발생",
-							iconColor: "#EB0000",
-							confirmButtonColor: "#FFB300"
-        				});
-        			}
-        		});
-        	} 
-        });
-	});
-	
-	let recordTotalCount = ${totalCount};
-	let recordCountPerPage = 5;
-	let naviCountPerPage = 5;
-	let currentPage = ${cPage};
-
-	let pageTotalCount = Math.ceil(recordTotalCount/recordCountPerPage);
-	
-	let startNavi = Math.floor(((currentPage - 1)/naviCountPerPage)) * naviCountPerPage + 1;
-	let endNavi = startNavi + naviCountPerPage - 1;
-	
-	if(endNavi > pageTotalCount) {
-		endNavi = pageTotalCount;
-	}
-	$(".page").empty();
-	
-	let needPrev = true; // <<
-	let needNext = true; // >>
-	
-	if(startNavi == 1){needPrev = false;}
-	if(endNavi == pageTotalCount){needNext = false;}
-	
-	if(needPrev) {
-		let prev = $("<a>"); 
-		prev.attr("href","/qa/toQa?cPage="+(startNavi-1)); 
-		prev.html("<< ");
-		$(".page").append(prev);
-	}
+							}).then(() => {
+								location.reload();
+							});
+						});
+			        	
+			        }) 
+        
+		   	// 삭제버튼
+		   	$(".delBtn").on("click", function(){
+		        	
+		        	let seq = $(this).data("seq");
+		        	
+		        	Swal.fire({
+						icon: "question",
+						title: "정말 삭제하시겠습니까?",
+						text: "삭제 후에는 복구할 수 없습니다.",
+						iconColor: "#FFB300",
+						confirmButtonColor: "#FFB300",
+							showCancelButton: true,
+							confirmButtonText: "삭제",
+							cancelButtonText: "취소",
+							cancelButtonColor: "#d9d9d9"
+					}).then((result) => {
+						
+						if(result.isConfirmed) {
+		        		
+		        		$.ajax ({
+		        			url: "/qa/delete",
+		        			type: "post",
+		        			data: { qa_seq: seq },
+		        			
+		        			success: function(resp) {
+		        				if(resp === "successDel") {
+		        					
+		        					// 삭제 성공 알림
+		        					Swal.fire({
+										icon: "success",
+										title: "Success  !",
+										text: "삭제되었습니다.",
+										iconColor: "#FFB300",
+										confirmButtonColor: "#FFB300"
+		        					}).then(() => {
+		        						location.reload(); // 새로고침
+		        					});
+		        					
+		        				}
+		        				else {
+		        					Swal.fire({
+										icon: "error",
+										title: "Error  !",
+										text: "문제가 발생해 삭제할 수 없습니다.",
+										iconColor: "#EB0000",
+										confirmButtonColor: "#FFB300"
+		        					});
+		        				}
+		        			},
+		        			error: function() {
+		        				Swal.fire({
+									icon: "error",
+									title: "Error  !",
+									text: "에러 발생",
+									iconColor: "#EB0000",
+									confirmButtonColor: "#FFB300"
+		        				});
+		        			}
+		        		});
+		        	} 
+		        });
+			});
+			
+			let recordTotalCount = ${totalCount};
+			let recordCountPerPage = 5;
+			let naviCountPerPage = 5;
+			let currentPage = ${cPage};
 		
-	for(let i = startNavi; i <= endNavi; i++) {
-		let navi = $("<a>");
-		navi.attr("href", "/qa/toQa?cPage="+i);
-		navi.html(i + " ");
-		$(".page").append(navi);
-		
-		if (i === currentPage) {
-	        navi.addClass("active");
-	    }
-	}
-	if(needNext) {
-		let next = $("<a>");
-		next.attr("href", "/qa/toQa?cPage="+(endNavi+1));
-		next.html(" >>");
-		$(".page").append(next);
-	}
-	
-	 $(document).on("keydown", ".titleContent[contenteditable='true']", function(e){
-         if(e.key === "Enter"){
-             e.preventDefault(); // 기본 동작 막기
-         }
-     });
-	 
-	 
+			let pageTotalCount = Math.ceil(recordTotalCount/recordCountPerPage);
+			
+			let startNavi = Math.floor(((currentPage - 1)/naviCountPerPage)) * naviCountPerPage + 1;
+			let endNavi = startNavi + naviCountPerPage - 1;
+			
+				if(endNavi > pageTotalCount) {
+					endNavi = pageTotalCount;
+				}
+				$(".page").empty();
+				
+				let needPrev = true; // <<
+				let needNext = true; // >>
+				
+				if(startNavi == 1){needPrev = false;}
+				if(endNavi == pageTotalCount){needNext = false;}
+				
+				if(needPrev) {
+					let prev = $("<a>"); 
+					prev.attr("href","/qa/toQa?cPage="+(startNavi-1)); 
+					prev.html("<< ");
+					$(".page").append(prev);
+				}
+					
+				for(let i = startNavi; i <= endNavi; i++) {
+					let navi = $("<a>");
+					navi.attr("href", "/qa/toQa?cPage="+i);
+					navi.html(i + " ");
+					$(".page").append(navi);
+					
+					if (i === currentPage) {
+				        navi.addClass("active");
+				    }
+				}
+				if(needNext) {
+					let next = $("<a>");
+					next.attr("href", "/qa/toQa?cPage="+(endNavi+1));
+					next.html(" >>");
+					$(".page").append(next);
+				}
+			
+			$(document).on("keydown", ".titleContent[contenteditable='true']", function(e){
+	        	if(e.key === "Enter"){
+	          	  e.preventDefault(); // 기본 동작 막기
+	        	}
+		    });
 	</script>
 	
 </body>
