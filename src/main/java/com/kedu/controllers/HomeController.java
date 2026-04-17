@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.gson.Gson;
 import com.kedu.dao.AttachmentDAO;
 import com.kedu.dao.BoardDAO;
 import com.kedu.dao.PostLikeDAO;
@@ -24,8 +23,6 @@ import com.kedu.dto.ReplyDTO;
 @Controller
 public class HomeController {
 
-	@Autowired
-	private Gson gson;
 	@Autowired
 	private BoardDAO dao;
 	@Autowired

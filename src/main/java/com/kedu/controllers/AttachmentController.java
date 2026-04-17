@@ -7,21 +7,15 @@ import java.io.FileInputStream;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.kedu.dao.AttachmentDAO;
-
 @Controller
 @RequestMapping("/attach")
 public class AttachmentController {
-
-	@Autowired
-	private AttachmentDAO aDao;
 
 	// 파일 다운로드
 	@GetMapping("/download")

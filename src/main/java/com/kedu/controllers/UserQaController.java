@@ -21,7 +21,7 @@ import com.kedu.dto.QaDTO;
 public class UserQaController {
 	
 	@Autowired
-	UserQaDAO uDAO;
+	private UserQaDAO uDAO;
 
 	@RequestMapping("/toQa")
 	public String toQa(Model model,int cPage, HttpSession session) throws Exception{

@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.google.gson.Gson;
 import com.kedu.dao.AttachmentDAO;
 import com.kedu.dao.FeedBackDAO;
 import com.kedu.dao.FeedBack_reactionDAO;
@@ -32,22 +31,19 @@ import com.kedu.dto.ReportDTO;
 public class FeedBackController {
 
 	@Autowired
-	public FeedBackDAO dao;
+	private FeedBackDAO dao;
 
 	@Autowired
-	public ReportDAO reportdao;
+	private ReportDAO reportdao;
 
 	@Autowired
-	public FeedBack_reactionDAO reactiondao;
+	private FeedBack_reactionDAO reactiondao;
 
 	@Autowired
-	public FeedBackDAO feedbackdao;
+	private FeedBackDAO feedbackdao;
 
 	@Autowired
 	private AttachmentDAO aDao;
-
-	@Autowired
-	public Gson gson;
 
 	// 건의사항 작성글 출력
 	@RequestMapping("/feedbackHome")

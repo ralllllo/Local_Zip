@@ -179,8 +179,6 @@ public class MeetingController {
 	    int pageTotalCount =
 	        (recordTotalCount + recordCountPerPage - 1) / recordCountPerPage;
 
-	    // if(pageTotalCount == 0) pageTotalCount = 1; // 최소 1페이지 유지 코드
-	    
 	    if(recordTotalCount == 0){ // 0이면 네비 생성X
 	        return new HashMap<>();
 	    }
@@ -234,7 +232,6 @@ public class MeetingController {
 	// 참여중인 모임 탭 > 자세히 보기 클릭 시
 	@RequestMapping("/myMeetingDetail")
 	public String myMeetingDetail(HttpSession session, int seq, Model model) throws Exception{
-		String loginId = (String)session.getAttribute("loginId");
 		
 		List<MeetingDTO> list = dao.selectBySeq(seq);
 		

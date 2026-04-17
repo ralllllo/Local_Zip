@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.kedu.dao.MeetingDAO;
 import com.kedu.dao.MeetingMemberDAO;
 import com.kedu.dto.ManageMeetingDTO;
 import com.kedu.dto.MeetingMemberDTO;
@@ -19,12 +18,9 @@ import com.kedu.dto.MeetingMemberDTO;
 @Controller
 @RequestMapping("/meetingMember")
 public class MeetingMemberController {
-	
-	@Autowired 
-	MeetingDAO mdao;	
-	
+
 	@Autowired
-	public MeetingMemberDAO dao;
+	private MeetingMemberDAO dao;
 	
 	@RequestMapping("/applyForm")
 	public String applyform(int meet_seq, Model model, HttpSession session) throws Exception{
@@ -40,7 +36,6 @@ public class MeetingMemberController {
 		
 		String loginId = (String)session.getAttribute("loginId");
 		Integer meet_seq = (Integer)session.getAttribute("meet_seq");
-		
 		
 		dto.setMem_id(loginId);
 		dao.insert(dto);
