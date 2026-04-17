@@ -32,27 +32,6 @@ public class FeedBackDAO {
 		return jdbc.queryForObject(sql, Integer.class);
 	}
 	
-	/*
-	 * // 좋아요 db에 넣기 public int plusLike(int suggestion_seq) { String sql =
-	 * "update suggestion set suggestion_like = suggestion_like + 1 where suggestion_seq = ?"
-	 * ;
-	 * 
-	 * return jdbc.update(sql, suggestion_seq); }
-	 * 
-	 * // 싫어요 db에 넣기 public int plusUnLike(int suggestion_seq) { String sql =
-	 * "update suggestion set suggestion_unlike = suggestion_unlike + 1 where suggestion_seq = ?"
-	 * ; return jdbc.update(sql, suggestion_seq); }
-	 * 
-	 * // 좋아요 취소 public int minusLike(int suggestion_seq) { String sql =
-	 * "update suggestion set suggestion_like = suggestion_like -1 where suggestion_seq = ? and suggestion_like > 0"
-	 * ; return jdbc.update(sql, suggestion_seq); }
-	 * 
-	 * // 싫어요 취소 public int minusUnlike(int suggestion_seq) { String sql =
-	 * "update suggestion set suggestion_unlike = suggestion_unlike -1 where suggestion_seq = ? and suggestion_unlike > 0"
-	 * ; return jdbc.update(sql, suggestion_seq); }
-	 */
-	
-	
 	// 신고
 	public String getWriterBySeq(int suggestion_seq) {
 	    String sql = "select mem_id from suggestion where suggestion_seq = ?";
@@ -74,7 +53,7 @@ public class FeedBackDAO {
 	
 	// 게시글 수정 1 (글 목록 불러오기)
 	public List<FeedBackDTO> list() {
-		String sql = "select * from suggestion order by suggestion_seq desc";
+		String sql = "select * from suggestion order by suggestion_writedate desc";
 		return jdbc.query(sql, new BeanPropertyRowMapper<FeedBackDTO>(FeedBackDTO.class));
 	}	
 	
@@ -94,7 +73,7 @@ public class FeedBackDAO {
 	public List<FeedBackDTO> list(String loginId, int start, int end) throws Exception {
 		
 		String sql = "select * from ("
-	               + " select row_number() over(order by s.suggestion_seq desc) rn, "
+	               + " select row_number() over(order by s.suggestion_writedate desc) rn, "
 	               + "s.suggestion_seq, s.mem_id, "
 	            + "m.mem_nickname, m.mem_dong, m.mem_role, "
 	            + "s.suggestion_title, s.suggestion_contents, s.suggestion_writedate, "
