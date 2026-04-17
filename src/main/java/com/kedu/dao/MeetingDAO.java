@@ -75,9 +75,9 @@ public class MeetingDAO {
 		return jdbc.queryForObject(sql, Integer.class, category);
 	}
 	
-	public int countMeetingByWriter(String loginId, int status) { // 모임 3개 생성 제한
-		String sql = "select count(*) from meeting where mem_id = ? and meet_status = ?";
-		return jdbc.queryForObject(sql, Integer.class, loginId, status);
+	public int countMeetingByWriter(String loginId) { // 모임 3개 생성 제한
+		String sql = "select count(*) from meeting where mem_id = ? and meet_status in (0,1)";
+		return jdbc.queryForObject(sql, Integer.class, loginId);
 	}
 	
 	public List<MeetingMemberDTO> isApplied(String loginId) { // 0, 승인 대기 상태

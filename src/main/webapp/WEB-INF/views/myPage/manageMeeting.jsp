@@ -12,275 +12,295 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/resources/images/pavicon.png">
 
 <style>
-		@font-face {
-			font-family: 'GMarketSans';
-			src:
-				url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
-				format('woff');
-			font-weight: 300;
-			font-display: swap;
-		}
-		
-		@font-face {
-			font-family: 'GMarketSans';
-			src:
-				url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-				format('woff');
-			font-weight: 500;
-			font-display: swap;
-		}
-		
-		@font-face {
-			font-family: 'GMarketSans';
-			src:
-				url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
-				format('woff');
-			font-weight: 700;
-			font-display: swap;
-		}
-		
-		button, body {
-			font-family: 'GMarketSans', sans-serif;
-		}
-		
-		body {
-			margin: 0;
-			background-color: #fbe5c0;
-		}
-		
-		.container {
-			width: 100%;
-			margin-bottom: 200px;
-		}
-		
-		.top-section {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 1000;
-			border-bottom: 2px solid #A66A3F;
-		}
-		
-		.mainTitle {
-			font-weight: bold;
-			font-size: 50px;
-			color: #A66A3F;
-/* 			box-sizing: border-box; */
-		}
-		.titleSection{
-			display:flex;
-			width: 100%;
-			border-bottom: 2px solid #A66A3F;
-			background-color: #F2D3A2;
-			height: 100px;
-			line-height: 100px;
-			padding: 0 20px;
-		}
-        .backBtnDiv{
-        	position: relative;
-			left: 1484px;
-			top: 18px;
-        }
-        .bottomBar{
-            border: 2px solid #A66A3F;
-            background-color: #F2D3A2;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            gap: 200px;
-        }
-        
-        .meetingDetail:hover,
-        .deleteBtn:hover,
-        .outBtn:hover,
-        .myMeetingBtn:hover,
-        .manageBtn:hover,
-        .acceptBtn:hover,
-        .rejectBtn:hover{
-            transform: translateY(-3px); /* 살짝 위로 뜸 */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        }
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: 300;
+	font-display: swap;
+}
 
-        .meetingDetail:active,
-        .deleteBtn:active,
-        .outBtn:active,
-        .myMeetingBtn:active,
-        .manageBtn:active,
-        .acceptBtn:active,
-        .rejectBtn:active,
-        .backBtn:active{
-            transform: translateY(2px); /* 아래로 눌림 */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .backBtn{
-			background-color: #ffb300;
-			color: #5e361a;
-			border: 1px solid #ffb300;
-			border-radius: 10px;
-			font-weight: bold;
-			height: 30px;
-			cursor: pointer;
-			transition: all 0.3s ease;
-		}
-		
-		.backBtn:hover{
-			transform: translateY(-3px); /* 살짝 위로 뜸 */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            background-color: #fecc56;
-   			color: #A66A3F;
-		}
-		
-        .meetingDetail, .deleteBtn, .outBtn, .myMeetingBtn, .manageBtn, .acceptBtn, .rejectBtn {
-        	cursor: pointer;
-			transition: all 0.2s ease;
-        }
-		.manageMeeting{
-			display: flex;
-			gap: 20px;
-			align-items: center;
-			background-color: #fbe5c0;
-		}
-		
-		.myMeetingBtn, .manageBtn{
-			width: 48%;
-		    height: 70px;
-		    border: none;
-		    color: #5e361a;
-		    font-weight: bold;
-		    font-size: x-large;
-		    border-radius: 10px;
-		    margin-top: 10px;
-			margin-bottom: 10px;
-			color: #5e361a;
-		}
-		.myMeetingBtn{
-			margin-left: 30px;
-			background-color: #E5D3B3;
-		}
-		.manageBtn{
-		 	background-color: #FFB300;
-		}
-		.emptyMeeting{
-			font-weight: bold;
-			font-size: large;
-			text-align: center;
-		}
-		.meetingListDiv{
-			margin-top: 230px;
-			font-weight: 500;
-			color: #5e361a;
-		}
-		.completeMeeting{
-			font-weight: 500;
-			color: #5e361a;
-			margin-top: 20px;
-		}
-		.acceptBtn, .rejectBtn{
-			color: #5e361a;
-			width: 40%;
-		    height: 35px;
-		    border:none;
-		    border-radius: 10px;
-		    font-size: large;
-		    color: #f5f5f5;
-		}
-		.acceptBtn{
-			margin-left: 155px;
-			margin-right: 10px;
-		    background-color: #7BB8C9;
-		}
-		.rejectBtn{
-		    background-color: #FF000080;
-		}
-		.acceptedBtn, .rejectedBtn{
-			color: #5e361a;
-		    height: 35px;
-		    border:none;
-		    border-radius: 10px;
-		    font-size: large;
-		    color: #f5f5f5;
-		    width: 80%;
-		    cursor: not-allowed;
-		}
-		.acceptedBtn{
-			background-color: #7BB8C9;
-			margin-left: 150px;
-		}
-		.rejectedBtn{
-			background-color: #FF000080;
-			margin-left: 150px;
-		}
-		.completeComments{
-			font-weight: bold;
-			font-size: large;
-			text-align: center;
-			background-color: #F2D3A2;
-			margin-top: 50px;
-			color: #5e361a;
-			box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-		}
-		.meeting-card, .completeMeeting-card{
-			width: 80%;
-			margin-left: 185px;
-			padding-bottom: 20px;
-			margin-top: 20px;
-			border-radius: 10px;
-			box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-		}
-		.nickname, .com_nickname{
-			margin-top: 5px;
-			min-height: 50px;
-			font-weight: bold;
-			font-size: x-large;
-			background-color: #F2D3A2;
-			padding-left: 20px;
-			padding-top: 20px;
-		}
-		.title, .com_title{
-			min-height: 40px;
-			font-weight: bold;
-			font-size: large;
-			padding-left: 20px;
-			margin-top: 7px;
-		}
-		.info, .com_info{
-			min-height: 40px;
-			font-size: large;
-			padding-left: 20px;
-		}
-		.btnDiv, .comBtnDiv{
-			margin-top: 20px;
-		}
-		.swal2-icon.swal2-question .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		.navicon:hover {
-		   transform: translateY(-3px);
-		   /* 살짝 위로 뜸 */
-		   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-		}
-		
-		.navicon:active {
-		   transform: translateY(2px);
-		   /* 아래로 눌림 */
-		   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-		}
-		
-		.nowNavicon{
-		   transform: translateY(-3px); /* 살짝 위로 뜸 */
-		   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-		   color: #e6a83e;
-		}
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
+		format('woff');
+	font-weight: 700;
+	font-display: swap;
+}
+
+button, body {
+	font-family: 'GMarketSans', sans-serif;
+}
+
+body {
+	margin: 0;
+	background-color: #fbe5c0;
+}
+
+.container {
+	width: 100%;
+	margin-bottom: 200px;
+}
+
+.top-section {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	border-bottom: 2px solid #A66A3F;
+}
+
+.mainTitle {
+	font-weight: bold;
+	font-size: 50px;
+	color: #A66A3F;
+}
+
+.titleSection{
+	display:flex;
+	width: 100%;
+	border-bottom: 2px solid #A66A3F;
+	background-color: #F2D3A2;
+	height: 100px;
+	line-height: 100px;
+	padding: 0 20px;
+}
+
+.backBtnDiv{
+    position: relative;
+	left: 1484px;
+	top: 18px;
+}
+      
+.bottomBar{
+    border: 2px solid #A66A3F;
+    background-color: #F2D3A2;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    gap: 200px;
+}
+      
+.meetingDetail:hover,
+.deleteBtn:hover,
+.outBtn:hover,
+.myMeetingBtn:hover,
+.manageBtn:hover,
+.acceptBtn:hover,
+.rejectBtn:hover{
+    transform: translateY(-3px); /* 살짝 위로 뜸 */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.meetingDetail:active,
+.deleteBtn:active,
+.outBtn:active,
+.myMeetingBtn:active,
+.manageBtn:active,
+.acceptBtn:active,
+.rejectBtn:active,
+.backBtn:active{
+    transform: translateY(2px); /* 아래로 눌림 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+      
+.backBtn{
+	background-color: #ffb300;
+	color: #5e361a;
+	border: 1px solid #ffb300;
+	border-radius: 10px;
+	font-weight: bold;
+	height: 30px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.backBtn:hover{
+	transform: translateY(-3px); /* 살짝 위로 뜸 */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    background-color: #fecc56;
+ 	color: #A66A3F;
+}
+
+.meetingDetail, .deleteBtn, .outBtn, .myMeetingBtn, .manageBtn, .acceptBtn, .rejectBtn {
+    cursor: pointer;
+	transition: all 0.2s ease;
+}
+      
+.manageMeeting{
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	background-color: #fbe5c0;
+}
+
+.myMeetingBtn, .manageBtn{
+	width: 48%;
+    height: 70px;
+    border: none;
+    color: #5e361a;
+    font-weight: bold;
+    font-size: x-large;
+    border-radius: 10px;
+    margin-top: 10px;
+	margin-bottom: 10px;
+	color: #5e361a;
+}
+
+.myMeetingBtn{
+	margin-left: 30px;
+	background-color: #E5D3B3;
+}
+
+.manageBtn{
+ 	background-color: #FFB300;
+}
+
+.emptyMeeting{
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+}
+
+.meetingListDiv{
+	margin-top: 230px;
+	font-weight: 500;
+	color: #5e361a;
+}
+
+.completeMeeting{
+	font-weight: 500;
+	color: #5e361a;
+	margin-top: 20px;
+}
+
+.acceptBtn, .rejectBtn{
+	color: #5e361a;
+	width: 40%;
+    height: 35px;
+    border:none;
+    border-radius: 10px;
+    font-size: large;
+    color: #f5f5f5;
+}
+
+.acceptBtn{
+	margin-left: 155px;
+	margin-right: 10px;
+    background-color: #7BB8C9;
+}
+
+.rejectBtn{
+    background-color: #FF000080;
+}
+
+.acceptedBtn, .rejectedBtn{
+	color: #5e361a;
+    height: 35px;
+    border:none;
+    border-radius: 10px;
+    font-size: large;
+    color: #f5f5f5;
+    width: 80%;
+    cursor: not-allowed;
+}
+
+.acceptedBtn{
+	background-color: #7BB8C9;
+	margin-left: 150px;
+}
+
+.rejectedBtn{
+	background-color: #FF000080;
+	margin-left: 150px;
+}
+
+.completeComments{
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	background-color: #F2D3A2;
+	margin-top: 50px;
+	color: #5e361a;
+	box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.meeting-card, .completeMeeting-card{
+	width: 80%;
+	margin-left: 185px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	border-radius: 10px;
+	box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.nickname, .com_nickname{
+	margin-top: 5px;
+	min-height: 50px;
+	font-weight: bold;
+	font-size: x-large;
+	background-color: #F2D3A2;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+.title, .com_title{
+	min-height: 40px;
+	font-weight: bold;
+	font-size: large;
+	padding-left: 20px;
+	margin-top: 7px;
+}
+
+.info, .com_info{
+	min-height: 40px;
+	font-size: large;
+	padding-left: 20px;
+}
+
+.btnDiv, .comBtnDiv{
+	margin-top: 20px;
+}
+
+.swal2-icon.swal2-question .swal2-icon-content {
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
+
+.navicon:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navicon:active {
+   transform: translateY(2px);
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nowNavicon{
+   transform: translateY(-3px);
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+   color: #e6a83e;
+}
 </style>
 </head>
 <body>

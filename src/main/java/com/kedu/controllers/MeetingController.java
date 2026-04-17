@@ -149,7 +149,7 @@ public class MeetingController {
 		String loginId = (String)session.getAttribute("loginId");
 		String nickname = (String)session.getAttribute("nickname");
 		// 한 id당 모임 3개 이상 생성 금지
-		int count = dao.countMeetingByWriter(loginId, dto.getMeet_status());
+		int count = dao.countMeetingByWriter(loginId);
 		
 		if(count >= 3) {
 			session.setAttribute("msg", "over");

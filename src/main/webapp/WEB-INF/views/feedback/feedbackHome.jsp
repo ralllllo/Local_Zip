@@ -52,7 +52,6 @@ body, html {
 	padding: 0;
 }
 
-/* 폰트 지정 */
 button, body {
 	font-family: 'GMarketSans', sans-serif;
 }
@@ -63,7 +62,6 @@ button, body {
 	padding-bottom: 90px;
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	background-color: #fbe5c0;
 }
 
@@ -79,7 +77,6 @@ button, body {
 	color: #A66A3F;
 	background-color: #F2D3A2;
 	border-bottom: 2px solid #A66A3F;
-	/* 아래쪽만 줄 그음 */
 	line-height: 100px;
 	z-index: 1000;
 }
@@ -100,15 +97,11 @@ button, body {
 	gap: 200px;
 }
 
-
-
 .writeBtn:hover, .editBtn:hover, .delBtn:hover,
- .cancleBtn:hover, .okBtn:hover, .fileDelBtn:hover
-	{
+.cancleBtn:hover, .okBtn:hover, .fileDelBtn:hover {
     background-color: #fecc56;
     color: #A66A3F;
-   
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -116,14 +109,12 @@ button, body {
 	background-color: #fecc56;
     color: #A66A3F;
 	transform: translateY(-3px);
-	/* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .navicon:active, .editBtn:active, .delBtn:active, .cancleBtn:active,
-	.okBtn:active, .fileDelBtn:active{
+.okBtn:active, .fileDelBtn:active {
 	transform: translateY(2px);
-	/* 아래로 눌림 */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -140,6 +131,7 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
 .writeBtn {
 	cursor: pointer;
 	transition: all 0.2s ease;
@@ -156,23 +148,18 @@ a {
 	font-weight: bold;
 	background-color: #FFB300;
 	border-radius: 5px;
-	
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	/* 애니메이션 부드럽게 */
 	transition: all 0.2s ease;
 }
+
 .postBox {
-	/* 수정: 고정 1500px 제거 */
 	width: 1500px;
 	max-width: 1500px;
-	/* 적당히 보기 좋은 최대 너비 설정 */
 	min-height: 200px;
 	height: auto;
 	margin: auto;
 	margin-top: 30px;
 	border-radius: 10px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -205,7 +192,6 @@ a {
 	left: 20px;
 	top: 20px;
 	flex-grow: 1;
-	/* 신고박스 오른쪽으로 딱 붙게 하기 위해 빈공간을 쭉 늘려주는 코드 */
 }
 
 .postInfoUp, .postInfoDown {
@@ -218,10 +204,8 @@ a {
 	top: 8px;
 	right: 20px;
 	display: flex;
-	flex-direction: column;
-	/* 아이콘과 선택창을 세로로 배치 */
+	flex-direction: column; /* 아이콘과 선택창을 세로로 배치 */
 	align-items: flex-end;
-	/* 오른쪽 정렬 */
 	gap: 5px;
 }
 
@@ -239,7 +223,6 @@ a {
 .reportBtn {
 	cursor: pointer;
 	transition: all 0.2s ease; 
-
 	background-color: #ffb300;
 	color: #5e361a;
 	border: 1px solid #ffb300;
@@ -251,8 +234,6 @@ a {
 .profileInfo {
 	width: auto;
 	margin-right: 15px;
-	/* 정보 사이의 간격 일정하게 부여 */
-	/*수직 정렬*/
 	display: flex;
 	align-items: center;
 	font-size: 14px;
@@ -296,7 +277,6 @@ a {
 	display: block;
 	padding:10px 0 5px 13px;
 }
-
 
 .postDownBox {
 	width: 95%;
@@ -348,9 +328,7 @@ a {
 	width: 50px;
 	height: 20px;
 	border-radius: 5px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	/* 애니메이션 부드럽게 */
 	transition: all 0.2s ease;
 }
 
@@ -381,9 +359,7 @@ a {
 	width: 50px;
 	height: 20px;
 	border-radius: 5px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	/* 애니메이션 부드럽게 */
 	transition: all 0.2s ease;
 }
 
@@ -419,21 +395,21 @@ a {
 }
 
 .swal2-icon.swal2-info .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .swal2-icon.swal2-warning .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 
 .suggestionImages {
@@ -443,12 +419,13 @@ a {
 
 .suggestionImages img {
 	max-width: 100%;
-	max-height: 500px; /* 부모 너비를 넘지 않게 함 */
+	max-height: 500px;
 	display: block;
 	width: 500px;
 	padding: 10px 0 0 10px;
 	margin: 0;
 }
+
 .imageContainer {
 	overflow: hidden;
 	margin: auto;
@@ -464,6 +441,7 @@ a {
 	color: #b24c4c;
 	font-size: 13px;
 }
+
 .fileDownload {
 	display:none;
 	margin: auto;
@@ -482,9 +460,10 @@ a {
 	margin-top: 5px;
 	margin-left: 40px;
 }
+
 /*  입력창 테두리 속성 */
- .postTitle[contenteditable="true"],
- .postContent[contenteditable="true"] {
+.postTitle[contenteditable="true"],
+.postContent[contenteditable="true"]{
 	border: 1px solid #FFB300;
 	padding: 5px;
 }
@@ -493,11 +472,13 @@ a {
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
+
 .postTitle[contenteditable="true"]:focus,
 .postContent[contenteditable="true"]:focus{
 	outline: none;
 	border: 1px solid #FFB300;
 }
+
 .okBtn:focus {
     outline: none;
 }
@@ -507,7 +488,7 @@ a {
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }

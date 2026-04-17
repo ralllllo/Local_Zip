@@ -47,11 +47,10 @@
 body, html {
 	margin: 0;
 	padding: 0;
-	height: 100%; /* 높이를 100%로 고정 */
-	overflow: hidden; /* 스크롤 막기 */
+	height: 100%;
+	overflow: hidden;
 }
 
-/* 폰트 지정 */
 button, body {
 	font-family: 'GMarketSans', sans-serif;
 }
@@ -61,7 +60,6 @@ button, body {
 	top: 100px;
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	background-color: #fbe5c0;
 }
 
@@ -77,7 +75,7 @@ button, body {
 	color: #A66A3F;
 	background-color: #F2D3A2;
 	border-bottom: 2px solid #A66A3F;
-	line-height: 100px; /* 세로 중앙 정렬 (기존 유지) */
+	line-height: 100px;
 	z-index: 1000;
 }
 
@@ -98,7 +96,6 @@ button, body {
 	height: 10%;
 	font-size: 45px;
 	font-weight: bold;
-	/* 	color: #ffb300; */
 	color: #FF8200;
 	text-shadow: 1px 1px 1px #d49500; /* [가로위치][세로위치][번짐정도][색상] */
 	text-align: center;
@@ -108,7 +105,6 @@ button, body {
 	width: 100%;
 	height: 90px;
 	color: #5e361a;
-
 }
 
 .errorMsg {
@@ -132,14 +128,14 @@ button, body {
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	transition: 0.3s;
 	display: flex;
-	justify-content: center; /* 가로(수평) 중앙 정렬 */
-	align-items: center; /* 세로(수직) 중앙 정렬 */
+	justify-content: center;
+	align-items: center; 
 }
 
 .homeBtn:hover {
 	background-color: #fecc56;
 	color: #A66A3F;
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 }
 
 .bottomBox {
@@ -174,12 +170,12 @@ button, body {
 
 .leftWay {
 	left: 550px;
-	transform: rotate(-10deg); /* 회전 */
+	transform: rotate(-10deg);
 }
 
 .rightWay {
 	right: 550px;
-	transform: rotate(15deg); /* 회전 */
+	transform: rotate(15deg);
 }
 
 .leftImg, .rightImg {
@@ -200,13 +196,11 @@ button, body {
 
 .navicon:hover {
    transform: translateY(-3px);
-   /* 살짝 위로 뜸 */
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .navicon:active {
    transform: translateY(2px);
-   /* 아래로 눌림 */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 </style>
@@ -215,9 +209,7 @@ button, body {
 <body>
 
 	<div class="container">
-
 		<div class="headBox">우리 동네.zip</div>
-
 		<div class="midBox">
 			<div class="imgBox">
 				<img class="leftWay" src="/resources/images/path.png"> 
@@ -225,7 +217,6 @@ button, body {
 				<img class="rightWay" src="/resources/images/pathway.png"> 
 				<img class="leftImg" src="/resources/images/왼쪽 모서리 풀.png">
 				<img class="rightImg" src="/resources/images/오른쪽 모서리 풀.png">
-
 			</div>
 
 			<div class="errorCode">길을 잃으신 것 같아요!</div>
@@ -244,10 +235,7 @@ button, body {
 				class="navicon fa-solid fa-people-group fa-2xl" style="color: #A66A3F"></i></a> <a href="/feedback/feedbackHome"><i
 				class="navicon fa-solid fa-bullhorn fa-2xl" style="color: #A66A3F"></i></a> <a href="/members/mypage"><i
 				class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
-
 		</div>
-
 	</div>
-
 </body>
 </html>

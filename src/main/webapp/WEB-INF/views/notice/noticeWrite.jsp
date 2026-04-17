@@ -51,7 +51,6 @@ body, html {
 	padding: 0;
 }
 
-/* 폰트 지정 */
 button, body, div, input {
 	font-family: 'GMarketSans', sans-serif;
 }
@@ -59,7 +58,6 @@ button, body, div, input {
 .container {
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	background-color: #fbe5c0;
 }
 
@@ -72,7 +70,6 @@ button, body, div, input {
 	color: #A66A3F;
 	background-color: #F2D3A2;
 	border-bottom: 2px solid #A66A3F;
-	/* 아래쪽만 줄 그음 */
 	line-height: 100px;
 	z-index: 1000;
 }
@@ -127,7 +124,7 @@ button, body, div, input {
 	font-size: 15px;
 	padding: 2px;
 	outline: none;
-	resize: none; /*늘어나기 방지*/
+	resize: none;
 }
 
 .TextTitle {
@@ -154,7 +151,6 @@ button, body, div, input {
 	word-break: break-all;
 	white-space: normal;
 }
-
 
 .bottomBtn {
 	display: flex;
@@ -205,6 +201,7 @@ button, body, div, input {
 	padding: 2px;
 	outline: none;
 }
+
 .leftImg, .rightImg{
 	position: absolute;
 	width: 450px;
@@ -212,22 +209,21 @@ button, body, div, input {
 	z-index: 10;
 	bottom: 0;
 }
+
 .leftImg{
     left: 0;
 }
+
 .rightImg{
 	right: 0;
 }
 
 .swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
 </style>
-
-
-
 </head>
 <body>
 

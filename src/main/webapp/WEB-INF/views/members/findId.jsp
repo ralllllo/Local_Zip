@@ -47,6 +47,7 @@ body {
 	margin: 0;
 	background-color: #F2D3A2;
 }
+
 .container{
 	position : relative;
 	z-index: 2;
@@ -172,20 +173,22 @@ hr {
 }
 
 .requestBtn:hover, .certifyBtn:hover, .backBtn:hover, .loginBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
 }
 
 .requestBtn:active, .certifyBtn:active, .backBtn:active, .loginBtn:hover {
-	transform: translateY(2px); /* 아래로 눌림 */
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .requestBtn, .certifyBtn, .backBtn, .loginBtn{
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
+
 .leftImg, .rightImg{
 	position: absolute;
 	width: 450px;
@@ -194,42 +197,44 @@ hr {
 	pointer-events: none;
 	bottom: 0;
 }
+
 .leftImg{
     left: 0;
 }
+
 .rightImg{
 	right: 0;
 }
+
 input{
 	outline: none;
 }
 
 .swal2-icon.swal2-info .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px;
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px;
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px;
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px;
 }
 
 .swal2-icon.swal2-warning .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px;
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px;
 }
 
 .swal2-icon.swal2-error .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px;
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px;
 }
 </style>
 </head>
-
 <body>
 	<div class="container">
 		<div class="mainTitle">우리 동네.zip ID 찾기</div>
@@ -243,6 +248,7 @@ input{
         <p style="font-size: 18px; margin-top: 10px;">입니다.</p>
         <button type="button" class="loginBtn" onclick="location.href='/members/loginUi'" style="position:static; margin-top:20px;">로그인하기</button>
     </div>
+    
 				<div class="inputArea">
 					<div class="form-row">
 						<label>· EMail : </label><input name="email" class="email"
@@ -317,7 +323,6 @@ input{
 		});
 		
 		//이메일 인증 확인 
-
 		$(".certifyBtn").on("click", function() {
 			if ($(".auth_code").val() === "") {
 				Swal.fire({

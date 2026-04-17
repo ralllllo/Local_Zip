@@ -14,134 +14,134 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="icon" type="image/png" sizes="512x512" href="/resources/images/pavicon.png">
 
-	<style>
-	button, body {
-		font-family: 'GMarketSans', sans-serif;
-	}
+<style>
+button, body {
+	font-family: 'GMarketSans', sans-serif;
+}
 
-	body {
-		margin: 0;
-		background-color: #fbe5c0;
-	}
+body {
+	margin: 0;
+	background-color: #fbe5c0;
+}
 
-	.container {
-		width: 100%;
-	}
-	
-	.title {
-		width: 100%;
-		font-weight: bold;
-		font-size: 40px;
-		color: #A66A3F;
-		border-bottom: 2px solid #A66A3F;
-		background-color: #F2D3A2;
-		height: 50px;
-		line-height: 100px;
-		display: flex;
-		padding: 0 20px;
-		justify-content: space-between; 
-		align-items: center;
-		box-sizing: border-box;
-		font-weight: bold;
-	    font-size: 23px;
-	    color: #5e361a;
-	}
-	
-	.centerBox{
-		margin: auto;
-	    width: 80%;
-	    border-radius: 10px;
-	    background-color: #fbe5c0;
-	    padding: 35px;
-	 	margin-top: 30px;
-	    background-color: #F2D3A2;
-	    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	}
-	
-	.centerBoxTitle{
-		margin-left: 20px;
-		margin-top: 10px;
-		font-weight: bold;
-		font-size: 20px;
-		color: #5e361a;
-	}
-	
-	.introWrite{
-		width: 620px;
-		top: 30px;
-		left: 0;
-		box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-		z-index: 10;
-		font-family: 'GMarketSans';
-		border-radius: 5px;
-		background-color: #fbe5c0;
-		color: #A66A3F;
-		font-size: 12px;
-		padding: 2px;
-		outline: none;
-		resize: none;
-	}
-	
-	.okBtn{
-		width: 50px;
-		height: 30px;
-		background-color: #FFB300;
-		border:none;
-		border-radius: 10px;
-		color: #5e361a;
-		font-size: 17px;
-		font-weight: bold;
-		box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-		display: flex;
-		margin-left: 370px;
-		margin-top: 15px;
-	}
-	
-	.okBtn:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-	}
-		
-	.okBtn:active {
-		transform: translateY(2px);
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-	}
-	
-	.my-swal {
-	    width: 420px !important;   /* 박스 크기 고정 */
-	    padding: 15px !important;
-	}
-	
-	.my-swal .swal2-title {
-    	font-size: 22px;
-    	margin: 5px 0;
-	}
+.container {
+	width: 100%;
+}
 
-	.my-swal .swal2-html-container {
-    	font-size: 16px;
-    	margin: 5px 0;
-	}
-	
-	.my-swal .swal2-actions{
-		margin-top: 10px;
-	}
-	
-	.my-swal .swal2-icon {
-	    width: 50px !important;
-	    height: 50px !important;
-	    margin: 10px auto;
-	}
-	
-	.my-swal .swal2-confirm{
-		padding: 8px 18px;
-	}
+.title {
+	width: 100%;
+	font-weight: bold;
+	font-size: 40px;
+	color: #A66A3F;
+	border-bottom: 2px solid #A66A3F;
+	background-color: #F2D3A2;
+	height: 50px;
+	line-height: 100px;
+	display: flex;
+	padding: 0 20px;
+	justify-content: space-between; 
+	align-items: center;
+	box-sizing: border-box;
+	font-weight: bold;
+    font-size: 23px;
+    color: #5e361a;
+}
 
-	.my-swal .swal2-icon-content {
-	    font-size: 30px !important;
-	    line-height: 60px !important;
-	}
+.centerBox{
+	margin: auto;
+    width: 80%;
+    border-radius: 10px;
+    background-color: #fbe5c0;
+    padding: 35px;
+ 	margin-top: 30px;
+    background-color: #F2D3A2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.centerBoxTitle{
+	margin-left: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	color: #5e361a;
+}
+
+.introWrite{
+	width: 620px;
+	top: 30px;
+	left: 0;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+	z-index: 10;
+	font-family: 'GMarketSans';
+	border-radius: 5px;
+	background-color: #fbe5c0;
+	color: #A66A3F;
+	font-size: 12px;
+	padding: 2px;
+	outline: none;
+	resize: none;
+}
+
+.okBtn{
+	width: 50px;
+	height: 30px;
+	background-color: #FFB300;
+	border:none;
+	border-radius: 10px;
+	color: #5e361a;
+	font-size: 17px;
+	font-weight: bold;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+	display: flex;
+	margin-left: 370px;
+	margin-top: 15px;
+}
+
+.okBtn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
 	
-	</style>
+.okBtn:active {
+	transform: translateY(2px);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.my-swal {
+    width: 420px !important;   /* 박스 크기 고정 */
+    padding: 15px !important;
+}
+
+.my-swal .swal2-title {
+   	font-size: 22px;
+   	margin: 5px 0;
+}
+
+.my-swal .swal2-html-container {
+   	font-size: 16px;
+   	margin: 5px 0;
+}
+
+.my-swal .swal2-actions{
+	margin-top: 10px;
+}
+
+.my-swal .swal2-icon {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 10px auto;
+}
+
+.my-swal .swal2-confirm{
+	padding: 8px 18px;
+}
+
+.my-swal .swal2-icon-content {
+    font-size: 30px !important;
+    line-height: 60px !important;
+}
+
+</style>
 </head>
 <body>
 <form action="/meetingMember/insert" class="frm" method="post">

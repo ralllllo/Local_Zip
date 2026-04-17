@@ -15,7 +15,9 @@
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2ad57018f836bb74c10d919e862f189a&libraries=clusterer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="icon" type="image/png" sizes="512x512" href="/resources/images/pavicon.png">
+
 <style>
+
 * {box-sizing: border-box;}
 
 @font-face {
@@ -123,6 +125,7 @@ body {
 	transform: translateY(2px); /* 아래로 눌림 */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .nowBtn{
 	background-color: #fecc56;
 	color: #A66A3F;
@@ -168,6 +171,7 @@ body {
 	margin: 25px auto;
 	width: 80%;
 }
+
 .chart-row, .chart-rowGen{
 	width: 50%;
     position: relative;
@@ -184,7 +188,7 @@ body {
     width: 80%;
     margin: 40px auto 70px auto;
     position: relative;
-    padding-top: 60px;   /* 제목 올라갈 자리 */
+    padding-top: 60px; 
 }
 
 .categoryText, .visitText {
@@ -255,7 +259,6 @@ body {
 	gap: 200px;
 }
 
-
 .membersIcon, .visitantIcon, .askIcon{
 	font-size:30px;
 	padding: 10px 10px 0 20px;
@@ -281,7 +284,7 @@ body {
 	color: #286708;
 }
 
-a{
+a {
 	text-decoration: none;
 }
 
@@ -291,7 +294,7 @@ img{
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }

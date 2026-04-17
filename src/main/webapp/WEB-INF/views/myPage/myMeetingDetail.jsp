@@ -11,213 +11,218 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/resources/images/pavicon.png">
 
 <style>
-	@font-face {
-		font-family: 'GMarketSans';
-		src:
-			url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
-			format('woff');
-		font-weight: 300;
-		font-display: swap;
-	}
-	
-	@font-face {
-		font-family: 'GMarketSans';
-		src:
-			url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-			format('woff');
-		font-weight: 500;
-		font-display: swap;
-	}
-	
-	@font-face {
-		font-family: 'GMarketSans';
-		src:
-			url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
-			format('woff');
-		font-weight: 700;
-		font-display: swap;
-	}
-	
-	*{box-sizing: border-box;}
-	
-	button, body {
-		font-family: 'GMarketSans', sans-serif;
-	}
-	
-	body {
-		margin: 0;
-		background-color: #fbe5c0;
-	}
-	
-	.container {
-		width: 100%;
-	}
-	
-	.mainTitle {
-		width: 100%;
-		font-weight: bold;
-		font-size: 50px;
-		color: #A66A3F;
-		border-bottom: 2px solid #A66A3F;
-		background-color: #F2D3A2;
-		height: 100px;
-		line-height: 100px;
-		display: flex;
-		padding: 0 20px;
-		justify-content: space-between; 
-		align-items: center;
-		box-sizing: border-box;
-	}
-	
-	.meetingDetail {
-		margin: auto;
-	    width: 70%;
-	    border-radius: 10px;
-	    background-color: #fbe5c0;
-	    padding: 35px;
-	 	margin-top: 60px;
-	    background-color: #F2D3A2;
-	    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	}
-	
-	.card-header {
-	    display: flex;
-	    justify-content: space-between;
-	    align-items: center;
-	    font-weight: bold;
-	    font-size:20px;
-	    color: #5e361a;
-	}
-	
-	.titleDiv, .categoryDiv, .descDiv, .locationDiv, .descTextDiv{
-		padding:10px;
-		border-bottom: 1px dotted #A66A3F;
-	}
-	
-	.openChatLinkDiv, .openChatPwDiv{
-		padding:10px;
-	}
-	
-	.descText{
-		font-weight: bold;
-	    font-size: 23px;
-	    color: #5e361a;
-	    border: none;
-	    padding-left: 2px;
-	}
-	
-	.descTextDetail{
-		padding-top: 10px;
-		border: none;
-		width: 70%;
-		padding-left: 2px;
-	}
-	
-	.title, .category, .desc, .location, .openChatLink, .openChatPw{
-		font-weight: bold;
-	    font-size: 23px;
-	    color: #5e361a;
-	}
-	
-	.categoryDiv{
-		display:flex;
-		gap:10px;
-	}
-	
-	.inputLink, .inputPw{
-		padding:5px;
-		background-color: #fbe5c0;
-		border-radius: 10px;
-		border:none;
-		font-size:15px;
-		width: 400px;
-		word-break: break-all;
-		white-space: normal; 
-	}
-	
-	.openChatWrapper{
-		display:flex;
-		gap: 300px;
-	}
-	
-	.openChatPwDiv{
-		padding-left: 50px;
-	}
-	
-	.categoryDetail {
-	    display: inline-block;
-	    line-height : 25px;
-	    font-size: 12px;
-	    padding: 3px 8px;
-	    border-radius: 5px;
-	    background-color: #FFB300;
-	    height: 28px;
-	    color: #3e5e40;
-	    font-weight: bold;
-	}
-	
-	.bottomBtn {
-	    margin-top: 20px;
-	    margin-bottom: 10px;
-	    margin-left: 600px;
-	    align-items: center;
-	}
-	
-	.backBtn, .updateBtn, .completeBtn, .cancelBtn{
-		width: 350px;
-	    height: 40px;
-	    background-color: #FFB300;
-	    border:none;
-	    border-radius: 10px;
-	    color: #5e361a;
-	    font-size: 17px;
-	    font-weight: bold;
-	    cursor: pointer;
-		transition: all 0.2s ease;
-	}
-	
-	.backBtn:hover, .updateBtn:hover,
-	.completeBtn:hover, .cancelBtn:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-		background-color: #fecc56;
-		color: #A66A3F;
-	}
-	
-	.backBtn:active, .updateBtn:active,
-	.completeBtn:active, .cancelBtn:active {
-		transform: translateY(2px);
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-	}
-	
-	.completeBtn, .cancelBtn{
-		display: none;
-	}
-	
-	.leftImg, .rightImg{
-		width: 450px;
-		height: 170px;
-		z-index: 10;
-		position: absolute;
-	}
-	.leftImg{
-	    left: 0;
-	}
-	.rightImg{
-		right: 0;
-	}
-	.descTextDetail{
-		white-space: pre-wrap;
-	}
-	.updateDiv[contenteditable="true"]{
-		border: 1px solid #FFB300;
-		border-radius: 5px;
-		padding: 5px;
-	}
-	.updateDiv[contenteditable="true"]:focus {
-		outline: none;
-		border: 1px solid #FFB300;
-	}
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: 300;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GMarketSans';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
+		format('woff');
+	font-weight: 700;
+	font-display: swap;
+}
+
+*{box-sizing: border-box;}
+
+button, body {
+	font-family: 'GMarketSans', sans-serif;
+}
+
+body {
+	margin: 0;
+	background-color: #fbe5c0;
+}
+
+.container {
+	width: 100%;
+}
+
+.mainTitle {
+	width: 100%;
+	font-weight: bold;
+	font-size: 50px;
+	color: #A66A3F;
+	border-bottom: 2px solid #A66A3F;
+	background-color: #F2D3A2;
+	height: 100px;
+	line-height: 100px;
+	display: flex;
+	padding: 0 20px;
+	justify-content: space-between; 
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.meetingDetail {
+	margin: auto;
+    width: 70%;
+    border-radius: 10px;
+    background-color: #fbe5c0;
+    padding: 35px;
+ 	margin-top: 60px;
+    background-color: #F2D3A2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size:20px;
+    color: #5e361a;
+}
+
+.titleDiv, .categoryDiv, .descDiv, .locationDiv, .descTextDiv{
+	padding:10px;
+	border-bottom: 1px dotted #A66A3F;
+}
+
+.openChatLinkDiv, .openChatPwDiv{
+	padding:10px;
+}
+
+.descText{
+	font-weight: bold;
+    font-size: 23px;
+    color: #5e361a;
+    border: none;
+    padding-left: 2px;
+}
+
+.descTextDetail{
+	padding-top: 10px;
+	border: none;
+	width: 70%;
+	padding-left: 2px;
+}
+
+.title, .category, .desc, .location, .openChatLink, .openChatPw{
+	font-weight: bold;
+    font-size: 23px;
+    color: #5e361a;
+}
+
+.categoryDiv{
+	display:flex;
+	gap:10px;
+}
+
+.inputLink, .inputPw{
+	padding:5px;
+	background-color: #fbe5c0;
+	border-radius: 10px;
+	border:none;
+	font-size:15px;
+	width: 400px;
+	word-break: break-all;
+	white-space: normal; 
+}
+
+.openChatWrapper{
+	display:flex;
+	gap: 300px;
+}
+
+.openChatPwDiv{
+	padding-left: 50px;
+}
+
+.categoryDetail {
+    display: inline-block;
+    line-height : 25px;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    background-color: #FFB300;
+    height: 28px;
+    color: #3e5e40;
+    font-weight: bold;
+}
+
+.bottomBtn {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 600px;
+    align-items: center;
+}
+
+.backBtn, .updateBtn, .completeBtn, .cancelBtn{
+	width: 350px;
+    height: 40px;
+    background-color: #FFB300;
+    border:none;
+    border-radius: 10px;
+    color: #5e361a;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.backBtn:hover, .updateBtn:hover,
+.completeBtn:hover, .cancelBtn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+	background-color: #fecc56;
+	color: #A66A3F;
+}
+
+.backBtn:active, .updateBtn:active,
+.completeBtn:active, .cancelBtn:active {
+	transform: translateY(2px);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.completeBtn, .cancelBtn{
+	display: none;
+}
+
+.leftImg, .rightImg{
+	width: 450px;
+	height: 170px;
+	z-index: 10;
+	position: absolute;
+}
+
+.leftImg{
+    left: 0;
+}
+
+.rightImg{
+	right: 0;
+}
+
+.descTextDetail{
+	white-space: pre-wrap;
+}
+
+.updateDiv[contenteditable="true"]{
+	border: 1px solid #FFB300;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.updateDiv[contenteditable="true"]:focus {
+	outline: none;
+	border: 1px solid #FFB300;
+}
 </style>
 </head>
 <body>
@@ -289,7 +294,6 @@
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
-			
 		</div>
 	</form>
 	<img class="leftImg" src="/resources/images/왼쪽 모서리 풀.png">
@@ -427,7 +431,7 @@
 	              });
 	              return;
 	          }
-	          console.log(seq);
+	          
 			$.ajax({
 				url : "/meeting/updateReportCheck",
 				type : "post",

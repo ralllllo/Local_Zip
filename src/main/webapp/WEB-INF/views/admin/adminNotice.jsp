@@ -115,14 +115,14 @@ body {
 }
 
 .categoryBtnAll:hover, .navicon:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
 } 
 
 .categoryBtnAll:active, .navicon:active {
-	transform: translateY(2px); /*아래로 눌림*/
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
@@ -237,50 +237,50 @@ body {
 }
 
 .postBox {
-        width: 95%;
-        max-width: 1000px;
-        margin: 20px auto 0 auto;
-        background-color: #fbe5c0;
-        border-radius: 5px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
+    width: 95%;
+    max-width: 1000px;
+    margin: 20px auto 0 auto;
+    background-color: #fbe5c0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
 
 .postHeader {
-        background-color: #F2D3A2;
-        padding: 10px 15px;
-        font-size: 14px;
-        border-bottom: 1px solid #A66A3F;
-        color: #A66A3F;
-        display: flex;
-        justify-content: space-between;
-    }
+    background-color: #F2D3A2;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #A66A3F;
+    color: #A66A3F;
+    display: flex;
+    justify-content: space-between;
+}
 
 .postBody {
-        padding: 15px 15px 5px 15px;
-    }
+   	padding: 15px 15px 5px 15px;
+}
 
 .rowItem1 {
-        border: 0px solid #ccc;
-        margin-bottom: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #F2D3A2;
-    }
+    border: 0px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #F2D3A2;
+}
 
 .rowItem2 {
-        border: 0px solid #ccc;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        border-radius: 5px;
-    }
+    border: 0px solid #ccc;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
     
 .labelName {
-        font-size: 12px;
-        color: #5e361a;;
-        display: block;
-        margin-bottom: 5px;
-    }
+    font-size: 12px;
+    color: #5e361a;;
+    display: block;
+    margin-bottom: 5px;
+}
 
 .titleContent {
 	font-weight: bold;
@@ -291,21 +291,19 @@ body {
 }
 .textContent { font-size: 15px; color: #444; min-height: 60px; color: #5e361a;}
 
-    /* 답변 영역 (와이어프레임의 하단 칸) */
+/* 답변 영역 (와이어프레임의 하단 칸) */
 .answerBox {
-        background-color: #F2D3A2;
-        border-top: 1px solid #A66A3F;
-        padding: 15px;
-        color : #5e361a;
-    }
+    background-color: #F2D3A2;
+    border-top: 1px solid #A66A3F;
+    padding: 15px;
+    color : #5e361a;
+}
 .answerLabel {
-        font-weight: bold;
-        color: #5e361a;
-        margin-bottom: 5px;
-        display: block;
-    }
-
-
+    font-weight: bold;
+    color: #5e361a;
+    margin-bottom: 5px;
+    display: block;
+}
 
 .WriteBtnDiv{
  	margin: 30px auto 0 auto;
@@ -313,24 +311,25 @@ body {
  	justify-content: center;
  	align-items: center;
  	gap: 100px;
- }
+}
  
 .WriteBtnDiv>button{
- 	 background-color: #FFB300;
-     color: #5e361a;
-     font-weight: bold;
-     border-radius: 10px;
-     border:none;
-     width: 200px;
- 	 height: 40px;
- 	 font-size:15px;
- } 
+	background-color: #FFB300;
+    color: #5e361a;
+    font-weight: bold;
+    border-radius: 10px;
+    border:none;
+    width: 200px;
+	height: 40px;
+	font-size:15px;
+} 
  
 .adminBtnArea{
  	display:flex;
 	gap:10px;
 	flex-shrink:0;
- }
+}
+
 .adminBtn{
  	margin: 0 0 7px 15px;
  	background-color: #ffb300;
@@ -341,20 +340,22 @@ body {
  	height: 40px;
  	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
  	font-size:15px;
- }
+}
  
 .postBox {
 	width: 95%;
 	max-width: 1000px;
 	margin: 20px auto;
-	background-color: #fbe5c0; /* 와이어프레임의 흰색 배경 느낌 */
+	background-color: #fbe5c0;
 	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+
 .postBox:hover{
 	cursor: pointer;
 }
+
 .postHeader {
 	background-color: #F2D3A2;
 	padding: 10px 15px;
@@ -362,9 +363,11 @@ body {
 	border-bottom: 1px solid #A66A3F;
 	color: #A66A3F;
 }
+
 .postBody {
 	padding: 15px;
 }
+
 .rowItem1 {
 	border: 0px solid #ccc;
 	padding: 10px;
@@ -377,6 +380,7 @@ body {
 	font-size: 18px;
 	color: #5e361a;
 }
+
 .emptyBox {
 	width: 100%;
 	height: 600px;
@@ -435,7 +439,7 @@ img{
 }
 
 .nowNavicon{
-   transform: translateY(-3px); /* 살짝 위로 뜸 */
+   transform: translateY(-3px);
    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
    color: #e6a83e;
 }
@@ -500,50 +504,50 @@ img{
 	</div>
 	
 	<script>			
-	let recordTotalCount = ${totalCount};
-	let recordCountPerPage = 10;
-	let naviCountPerPage = 10;
-	let currentPage = ${cPage};
-
-	let pageTotalCount = Math.ceil(recordTotalCount/recordCountPerPage);
-	
-	let startNavi = Math.floor(((currentPage - 1)/naviCountPerPage)) * naviCountPerPage + 1;
-	let endNavi = startNavi + naviCountPerPage - 1;
-	
-	if(endNavi > pageTotalCount) {
-		endNavi = pageTotalCount;
-	}
-	$(".page").empty();
-	
-	let needPrev = true; // <<
-	let needNext = true; // >>
-	
-	if(startNavi == 1){needPrev = false;}
-	if(endNavi == pageTotalCount){needNext = false;}
-	
-	if(needPrev) {
-		let prev = $("<a>"); 
-		prev.attr("href","/admin/toAdminNotice?cPage="+(startNavi-1)); 
-		prev.html("<< ");
-		$(".page").append(prev);
-	}
+			let recordTotalCount = ${totalCount};
+			let recordCountPerPage = 10;
+			let naviCountPerPage = 10;
+			let currentPage = ${cPage};
 		
-	for(let i = startNavi; i <= endNavi; i++) {
-		let navi = $("<a>");
-		navi.attr("href", "/admin/toAdminNotice?cPage="+i);
-		navi.html(i + " ");
-		$(".page").append(navi);
-		
-		if (i === currentPage) {
-	        navi.addClass("active");
-	    }
-	}
-	if(needNext) {
-		let next = $("<a>");
-		next.attr("href", "/admin/toAdminNotice?cPage="+(endNavi+1));
-		next.html(" >>");
-		$(".page").append(next);
-	}
+			let pageTotalCount = Math.ceil(recordTotalCount/recordCountPerPage);
+			
+			let startNavi = Math.floor(((currentPage - 1)/naviCountPerPage)) * naviCountPerPage + 1;
+			let endNavi = startNavi + naviCountPerPage - 1;
+			
+			if(endNavi > pageTotalCount) {
+				endNavi = pageTotalCount;
+			}
+			$(".page").empty();
+			
+			let needPrev = true; // <<
+			let needNext = true; // >>
+			
+			if(startNavi == 1){needPrev = false;}
+			if(endNavi == pageTotalCount){needNext = false;}
+			
+			if(needPrev) {
+				let prev = $("<a>"); 
+				prev.attr("href","/admin/toAdminNotice?cPage="+(startNavi-1)); 
+				prev.html("<< ");
+				$(".page").append(prev);
+			}
+				
+			for(let i = startNavi; i <= endNavi; i++) {
+				let navi = $("<a>");
+				navi.attr("href", "/admin/toAdminNotice?cPage="+i);
+				navi.html(i + " ");
+				$(".page").append(navi);
+				
+				if (i === currentPage) {
+			        navi.addClass("active");
+			    }
+			}
+			if(needNext) {
+				let next = $("<a>");
+				next.attr("href", "/admin/toAdminNotice?cPage="+(endNavi+1));
+				next.html(" >>");
+				$(".page").append(next);
+			}
 
 	</script>
 </body>

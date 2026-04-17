@@ -81,10 +81,10 @@ body {
 
 .form-row {
 	display: flex;
-    align-items: center; /* 세로 중앙 */
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
-    max-width: 480px; /* 전체 너비 제한 */
+    max-width: 480px;
     margin-bottom: 15px;
 }
 
@@ -108,12 +108,15 @@ label {
 	color : #5e361a;
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
 .mem_id {
     margin-right: 80px; 
 }
+
 .pw, .checkPw {
     margin-right: 64px;
 }
+
 hr {
 	position: absolute;
 	left: 50%;
@@ -191,6 +194,7 @@ hr {
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
+
 .correct, .incorrect {
 	display: none;
 	font-size: small;
@@ -225,6 +229,7 @@ hr {
 	border: 1px solid #ffb300;
 	display : none;
 }
+
 .pwLabel{
 	margin-left: 17px;
 }
@@ -237,53 +242,59 @@ hr {
 	pointer-events: none;
 	bottom: 0;
 }
+
 .leftImg{
     left: 0;
 }
+
 .rightImg{
 	right: 0;
 }
+
 input{
 	outline: none;
 }
+
 .swal2-icon.swal2-info .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px;
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px;
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px;
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px;
 }
 
 .swal2-icon.swal2-warning .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px; 
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px; 
 }
 .swal2-icon.swal2-info .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px; 
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px; 
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px;
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px;
 }
 
 .swal2-icon.swal2-error .swal2-icon-content {
-    font-size: 50px;     /* i 크기 */
+    font-size: 50px;
     transform: translateY(5px);
-    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    line-height: 70px;
 }
+
 .correct{
 	color: #286708;
 	margin-top: 5px;
 }
+
 .incorrect{
 	color: #de4f28;
 	margin-top: 5px;

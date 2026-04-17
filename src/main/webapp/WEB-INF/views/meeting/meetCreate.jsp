@@ -19,294 +19,301 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/resources/images/pavicon.png">
 </head>
 
-	<style>
-		@font-face {
-			font-family: 'GMarketSans';
-			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-			font-weight: 300;
-			font-display: swap;
-		}
+<style>
+@font-face {
+	font-family: 'GMarketSans';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+	font-weight: 300;
+	font-display: swap;
+}
 
-		@font-face {
-			font-family: 'GMarketSans';
-			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-			font-weight: 500;
-			font-display: swap;
-		}
-		
-		@font-face {
-			font-family: 'GMarketSans';
-			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-			font-weight: 700;
-			font-display: swap;
-		}
-		
-		*{box-sizing: border-box;}
-		
-		button, body {
-			font-family: 'GMarketSans', sans-serif;
-		}
+@font-face {
+	font-family: 'GMarketSans';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: 500;
+	font-display: swap;
+}
 
-		body {
-			margin: 0;
-			background-color: #fbe5c0;
-		}
-		
-		.container {
-			position : relative;
-			z-index: 2;
-			width: 100%;
-		}
-		
-		.mainTitle {
-			width: 100%;
-			font-weight: bold;
-			font-size: 50px;
-			color: #A66A3F;
-			border-bottom: 2px solid #A66A3F;
-			background-color: #F2D3A2;
-			height: 100px;
-			line-height: 100px;
-			display: flex;
-			padding: 0 20px;
-			justify-content: space-between; 
-			align-items: center;
-			box-sizing: border-box;
-		}
-		
-		.meetingDetail {
-			margin: auto;
-		    width: 1060px;
-		    border-radius: 10px;
-		    background-color: #fbe5c0;
-		    padding: 35px;
-		 	margin-top: 30px;
-		    background-color: #F2D3A2;
-		    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-		}
-		
-		.card-header {
-		    display: flex;
-		    justify-content: space-between;
-		    align-items: center;
-		    font-weight: bold;
-		    font-size:20px;
-		    color: #5e361a;
-		}
-		
-		.titleDiv, .categoryDiv, .descDiv, .locationDiv, .descTextDiv, .peopleNumDiv{
-			padding:10px;
-			border-bottom: 1px dotted #A66A3F;
-		}
-		
-		.openChatLinkDiv, .openChatPwDiv{
-			padding:10px;
-		}
-		
-		.descText{
-			font-weight: bold;
-		    font-size: 23px;
-		    color: #5e361a;
-		    border: none;
-		    padding-left: 2px;
-		}
-		
-		.descTextDetail{
-			padding-top: 10px;
-			border: none;
-			width: 100%;
-			padding-left: 2px;
-		}
-		
-		.title, .category, .desc, .location, .openChatLink, .openChatPw, .peopleNum{
-			font-weight: bold;
-		    font-size: 23px;
-		    color: #5e361a;
-		}
-		
-		.categoryDiv{
-			display: flex;
-		    flex-direction: column;
-		    gap: 8px;
-		    padding: 10px;
-		    border-bottom: 1px dotted #A66A3F;
-		}
-		
-		.openChatWrapper{
-			display:flex;
-			gap: 50px;
-		}
-		
-		.bottomBtn {
-		    display: flex;
-		    justify-content: center;
-		    gap: 20px;
-		    margin-top: 20px;
-		    margin-bottom: 10px;
-		}
-		
-		.requestBtn, .backBtn{
-			cursor: pointer;
-			transition: all 0.2s ease;
-			width: 350px;
-			height: 40px;
-			background-color: #FFB300;
-			border: none;
-			border-radius: 10px;
-			color: #5e361a;
-			font-size: 17px;
-			font-weight: bold;
-			flex-shrink: 0;
-		}
-		.requestBtn:hover, .backBtn:hover {
-			transform: translateY(-3px);
-			box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-			background-color: #fecc56;
-			color: #A66A3F;
-		}
-		
-		.requestBtn:active, .backBtn:active{
-			transform: translateY(2px);
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-		}
-		
-		.requestBtn, .backBtn {
-			cursor: pointer;
-			transition: all 0.2s ease;
-		}
-		.clubName{
-			width: 100%;
-			height: 35px;
-			top: 30px;
-		    left: 0;
-		    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-		    z-index: 10;
-		    font-family: 'GMarketSans';
-		    border-radius: 5px;
-		    background-color: #fbe5c0;
-		    color: #A66A3F;
-		    font-size: 12px;
-		    padding: 2px;
-		    outline: none;
-		}
-		
-		.detailContent{
-			width: 100%;
-			height: 300px;
-			top: 30px;
-		    left: 0;
-		    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-		    z-index: 10;
-		    font-family: 'GMarketSans';
-		    border: 1px solid #A66A3F;
-		    border-radius: 5px;
-		    background-color: #fbe5c0;
-		    color: #A66A3F;
-		    font-size: 12px;
-		    padding: 2px;
-		    outline: none;
-		}
-		
-		.categoryGuide{
-			font-size: 14px;
-    		color: #5e361a;
-		}
-		
-		.report{
-			width: 200px;
-    		height: 32px;
-		    top: 30px;
-		    left: 0;
-		    width: 150px;
-		    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-		    z-index: 10;
-		    font-family: 'GMarketSans';
-		    border: 1px solid #A66A3F;
-		    border-radius: 5px;
-		    background-color: #F2D3A2;
-		    color: #A66A3F;
-		    font-size: 12px;
-		    padding: 2px;
-		    outline: none;
-		}
-		
-		textarea{
-		    resize: none;
-		}
-		
-		.kakaotalk{
-			width: 600px;
-			height: 35px;
-			top: 30px;
-		    left: 0;
-		    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-		    z-index: 10;
-		    font-family: 'GMarketSans';
-		    border: 1px solid #A66A3F;
-		    border-radius: 5px;
-		    background-color: #fbe5c0;
-		    color: #A66A3F;
-		    font-size: 12px;
-		    padding: 2px;
-		    outline: none;
-		}
-		
-		.kakaotalkPw {
-			width: 300px;
-			height: 35px;
-			top: 30px;
-		    left: 0;
-		    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-		    z-index: 10;
-		    font-family: 'GMarketSans';
-		    border: 1px solid #A66A3F;
-		    border-radius: 5px;
-		    background-color: #fbe5c0;
-		    color: #A66A3F;
-		    font-size: 12px;
-		    padding: 2px;
-		    outline: none;
-		}
-		
-		#peopleNumber{
-			width: 200px;
-		}
-		
-		.leftImg, .rightImg{
-			position: absolute;
-			width: 450px;
-			height: 170px;
-			z-index: -1;
-			pointer-events: none;
-			bottom: -300px;
-		}
-		.leftImg{
-		    left: 0;
-		}
-		.rightImg{
-			right: 0;
-		}
-		.swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		.searchDiv{
-			display: flex;
-			gap: 5px;
-		}
-		.searchBtn{
-			width: 40px;
-		    height: 20px;
-		    background-color: #FFB300;
-		    border:none;
-		    border-radius: 10px;
-		    color: #5e361a;
-		    font-size: 13px;
-		    font-weight: bold;
-		    cursor: pointer;
-		}
-	</style>
+@font-face {
+	font-family: 'GMarketSans';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+	font-weight: 700;
+	font-display: swap;
+}
+
+*{box-sizing: border-box;}
+
+button, body {
+	font-family: 'GMarketSans', sans-serif;
+}
+
+body {
+	margin: 0;
+	background-color: #fbe5c0;
+}
+
+.container {
+	position : relative;
+	z-index: 2;
+	width: 100%;
+}
+
+.mainTitle {
+	width: 100%;
+	font-weight: bold;
+	font-size: 50px;
+	color: #A66A3F;
+	border-bottom: 2px solid #A66A3F;
+	background-color: #F2D3A2;
+	height: 100px;
+	line-height: 100px;
+	display: flex;
+	padding: 0 20px;
+	justify-content: space-between; 
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.meetingDetail {
+	margin: auto;
+    width: 1060px;
+    border-radius: 10px;
+    background-color: #fbe5c0;
+    padding: 35px;
+ 	margin-top: 30px;
+    background-color: #F2D3A2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size:20px;
+    color: #5e361a;
+}
+
+.titleDiv, .categoryDiv, .descDiv, .locationDiv, .descTextDiv, .peopleNumDiv{
+	padding:10px;
+	border-bottom: 1px dotted #A66A3F;
+}
+
+.openChatLinkDiv, .openChatPwDiv{
+	padding:10px;
+}
+
+.descText{
+	font-weight: bold;
+    font-size: 23px;
+    color: #5e361a;
+    border: none;
+    padding-left: 2px;
+}
+
+.descTextDetail{
+	padding-top: 10px;
+	border: none;
+	width: 100%;
+	padding-left: 2px;
+}
+
+.title, .category, .desc, .location, .openChatLink, .openChatPw, .peopleNum{
+	font-weight: bold;
+    font-size: 23px;
+    color: #5e361a;
+}
+
+.categoryDiv{
+	display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border-bottom: 1px dotted #A66A3F;
+}
+
+.openChatWrapper{
+	display:flex;
+	gap: 50px;
+}
+
+.bottomBtn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.requestBtn, .backBtn{
+	cursor: pointer;
+	transition: all 0.2s ease;
+	width: 350px;
+	height: 40px;
+	background-color: #FFB300;
+	border: none;
+	border-radius: 10px;
+	color: #5e361a;
+	font-size: 17px;
+	font-weight: bold;
+	flex-shrink: 0;
+}
+
+.requestBtn:hover, .backBtn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+	background-color: #fecc56;
+	color: #A66A3F;
+}
+
+.requestBtn:active, .backBtn:active{
+	transform: translateY(2px);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.requestBtn, .backBtn {
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.clubName{
+	width: 100%;
+	height: 35px;
+	top: 30px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+    font-family: 'GMarketSans';
+    border-radius: 5px;
+    background-color: #fbe5c0;
+    color: #A66A3F;
+    font-size: 12px;
+    padding: 2px;
+    outline: none;
+}
+
+.detailContent{
+	width: 100%;
+	height: 300px;
+	top: 30px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+    font-family: 'GMarketSans';
+    border: 1px solid #A66A3F;
+    border-radius: 5px;
+    background-color: #fbe5c0;
+    color: #A66A3F;
+    font-size: 12px;
+    padding: 2px;
+    outline: none;
+}
+
+.categoryGuide{
+	font-size: 14px;
+  	color: #5e361a;
+}
+
+.report{
+	width: 200px;
+  	height: 32px;
+    top: 30px;
+    left: 0;
+    width: 150px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+    font-family: 'GMarketSans';
+    border: 1px solid #A66A3F;
+    border-radius: 5px;
+    background-color: #F2D3A2;
+    color: #A66A3F;
+    font-size: 12px;
+    padding: 2px;
+    outline: none;
+}
+
+textarea{
+    resize: none;
+}
+
+.kakaotalk{
+	width: 600px;
+	height: 35px;
+	top: 30px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+    font-family: 'GMarketSans';
+    border: 1px solid #A66A3F;
+    border-radius: 5px;
+    background-color: #fbe5c0;
+    color: #A66A3F;
+    font-size: 12px;
+    padding: 2px;
+    outline: none;
+}
+
+.kakaotalkPw {
+	width: 300px;
+	height: 35px;
+	top: 30px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+    font-family: 'GMarketSans';
+    border: 1px solid #A66A3F;
+    border-radius: 5px;
+    background-color: #fbe5c0;
+    color: #A66A3F;
+    font-size: 12px;
+    padding: 2px;
+    outline: none;
+}
+
+#peopleNumber{
+	width: 200px;
+}
+
+.leftImg, .rightImg{
+	position: absolute;
+	width: 450px;
+	height: 170px;
+	z-index: -1;
+	pointer-events: none;
+	bottom: -300px;
+}
+
+.leftImg{
+    left: 0;
+}
+
+.rightImg{
+	right: 0;
+}
+
+.swal2-icon.swal2-info .swal2-icon-content {
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
+}
+
+.searchDiv{
+	display: flex;
+	gap: 5px;
+}
+
+.searchBtn{
+	width: 40px;
+    height: 20px;
+    background-color: #FFB300;
+    border:none;
+    border-radius: 10px;
+    color: #5e361a;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
 <body>
 <form action="/meeting/meetGenerate" class="frm" method="post" onsubmit="return checkForm();">
 	<div class="container">

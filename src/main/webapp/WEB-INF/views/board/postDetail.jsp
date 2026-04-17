@@ -53,7 +53,6 @@ body, html {
 	padding: 0;
 }
 
-/* 폰트 지정 */
 button, body {
 	font-family: 'GMarketSans', sans-serif;
 }
@@ -63,7 +62,6 @@ button, body {
 	top: 100px;
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	background-color: #fbe5c0;
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -93,8 +91,8 @@ button, body {
 }
 
 .backBtnDiv {
-	 margin-right: 40px;
-	 margin-top : 30px;
+	margin-right: 40px;
+	margin-top : 30px;
     position: static; 
 }
 
@@ -116,9 +114,7 @@ button, body {
 	border: 1px solid #FFB300;
 	color: #3e5e40;
 	align-items: center;
-	/* 수직 중앙 정렬 */
 	vertical-align: middle;
-	/* 버튼들끼리 줄이 안 맞을 때를 대비 */
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -126,23 +122,19 @@ button, body {
 .bodyBox {
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	margin-top: 30px;
 	color: #5e361a;
 	padding-bottom: 200px;
 }
 
 .postBox {
-	/* 수정: 고정 1500px 제거 */
 	width: 1500px;
 	max-width: 1500px;
-	/* 적당히 보기 좋은 최대 너비 설정 */
 	min-height: 200px;
 	height: auto;
 	margin: auto;
 	margin-top: 30px;
 	border-radius: 10px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -193,7 +185,6 @@ button, body {
 	left: 20px;
 	top: 23px;
 	flex-grow: 1;
-	/* 신고박스 오른쪽으로 딱 붙게 하기 위해 빈공간을 쭉 늘려주는 코드 */
 }
 
 .replyInfoBox {
@@ -235,8 +226,6 @@ button, body {
 .profileInfo, .replyInfo {
 	width: auto;
 	margin-right: 15px;
-	/* 정보 사이의 간격 일정하게 부여 */
-	/*수직 정렬*/
 	display: flex;
 	align-items: center;
 	font-size: 14px;
@@ -247,12 +236,11 @@ button, body {
 .reportArea {
 	display: flex;
 	flex-direction: column;
-	/* 아이콘과 선택창을 세로로 배치 */
 	align-items: flex-end;
 	margin-left: auto;
 	position: absolute;
-	top: 5px; /* 위에서 살짝 띄움 */
-	right: 20px; /* 오른쪽에서 살짝 띄움 */
+	top: 5px;
+	right: 20px;
 	z-index: 10;
 }
 
@@ -321,7 +309,7 @@ button, body {
 
 .postImages img {
 	max-width: 100%;
-	max-height: 500px; /* 부모 너비를 넘지 않게 함 */
+	max-height: 500px;
 	display: block;
 	border-radius: 8px;
 	width: 500px;
@@ -356,7 +344,6 @@ button, body {
 	color: #cdaa69;
 }
 
-/* 기본 상태 : 빨간하트는 숨겨놓고, 빈 하트는 보여주기 */
 .beforeHeart {
 	display: inline;
 }
@@ -366,7 +353,6 @@ button, body {
 	color: red;
 }
 
-/* active 클래스가 붙었을 때의 제어 */
 .postLikeBox.active .beforeHeart {
 	display: none;
 }
@@ -379,7 +365,6 @@ button, body {
 	.deleteBtn:hover, .completeBtn:hover, .cancelBtn:hover, .upBtn:hover,
 	.delBtn:hover, .OBtn:hover, .XBtn:hover, .fileDelBtn:hover {
 	transform: translateY(-3px);
-	/* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
@@ -389,7 +374,6 @@ button, body {
 	.deleteBtn:active, .completeBtn:active, .cancelBtn:active, .upBtn:active,
 	.delBtn:active, .OBtn:active, .XBtn:active, .fileDelBtn:active {
 	transform: translateY(2px);
-	/* 아래로 눌림 */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -423,25 +407,22 @@ a {
 .replyBox {
 	width: 1500px;
 	max-width: 1500px;
-	/* 적당히 보기 좋은 최대 너비 설정 */
 	min-height: 200px;
 	height: auto;
 	margin: auto;
-	
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 }
 
 .replyTitle {
-margin: 20px auto 0 auto;
-width : 1500px;
-height: 50px;
-font-weight: bold;
-font-size: x-large;
-color: #A66A3F;
-
+	margin: 20px auto 0 auto;
+	width : 1500px;
+	height: 50px;
+	font-weight: bold;
+	font-size: x-large;
+	color: #A66A3F;
 }
+
 .reportBtn {
 	background-color: #ffb300;
 	color: #5e361a;
@@ -458,14 +439,14 @@ color: #A66A3F;
 }
 
 .reportBtn:hover {
-	transform: translateY(-3px); /* 살짝 위로 뜸 */
+	transform: translateY(-3px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
 }
 
 .reportBtn:active {
-	transform: translateY(2px); /* 아래로 눌림 */
+	transform: translateY(2px);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -563,7 +544,7 @@ hr {
 }
 
 .replyContents[contenteditable="true"], .postTitle[contenteditable="true"],
-	.postContents[contenteditable="true"] {
+.postContents[contenteditable="true"] {
 	border: 1px solid #FFB300;
 	border-radius: 5px;
 	padding: 5px;
@@ -574,8 +555,7 @@ hr {
 	border: 1px solid #FFB300;
 }
 
-.postTitle[contenteditable="true"]:focus, .postContents[contenteditable="true"]:focus
-	{
+.postTitle[contenteditable="true"]:focus, .postContents[contenteditable="true"]:focus {
 	outline: none;
 	border: 1px solid #FFB300;
 }
@@ -600,9 +580,9 @@ hr {
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {
-	font-size: 50px; /* i 크기 */
+	font-size: 50px;
 	transform: translateY(5px);
-	line-height: 70px; /* 세로 위치 (핵심🔥) */
+	line-height: 70px;
 }
 </style>
 

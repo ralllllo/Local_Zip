@@ -50,7 +50,6 @@ body, html {
 	padding: 0;
 }
 
-/* 폰트 지정 */
 button, body {
 	font-family: 'GMarketSans', sans-serif;
 }
@@ -60,7 +59,6 @@ button, body {
 	padding-top: 150px;
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	border: 1px solid black;
 	background-color: #fbe5c0;
 }
@@ -76,7 +74,7 @@ button, body {
 	border-bottom: 2px solid #A66A3F;
 	z-index: 1000;
 	display: flex;
-	align-items: center; /* 세로 중앙 정렬 */
+	align-items: center;
 	justify-content: space-between;
 }
 
@@ -112,9 +110,7 @@ button, body {
 	border: 1px solid #FFB300;
 	color: #3e5e40;
 	align-items: center;
-	/* 수직 중앙 정렬 */
 	vertical-align: middle;
-	/* 버튼들끼리 줄이 안 맞을 때를 대비 */
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -122,22 +118,18 @@ button, body {
 .bodyBox {
 	width: 100%;
 	min-height: 100vh;
-	/* 최소 높이 지정 : 브라우저 */
 	margin-top: 30px;
 	color: #5e361a;
 	padding-bottom: 50px;
 }
 
 .postBox {
-	/* 수정: 고정 1500px 제거 */
 	width: 95%;
 	max-width: 1150px;
-	/* 적당히 보기 좋은 최대 너비 설정 */
 	min-height: 200px;
 	height: auto;
 	margin: 30px auto;
 	border-radius: 10px;
-	/* 그림자 효과 */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
 }
@@ -153,7 +145,6 @@ button, body {
 
 .postInfoBox {
 	width: 100%;
-	/* 신고박스 오른쪽으로 딱 붙게 하기 위해 빈공간을 쭉 늘려주는 코드 */
 }
 
 .postMidBox {
@@ -192,7 +183,6 @@ button, body {
 .navicon:hover, .backBtn:hover, .upBtn:hover, .delBtn:hover, .OBtn:hover,
 	.XBtn:hover, .changeBtns:hover{
 	transform: translateY(-3px);
-	/* 살짝 위로 뜸 */
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 	background-color: #fecc56;
 	color: #A66A3F;
@@ -202,7 +192,6 @@ button, body {
 .navicon:active, .backBtn:active, .upBtn:active, .delBtn:active, .OBtn:active,
 	.XBtn:active, .changeBtns:active{
 	transform: translateY(2px);
-	/* 아래로 눌림 */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -214,13 +203,16 @@ button, body {
 	font-weight: bold;
 	cursor: pointer;
 }
+
 .completeBtn ,.cancelBtn{
 	display : none;
 	margin-left: 5px;
 }
+
 .updateBtn, .deleteBtn{
 	margin-left: 5px;
 }
+
 .postContents[contenteditable="true"] {
     border: 1px solid #FFB300;
     border-radius: 5px;
@@ -263,7 +255,6 @@ hr {
 	width: 97%;
 	margin-bottom: 40px;
 	border: 1px solid #cdaa69;
-	;
 }
 
 a {
@@ -298,17 +289,19 @@ a {
 hr {
 	border: 1px dotted #5e361a;
 }
+
 .swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
 }
 		
 .swal2-icon.swal2-question .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+    font-size: 50px;
+    transform: translateY(5px);
+    line-height: 70px;
 }
+
 .noticeImg {
     display: block;
     width: 90%;
@@ -328,15 +321,13 @@ hr {
 	border-top-right-radius: 0;
 }
 </style>
-
 </head>
 <body>
 	<div class="container">
-
 		<div class="headBoxDiv">
 			<div class="headBox">공지사항</div>
 			<div class="backBtnDiv">
-				<!-- 			게시글을 누르기 전에 보고있었던 목록의 페이지를 기억해서, 누르면 전으로 돌아가는 기능 : onclick="history.back();" -->
+				<!-- 게시글을 누르기 전에 보고있었던 목록의 페이지를 기억해서, 누르면 전으로 돌아가는 기능 : onclick="history.back();" -->
 				<c:choose>
 					<c:when test="${role==0}">
 					<a href="/admin/toAdminNotice?cPage=${cPage}"><input class="backBtn" type="button" value="목록으로"></a>
@@ -352,6 +343,7 @@ hr {
 				</c:choose>
 			</div>
 		</div>
+		
 		<div class="bodyBox">
 			<div class="postBox">
 			<form action="" method="post" class="frm">
@@ -362,18 +354,15 @@ hr {
 						</div>
 					</div>
 					<c:if test="${role==0}">
-					
 					<input type="button" class="changeBtns updateBtn" value="수정">
 					<input type="button" class="changeBtns deleteBtn" value="삭제">
 					<input type="button" class="changeBtns completeBtn" value="완료">
 					<input type="button" class="changeBtns cancelBtn" value="취소">
-					
 					</c:if>
 				</div>
 
 				<div class="postMidBox">
 					<div class="postContents">${dto.notice_content}</div>
-					
 					<div class="noticeDiv">
 					<c:choose>
 				        <c:when test="${dto.notice_title == '📢 「따스한 봄 따라가요」 행사 안내'}">
@@ -400,133 +389,131 @@ hr {
 				<a href="/meeting/list?category=all"><i class="navicon fa-solid fa-people-group fa-2xl" style="color: #A66A3F"></i></a> 
 				<a href="/feedback/feedbackHome"><i class="navicon fa-solid fa-bullhorn fa-2xl" style="color: #A66A3F"></i></a>
 				<a href="/members/mypage"><i class="navicon fa-solid fa-user fa-2xl" style="color: #A66A3F"></i></a>
-
 			</div>
 		</div>
 	</div>
 
 	<script>
 	
-	let currentTitle = "${dto.notice_title}";
-    let currentContent = `${dto.notice_content}`;
-    
-		$(".updateBtn").on("click",function(){
-			$(".completeBtn").show();
-			$(".cancelBtn").show();
-			$(".updateBtn").hide();
-			$(".deleteBtn").hide();
+		let currentTitle = "${dto.notice_title}";
+	    let currentContent = `${dto.notice_content}`;
+	    
+			$(".updateBtn").on("click",function(){
+				$(".completeBtn").show();
+				$(".cancelBtn").show();
+				$(".updateBtn").hide();
+				$(".deleteBtn").hide();
+				
+				$(".postTitle").attr("contenteditable","true");
+				$(".postContents").attr("contenteditable","true");
+				
+			})
 			
-			$(".postTitle").attr("contenteditable","true");
-			$(".postContents").attr("contenteditable","true");
+			$(".cancelBtn").on("click",function(){
+				$(".completeBtn").hide();
+				$(".cancelBtn").hide();
+				$(".updateBtn").show();
+				$(".deleteBtn").show();
+				
+				$(".postTitle").attr("contenteditable","false");
+				$(".postContents").attr("contenteditable","false");
+				$(".postTitle").html(currentTitle);
+				$(".postContents").html(currentContent);
+				
+			})
 			
-		})
+		$(".completeBtn").on("click", function() {
+		    // 1. 데이터 추출 (innerText를 사용하여 태그를 제외한 실제 글자수 계산)
+		    let newTitle = $(".postTitle").text().trim();
+		    let newContent = $(".postContents").html();
+		    let newContentText = $(".postContents").text().trim();
+		    
+		    // 글자수 제한 설정
+		    let titleLimit = 100; // 제목 제한
+		    let contentLimit = 1000; // 내용 제한
 		
+		    // 2. 미입력 체크
+		    if (newTitle == "" || newContentText == "") {
+		        Swal.fire({
+		            icon: "info",
+		            title: "입력 확인",
+		            text: "제목과 내용을 모두 입력해 주세요.",
+		            iconColor: "#FFB300",
+		            confirmButtonColor: "#FFB300"
+		        });
+		        return;
+		    }
 		
+		    // 3. 제목 글자수 초과 체크 (추가된 부분)
+		    if (newTitle.length > titleLimit) {
+		        let overTitle = newTitle.substring(titleLimit, titleLimit + 30);
+		        Swal.fire({
+		            icon: "warning",
+		            title: "제목 글자수 초과!",
+		            html: "현재 제목이 <b>" + newTitle.length + "자</b>입니다. (제한: 100자)<br><br>" +
+		                  "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:13px; border:1px solid #ffcccc; word-break: break-all;'>" +
+		                  "<b>제목 뒷부분을 삭제해주세요:</b><br><br>" +
+		                  "<span style='color:#555;'>... " + overTitle + "</span></div>",
+		            iconColor: "#EB0000",
+		            confirmButtonColor: "#FFB300"
+		        });
+		        return;
+		    }
 		
-		$(".cancelBtn").on("click",function(){
-			$(".completeBtn").hide();
-			$(".cancelBtn").hide();
-			$(".updateBtn").show();
-			$(".deleteBtn").show();
-			
-			$(".postTitle").attr("contenteditable","false");
-			$(".postContents").attr("contenteditable","false");
-			$(".postTitle").html(currentTitle);
-			$(".postContents").html(currentContent);
-			
-		})
-$(".completeBtn").on("click", function() {
-    // 1. 데이터 추출 (innerText를 사용하여 태그를 제외한 실제 글자수 계산)
-    let newTitle = $(".postTitle").text().trim();
-    let newContent = $(".postContents").html();
-    let newContentText = $(".postContents").text().trim();
-    
-    // 글자수 제한 설정
-    let titleLimit = 100; // 제목 제한
-    let contentLimit = 1000; // 내용 제한
-
-    // 2. 미입력 체크
-    if (newTitle == "" || newContentText == "") {
-        Swal.fire({
-            icon: "info",
-            title: "입력 확인",
-            text: "제목과 내용을 모두 입력해 주세요.",
-            iconColor: "#FFB300",
-            confirmButtonColor: "#FFB300"
-        });
-        return;
-    }
-
-    // 3. 제목 글자수 초과 체크 (추가된 부분)
-    if (newTitle.length > titleLimit) {
-        let overTitle = newTitle.substring(titleLimit, titleLimit + 30);
-        Swal.fire({
-            icon: "warning",
-            title: "제목 글자수 초과!",
-            html: "현재 제목이 <b>" + newTitle.length + "자</b>입니다. (제한: 100자)<br><br>" +
-                  "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:13px; border:1px solid #ffcccc; word-break: break-all;'>" +
-                  "<b>제목 뒷부분을 삭제해주세요:</b><br><br>" +
-                  "<span style='color:#555;'>... " + overTitle + "</span></div>",
-            iconColor: "#EB0000",
-            confirmButtonColor: "#FFB300"
-        });
-        return;
-    }
-
-    // 4. 내용 글자수 초과 체크 (추가된 부분)
-    if (newContentText.length > contentLimit) {
-        let overText = newContentText.substring(contentLimit, contentLimit + 50);
-        Swal.fire({
-            icon: "warning",
-            title: "내용 글자수 초과!",
-            html: "현재 내용이 <b>" + newContentText.length + "자</b>입니다. (제한: 1000자)<br><br>" +
-                  "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:14px; border:1px solid #ffcccc; white-space: pre-wrap; word-break: break-all;'>" +
-                  "<b>이 부분부터 삭제해주세요:</b><br><br>" +
-                  "<span style='color:#555;'>... " + overText + "</span></div>",
-            iconColor: "#EB0000",
-            confirmButtonColor: "#FFB300"
-        });
-        return;
-    }
-
-    // 5. 서버 전송 (AJAX)
-    $.ajax({
-        url: "/admin/updateNotice",
-        data: {
-            seq: "${dto.notice_seq}",
-            notice_title: newTitle,
-            notice_content: newContent
-        },
-        type: "post"
-    }).done(function(resp) {
-        if (resp == "success") {
-            Swal.fire({
-                icon: "success",
-                title: "Success!",
-                text: "수정되었습니다.",
-                iconColor: "#FFB300",
-                confirmButtonColor: "#FFB300"
-            });
-            currentTitle = newTitle;
-            currentContent = newContent;
-            
-            // 전송 성공 시에만 버튼 상태 되돌리기
-            $(".completeBtn").hide();
-            $(".cancelBtn").hide();
-            $(".updateBtn").show();
-            $(".deleteBtn").show();
-            $(".postTitle, .postContents").attr("contenteditable", "false");
-        } else {
-            Swal.fire({
-                icon: "error",
-                title: "Error!",
-                text: "공지사항 수정에 실패했습니다.",
-                iconColor: "#EB0000",
-                confirmButtonColor: "#FFB300"
-            });
-        }
-    });
-});
+		    // 4. 내용 글자수 초과 체크 (추가된 부분)
+		    if (newContentText.length > contentLimit) {
+		        let overText = newContentText.substring(contentLimit, contentLimit + 50);
+		        Swal.fire({
+		            icon: "warning",
+		            title: "내용 글자수 초과!",
+		            html: "현재 내용이 <b>" + newContentText.length + "자</b>입니다. (제한: 1000자)<br><br>" +
+		                  "<div style='color:red; background:#fff1f1; padding:15px; border-radius:5px; text-align:left; font-size:14px; border:1px solid #ffcccc; white-space: pre-wrap; word-break: break-all;'>" +
+		                  "<b>이 부분부터 삭제해주세요:</b><br><br>" +
+		                  "<span style='color:#555;'>... " + overText + "</span></div>",
+		            iconColor: "#EB0000",
+		            confirmButtonColor: "#FFB300"
+		        });
+		        return;
+		    }
+		
+		    // 5. 서버 전송 (AJAX)
+		    $.ajax({
+		        url: "/admin/updateNotice",
+		        data: {
+		            seq: "${dto.notice_seq}",
+		            notice_title: newTitle,
+		            notice_content: newContent
+		        },
+		        type: "post"
+		    }).done(function(resp) {
+		        if (resp == "success") {
+		            Swal.fire({
+		                icon: "success",
+		                title: "Success!",
+		                text: "수정되었습니다.",
+		                iconColor: "#FFB300",
+		                confirmButtonColor: "#FFB300"
+		            });
+		            currentTitle = newTitle;
+		            currentContent = newContent;
+		            
+		            // 전송 성공 시에만 버튼 상태 되돌리기
+		            $(".completeBtn").hide();
+		            $(".cancelBtn").hide();
+		            $(".updateBtn").show();
+		            $(".deleteBtn").show();
+		            $(".postTitle, .postContents").attr("contenteditable", "false");
+		        } else {
+		            Swal.fire({
+		                icon: "error",
+		                title: "Error!",
+		                text: "공지사항 수정에 실패했습니다.",
+		                iconColor: "#EB0000",
+		                confirmButtonColor: "#FFB300"
+		            });
+		        }
+		    });
+		});
 		
 		$(".deleteBtn").on("click",function(){
 			
@@ -580,12 +567,12 @@ $(".completeBtn").on("click", function() {
 		        document.execCommand("insertLineBreak"); // 줄바꿈 삽입
 			    }
 			});
-		 $(document).on("keydown", ".postTitle[contenteditable='true']", function(e){
+		
+		$(document).on("keydown", ".postTitle[contenteditable='true']", function(e){
 	            if(e.key === "Enter"){
 	                e.preventDefault(); // 기본 동작 막기
 	            }
-	        });	
-		
+	       });	
 	</script>
 </body>
 </html>
