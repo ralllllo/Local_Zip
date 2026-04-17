@@ -201,8 +201,6 @@ a {
 
 .postInfoBox {
 	width: 300px;
-	/* min-height: 50px; */
-	/*  margin-bottom: 10px; */
 	position: relative;
 	left: 20px;
 	top: 20px;
@@ -488,7 +486,6 @@ a {
  .postTitle[contenteditable="true"],
  .postContent[contenteditable="true"] {
 	border: 1px solid #FFB300;
-/* 	border-radius: 5px; */
 	padding: 5px;
 }
 

@@ -68,7 +68,6 @@
 	
 	.introWrite{
 		width: 620px;
-		/* height: 35px; */
 		top: 30px;
 		left: 0;
 		box-shadow: 0 4px 10px rgba(0,0,0,0.2);

@@ -597,7 +597,6 @@ hr {
 
 .postContents {
 	white-space: pre-line;
-	/*    text-align: left; */
 }
 
 .swal2-icon.swal2-question .swal2-icon-content {

@@ -541,7 +541,7 @@ a {
 		        <div class="bodyBox">
 		
 		            <div class="orderBox">
-<!-- 		            버튼 하나만 쓰고 현재 상태를 클릭하면 반대로 이동 -->
+                    <!-- 버튼 하나만 쓰고 현재 상태를 클릭하면 반대로 이동 -->
 		                <button class="sortBtn orderBtn" type="button">${sort == 'latest' ? '최신순' : '인기순'}</button>
 		            </div>
 				<c:forEach var="i" items="${list}">

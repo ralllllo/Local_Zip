@@ -55,8 +55,7 @@
 		}).then(() => {
 			window.opener.location.href="/meeting/list?category=all";
 			window.close();
-		}); 
-		
+		});
 	</script>
 
 </body>

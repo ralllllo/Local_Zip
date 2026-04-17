@@ -49,7 +49,7 @@ body {
 }
 
 .container {
-position : relative;
+	position : relative;
 	z-index: 2;
 	width: 100%;
 	min-height: 100vh;
@@ -157,26 +157,27 @@ hr {
 	align-items: center;
 	gap: 15px;
 }
-		.loginBtn:hover,
-        .JoinBtn:hover,
-        .backBtn:hover{
-            transform: translateY(-3px); /* 살짝 위로 뜸 */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            background-color: #fecc56;
-			color: #A66A3F;
-        }
+.loginBtn:hover,
+.JoinBtn:hover,
+.backBtn:hover{
+    transform: translateY(-3px); /* 살짝 위로 뜸 */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    background-color: #fecc56;
+	color: #A66A3F;
+}
 
-        .loginBtn:active,
-        .JoinBtn:active,
-        .backBtn:active{
-            transform: translateY(2px); /* 아래로 눌림 */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .loginBtn, .JoinBtn, .backBtn {
-        	cursor: pointer;
-			transition: all 0.2s ease;
-        }
+.loginBtn:active,
+.JoinBtn:active,
+.backBtn:active{
+    transform: translateY(2px); /* 아래로 눌림 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+      
+.loginBtn, .JoinBtn, .backBtn {
+    cursor: pointer;
+	transition: all 0.2s ease;
+}
+
 .linkText{
 	display: flex;
 	gap: 60px;
@@ -185,6 +186,7 @@ hr {
 	margin-left: 10px;
 	color: #5e361a;
 }
+
 a:link{color:black;text-decoration:none;}
 a:visited{color:black;text-decoration:none;}
 
@@ -200,17 +202,21 @@ input{
 	z-index: -1;
 	pointer-events: none;
 }
+
 .leftImg{
     left: 0;
 }
+
 .rightImg{
 	right: 0;
 }
+
 .swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
+   font-size: 50px;     /* i 크기 */
+   transform: translateY(5px);
+   line-height: 70px;   /* 세로 위치 (핵심🔥) */
+}
+
 .linkDiv a {
 	color: #5e361a;
 }
@@ -332,9 +338,6 @@ input{
 				confirmButtonColor: "#FFB300"
 			});
 		}
-		
-		
-		
 	</script>
 	
 </body>

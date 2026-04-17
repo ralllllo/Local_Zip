@@ -144,8 +144,6 @@
 		border-radius: 8px;
 	}
 	
-	
-	
 	.openChatLinkDiv, .openChatPwDiv {
 		padding: 10px;
 	}
@@ -206,10 +204,10 @@
 		
 	}
 	.bottomBtn a {
-	display: block;
-}
+		display: block;
+	}
 	.requestBtn:hover, .backBtn:hover {
-	   background-color: #fecc56;
+	    background-color: #fecc56;
    		color: #A66A3F;
 		transform: translateY(-3px);
 		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
@@ -254,25 +252,28 @@
 		padding: 2px;
 		outline: none;
 	}
+	
 	.leftImg, .rightImg{
-	position: absolute;
-	width: 450px;
-	height: 170px;
-	z-index: -1;
-	pointer-events: none;
-	bottom: 0;
+		position: absolute;
+		width: 450px;
+		height: 170px;
+		z-index: -1;
+		pointer-events: none;
+		bottom: 0;
 	}
+	
 	.leftImg{
 	    left: 0;
 	}
+	
 	.rightImg{
 		right: 0;
 	}
 	
 	.swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+	    font-size: 50px;     /* i 크기 */
+	    transform: translateY(5px);
+	    line-height: 70px;   /* 세로 위치 (핵심🔥) */
 	}
 	</style>
 </head>
@@ -363,10 +364,8 @@
 				iconColor: "#FFB300",
 				confirmButtonColor: "#FFB300"
 			}).then(() => {
-				//this.submit();
 				$(".frm")[0].submit();
 			});
-// 			return true;
 		});
 	</script>
 

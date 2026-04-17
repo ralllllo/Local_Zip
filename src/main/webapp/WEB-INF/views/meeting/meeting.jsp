@@ -264,7 +264,6 @@ body {
 	display: none;
 	position: absolute;
 	top: 30px;
-/* 	left: 0; */
 	right: 0px;
 	width: 150px;
 	z-index: 10;
@@ -588,7 +587,7 @@ body {
 				</div>
 			</c:forEach>
 	</div>
-<c:if test="${not empty navi}">
+	<c:if test="${not empty navi}">
 		<div class="pageBox">
 
 			<c:if test="${navi.needPrev}">

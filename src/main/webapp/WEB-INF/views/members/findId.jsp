@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <title>우리동네.zip</title>
@@ -207,29 +204,29 @@ input{
 	outline: none;
 }
 
-		.swal2-icon.swal2-info .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		
-		.swal2-icon.swal2-question .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		
-		.swal2-icon.swal2-warning .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
-		
-		.swal2-icon.swal2-error .swal2-icon-content {
-		    font-size: 50px;     /* i 크기 */
-		    transform: translateY(5px);
-		    line-height: 70px;   /* 세로 위치 (핵심🔥) */
-		}
+.swal2-icon.swal2-info .swal2-icon-content {
+    font-size: 50px;     /* i 크기 */
+    transform: translateY(5px);
+    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+}
+
+.swal2-icon.swal2-question .swal2-icon-content {
+    font-size: 50px;     /* i 크기 */
+    transform: translateY(5px);
+    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+}
+
+.swal2-icon.swal2-warning .swal2-icon-content {
+    font-size: 50px;     /* i 크기 */
+    transform: translateY(5px);
+    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+}
+
+.swal2-icon.swal2-error .swal2-icon-content {
+    font-size: 50px;     /* i 크기 */
+    transform: translateY(5px);
+    line-height: 70px;   /* 세로 위치 (핵심🔥) */
+}
 </style>
 </head>
 
@@ -350,8 +347,8 @@ input{
     						confirmButtonColor: "#FFB300"
     					});
 						// 입력창 영역을 숨기고 결과 영역을 보여줌
-						$(".inputArea").hide();
-						$(".backBtn").hide();
+							$(".inputArea").hide();
+							$(".backBtn").hide();
 							$("#foundedId").text(resp.myId);
 							$("#resultArea").show();
 							$(".loginBtn").show();
@@ -374,5 +371,4 @@ input{
 	</script>
 
 </body>
-
 </html>

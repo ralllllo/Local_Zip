@@ -53,8 +53,8 @@
 		}
 		
 		.container {
-		position : relative;
-		z-index: 2;
+			position : relative;
+			z-index: 2;
 			width: 100%;
 		}
 		
@@ -147,16 +147,16 @@
 		
 		.requestBtn, .backBtn{
 			cursor: pointer;
-		transition: all 0.2s ease;
-		width: 350px;
-		height: 40px;
-		background-color: #FFB300;
-		border: none;
-		border-radius: 10px;
-		color: #5e361a;
-		font-size: 17px;
-		font-weight: bold;
-		 flex-shrink: 0;
+			transition: all 0.2s ease;
+			width: 350px;
+			height: 40px;
+			background-color: #FFB300;
+			border: none;
+			border-radius: 10px;
+			color: #5e361a;
+			font-size: 17px;
+			font-weight: bold;
+			flex-shrink: 0;
 		}
 		.requestBtn:hover, .backBtn:hover {
 			transform: translateY(-3px);
@@ -277,7 +277,7 @@
 			width: 450px;
 			height: 170px;
 			z-index: -1;
-	pointer-events: none;
+			pointer-events: none;
 			bottom: -300px;
 		}
 		.leftImg{
@@ -307,7 +307,7 @@
 		    cursor: pointer;
 		}
 	</style>
-<body><!-- /meeting/test -->
+<body>
 <form action="/meeting/meetGenerate" class="frm" method="post" onsubmit="return checkForm();">
 	<div class="container">
 		<div class="top-section">

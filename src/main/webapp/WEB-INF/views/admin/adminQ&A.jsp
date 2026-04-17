@@ -212,7 +212,6 @@ body {
 	border: none;
 	margin: 0 0 5px 0;
 	font-size: 15px;
-	/*  	height: 40px; */
 	flex: 1;
 	width: auto;
 	min-width: 0;
@@ -234,7 +233,6 @@ body {
 
 .replyTextAndBtn {
 	display: flex;
-	/*  	align-items: stretch; /* textarea랑 버튼 영역 높이 맞추기 */
 	gap: 10px;
 }
 
@@ -380,8 +378,6 @@ body {
 	display: flex;
 	gap: 10px;
 	flex-shrink: 0;
-	/* 	align-self: flex-start; /*버튼 영역 위로 붙이기*/
-	*/
 }
 
 .adminBtn, .replyBtn {

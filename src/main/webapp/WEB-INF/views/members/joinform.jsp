@@ -50,7 +50,7 @@ body {
 }
 
 .container {
-position : relative;
+	position : relative;
 	z-index: 2;
 	width: 100%;
 	min-height: 100vh;
@@ -58,7 +58,7 @@ position : relative;
 }
 
 .topBar {
-display: flex;
+	display: flex;
 	padding-left: 20px;
 	font-weight: bold;
 	color: #A66A3F;
@@ -71,15 +71,18 @@ display: flex;
     padding: 0 20px;
 	
 }
+
 .mainTitle{
 	min-width:500px;
 	font-size: 50px;
 }
+
 .backBtnDiv{
-position: relative;
+	position: relative;
     top: 20px; /* 아래로 이동 */
     right : 20px;
 }
+
 .divTotal {
 	padding-top: 30px;
 	margin: auto;
@@ -197,6 +200,7 @@ hr {
 	display: none;
 	font-size: small;
 }
+
 .duplCheck:hover,
 .authCheck:hover,
 .confirmBtn:hover,
@@ -223,6 +227,7 @@ hr {
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
+
 .leftImg, .rightImg{
 	position: absolute;
 	width: 400px;
@@ -231,18 +236,23 @@ hr {
 	pointer-events: none;
 	bottom: 0;
 }
+
 .leftImg{
     left: 0;
 }
+
 .rightImg{
 	right: 0;
 }
+
 input{
 	outline: none;
 }
+
 a {
     color:#FF8200;
 }
+
 .swal2-icon.swal2-info .swal2-icon-content {
 	font-size: 50px;     /* i 크기 */
 	transform: translateY(5px);
@@ -582,7 +592,6 @@ a {
 		let frm = document.getElementsByClassName("frm")[0];
 		frm.onsubmit = function(e) {
 			//기본 제출 막기
-// 			e.preventDefault();
 			
 			// id
 			let id = document.getElementsByClassName("id")[0];
@@ -829,10 +838,6 @@ a {
 				address1.value = "";
 				return false;
 			}
-			
-			// address2
-			/* let address2 = document.getElementsByClassName("address2")[0];
-			let regex = /^[가-힣a-zA-Z0-9\s]{2,15}$/; */
 			
 			// agreeBtn
 			let agreeBtn = document.getElementsByClassName("agreeBtn")[0];

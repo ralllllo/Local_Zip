@@ -276,9 +276,6 @@ button, body, div, input {
 
 
 </style>
-
-
-
 </head>
 <body>
 
@@ -336,7 +333,6 @@ button, body, div, input {
 	</div>
 
 	<script>
-		
 		// submit 전 공백에 대한 안내메시지
 		$(".frm").on("submit",function(e){
 			e.preventDefault();
@@ -386,10 +382,6 @@ button, body, div, input {
 		        $(".frm")[0].submit();
 			});
 		});
-		
-		
 	</script>
-
-
 </body>
 </html>

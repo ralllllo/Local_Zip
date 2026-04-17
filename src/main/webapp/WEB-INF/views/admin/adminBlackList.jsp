@@ -201,7 +201,6 @@ body {
 	border-radius: 5px;
 }
 
-/* .reportReason { font-weight: bold; font-size: 18px; color: #5e361a; } */
 .reportReason {
 	font-size: 18px;
 	color: #444;
