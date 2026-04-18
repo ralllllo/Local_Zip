@@ -237,19 +237,6 @@ public class FeedBackController {
 	    return "fail";
 	}
 
-	// 신고
-	@ResponseBody
-	@RequestMapping("/report/insert")
-	public String report(ReportDTO dto, HttpSession session) {
-
-		String loginId = (String) session.getAttribute("loginId");
-
-		dto.setMem_id(loginId);
-		reportdao.reportInsert(dto);
-
-		return "success";
-	}
-
 	// 게시글 삭제
 	@ResponseBody
 	@RequestMapping("/delete")
