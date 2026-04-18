@@ -398,7 +398,6 @@ public class BoardController {
 				aDao.insert(new AttachmentDTO(0, dto.getPost_category(), dto.getPost_seq(), oriName, sysName));
 	        }
 	    }
-		
 		return "success";
 	}
 
