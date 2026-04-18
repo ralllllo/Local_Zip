@@ -11,7 +11,7 @@
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="url"
-			value="jdbc:oracle:thin:@10.10.55.74:1521:xe" />
+			value="jdbc:oracle:thin:@175.116.9.23:1521:xe" />
 		<property name="username" value="zip" />
 		<property name="password" value="zip" />
 		<property name="driverClassName"

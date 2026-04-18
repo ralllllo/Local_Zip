@@ -28,12 +28,12 @@ public class ReportDAO {
 	}
 	
 	public int reportDeleteBlock(int target_seq) { // 신고된 게시글/댓글/모임 삭제 불가 로직
-		String sql = "select count(*) from reports where target_seq =? and reports_status = 4 ";
+		String sql = "select count(*) from reports where target_seq =? and reports_status in (3,4) ";
 		return jdbc.queryForObject(sql, Integer.class, target_seq);
 	}
 	
 	public int reportUpdateBlock(int target_seq) { // 신고된 게시글/댓글/모임 수정 불가 로직
-		String sql = "select count(*) from reports where target_seq =? and reports_status = 4 ";
+		String sql = "select count(*) from reports where target_seq =? and reports_status in (3,4) ";
 		return jdbc.queryForObject(sql, Integer.class, target_seq);
 	}
 }
