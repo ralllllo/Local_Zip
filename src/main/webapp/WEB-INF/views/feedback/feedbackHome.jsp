@@ -762,7 +762,7 @@ a {
         	
         	// 클릭한 버튼에서 값 가져옴
         	let target_seq = $(this).data("seq");
-        	let reports_type = 0; // 신고 종류(게시글)
+        	let reports_type = 3; // 신고 종류(동네건의)
         	let target_id = $(this).data("targetid");
         	let reports_reason = $(this).closest(".postBox").find(".reportSelect").val();
         	

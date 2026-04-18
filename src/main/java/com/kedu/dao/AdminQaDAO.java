@@ -114,13 +114,14 @@ public class AdminQaDAO {
 		String sql = "select * from( "
 				+ "select row_number() over(order by r.reports_date desc) as rn, "
 				+ "r.mem_id, r.target_id, r.reports_date, r.reports_type, r.reports_reason, r.target_seq, r.reports_status, r.reports_seq, "
-				+ "coalesce(p.post_contents, reply.reply_contents, m.meet_introcontents, '원문 삭제됨(번호:' || r.target_seq || ')') as target_content, "
+				+ "coalesce(p.post_contents, reply.reply_contents, m.meet_introcontents, suggestion_contents, '원문 삭제됨(번호:' || r.target_seq || ')') as target_content, "
 				+ "case "
-				+ "when r.reports_type = 0 then '게시글' when r.reports_type = 1 then '댓글' else '모임' end as target_type_name "
+				+ "when r.reports_type = 0 then '게시글' when r.reports_type = 1 then '댓글' when r.reports_type = 2 then '모임' else '동네건의' end as target_type_name "
 				+ "from reports r "
 				+ "left join post p on r.target_seq = p.post_seq and r.reports_type = 0 "
 				+ "left join reply on r.target_seq = reply.reply_seq and r.reports_type = 1 "
 				+ "left join meeting m on r.target_seq = m.meet_seq and r.reports_type = 2 "
+				+ "left join suggestion s on r.target_seq = s.suggestion_seq and r.reports_type = 3 "
 				+ ") where rn between ? and ? ";
 		return jdbc.query(sql, new BeanPropertyRowMapper<ReportDTO>(ReportDTO.class), start, end);
 	}
@@ -129,13 +130,14 @@ public class AdminQaDAO {
 		String sql = "select * from( "
 				+ "select row_number() over(order by r.reports_date) as rn, "
 				+ "r.mem_id, r.target_id, r.reports_date, r.reports_type, r.reports_reason, r.target_seq,  r.reports_status, r.reports_seq, "
-				+ "coalesce(p.post_contents, reply.reply_contents, m.meet_introcontents, '원문 삭제됨(번호:' || r.target_seq || ')') as target_content, "
+				+ "coalesce(p.post_contents, reply.reply_contents, m.meet_introcontents, suggestion_contents, '원문 삭제됨(번호:' || r.target_seq || ')') as target_content, "
 				+ "case "
-				+ "when r.reports_type = 0 then '게시글' when r.reports_type = 1 then '댓글' else '모임' end as target_type_name "
+				+ "when r.reports_type = 0 then '게시글' when r.reports_type = 1 then '댓글' when r.reports_type = 2 then '모임' else '동네건의' end as target_type_name "
 				+ "from reports r "
 				+ "left join post p on r.target_seq = p.post_seq and r.reports_type = 0 "
 				+ "left join reply on r.target_seq = reply.reply_seq and r.reports_type = 1 "
 				+ "left join meeting m on r.target_seq = m.meet_seq and r.reports_type = 2 "
+				+ "left join suggestion s on r.target_seq = s.suggestion_seq and r.reports_type = 3 "
 				+ "where r.reports_status = ? "
 				+ ") where rn between ? and ? ";
 		return jdbc.query(sql, new BeanPropertyRowMapper<ReportDTO>(ReportDTO.class),status, start, end);
@@ -145,13 +147,14 @@ public class AdminQaDAO {
 		String sql = "select * from( "
 				+ "select row_number() over(order by r.reports_status) as rn, "
 				+ "r.mem_id, r.target_id, r.reports_date, r.reports_type, r.reports_reason, r.target_seq,  r.reports_status, r.reports_seq, "
-				+ "coalesce(p.post_contents, reply.reply_contents, m.meet_introcontents, '원문 삭제됨(번호:' || r.target_seq || ')') as target_content, "
+				+ "coalesce(p.post_contents, reply.reply_contents, m.meet_introcontents, suggestion_contents, '원문 삭제됨(번호:' || r.target_seq || ')') as target_content, "
 				+ "case "
-				+ "when r.reports_type = 0 then '게시글' when r.reports_type = 1 then '댓글' else '모임' end as target_type_name "
+				+ "when r.reports_type = 0 then '게시글' when r.reports_type = 1 then '댓글' when r.reports_type = 2 then '모임' else '동네건의' end as target_type_name "
 				+ "from reports r "
 				+ "left join post p on r.target_seq = p.post_seq and r.reports_type = 0 "
 				+ "left join reply on r.target_seq = reply.reply_seq and r.reports_type = 1 "
 				+ "left join meeting m on r.target_seq = m.meet_seq and r.reports_type = 2 "
+				+ "left join suggestion s on r.target_seq = s.suggestion_seq and r.reports_type = 3 "
 				+ "where r.reports_status in (3,5) "
 				+ ") where rn between ? and ? ";
 		return jdbc.query(sql, new BeanPropertyRowMapper<ReportDTO>(ReportDTO.class), start, end);
